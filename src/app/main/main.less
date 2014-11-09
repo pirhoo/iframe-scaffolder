@@ -47,9 +47,29 @@
       position: relative;
 
       &__actions {
+        z-index: 15;
         position:relative;
         background: white;
         .box-shadow(0 0 10px 10px white);
+      }
+
+      &__value {
+        position:relative;
+        z-index: 10;
+        display: inline-block;
+        width:100%;
+        overflow: hidden;
+      }
+
+      &__edit-label {
+        position:absolute;
+        z-index: 20;
+        left:0;
+        top:0;
+        right:0;
+        bottom:0;
+        padding:7px 15px;
+        background:@gray-lighter;
       }
     }
 

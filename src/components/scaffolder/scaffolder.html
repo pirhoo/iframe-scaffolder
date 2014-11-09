@@ -1,8 +1,20 @@
 <div class="scaffolder scaffolder--{{layout}}">
+  <aside ng-show="layout == 'menu'" class="scaffolder__menu">
+    <ul class="nav nav-pills nav-stacked">
+      <li ng-repeat="url in urls track by $index"
+          ng-class="{'active': scaffolder.isActive($index) }"
+          class="scaffolder__menu__item">
+        <a ng-click="scaffolder.activate($index)">
+          {{scaffolder.label($index, "Iframe " + ($index+1))}}
+        </a>
+      </li>
+    </ul>
+  </aside>
   <iframe frameborder="0"
           class="scaffolder__iframe"
           width="{{iframeWidth($index, $first, $last)}}"
           height="{{iframeHeight($index, $first, $last)}}"
-          ng-src="{{url}}"
+          ng-src="{{scaffolder.url($index)}}"
+          ng-show="scaffolder.isVisible($index)"
           ng-repeat="url in urls track by $index"></iframe>
 </div>

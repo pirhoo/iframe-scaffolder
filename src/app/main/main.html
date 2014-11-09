@@ -21,12 +21,29 @@
         </form>
         <ul class="list-group">
           <li class="list-group-item editor__step__url" ng-repeat="url in urls track by $index">
-            <div class="btn-group btn-group-xs pull-right editor__step__url__actions">
-              <button type="button" class="btn btn-default" ng-click="removeUrl($index)">
-                <i class="glyphicon glyphicon-trash"></i>
-              </button>
+            <div>
+              <div class="btn-group btn-group-xs pull-right editor__step__url__actions">
+                <button type="button" class="btn btn-default" ng-click="editLabel($index)">
+                  Edit label
+                </button>
+                <button type="button" class="btn btn-default" ng-click="removeUrl($index)">
+                  <i class="glyphicon glyphicon-trash"></i>
+                </button>
+              </div>
+              <a ng-href="{{scaffolder.url($index)}}" target="_blank" class="editor__step__url__value">
+                {{scaffolder.label($index)}}
+              </a>
             </div>
-            <a ng-href="{{url}}" target="_blank" class="editor__step__url__value">{{url}}</a>
+            <form ng-submit="saveLabel($index)" ng-show="labels[$index] || labels[$index] === ''" class="editor__step__url__edit-label">
+              <div class="input-group input-group-sm">
+                <input type="text" ng-model="labels[$index]" class="form-control" />
+                <span class="input-group-btn">
+                  <button class="btn btn-default" type="submit">
+                    Save
+                  </button>
+                </span>
+              </div>
+            </form>
           </li>
         </ul>
       </div>
@@ -38,13 +55,16 @@
             <small class="text-muted">How iframes are arranged</small>
           </div>
           <div class="pull-right">
-            <button class="btn btn-default" ng-class="{active: layout == 'horizontal'}" ng-click="layout = 'horizontal'">
+            <button class="btn btn-default btn-sm" ng-class="{active: layout == 'menu'}" ng-click="layout = 'menu'">
+              ≡◻
+            </button>
+            <button class="btn btn-default btn-sm" ng-class="{active: layout == 'horizontal'}" ng-click="layout = 'horizontal'">
               ▯▯▯
             </button>
-            <button class="btn btn-default" ng-class="{active: layout == 'head'}" ng-click="layout = 'head'">
+            <button class="btn btn-default btn-sm" ng-class="{active: layout == 'head'}" ng-click="layout = 'head'">
               ▯▤
             </button>
-            <button class="btn btn-default" ng-class="{active: layout == 'tail'}" ng-click="layout = 'tail'">
+            <button class="btn btn-default btn-sm" ng-class="{active: layout == 'tail'}" ng-click="layout = 'tail'">
               ▤▯
             </button>
           </div>
@@ -79,7 +99,7 @@
           </a>
           <div class="media-body">
             Hi, I'm <a href="http://twitter.com/pirhoo" target="_blank">@pirhoo</a>.<br />
-            I hope you enjoy this <a href="">open source</a> tool.
+            This is an <a href="http://github.com/pirhoo/iframe-scaffolder/">open source</a> tool.
           </div>
         </div>
       </div>

@@ -1,6 +1,8 @@
 'use strict';
 
-angular.module('iframeScaffolder').controller('ScaffolderCtrl', function ($scope) {
+angular.module('iframeScaffolder').controller('ScaffolderCtrl', function ($scope, Scaffolder) {
+
+  $scope.scaffolder = new Scaffolder();
 
   $scope.iframeWidth = function() {
     switch($scope.layout) {
@@ -10,11 +12,14 @@ angular.module('iframeScaffolder').controller('ScaffolderCtrl', function ($scope
         return '50%';
       case 'head':
         return '50%';
+      case 'menu':
+        return '75%';
     }
   };
 
   $scope.iframeHeight = function(index, first, last) {
-    if ($scope.layout === 'horizontal' ||
+    if ($scope.layout === 'horizontal'    ||
+        $scope.layout === 'menu'          ||
         $scope.layout === 'head' && first ||
         $scope.layout === 'tail' && last) {
       return '100%';
@@ -22,5 +27,10 @@ angular.module('iframeScaffolder').controller('ScaffolderCtrl', function ($scope
       return (100/($scope.urls.length-1)) + '%';
     }
   };
+
+  $scope.$watch('urls + layout', function() {
+    // New instance of the scaffolder class
+    $scope.scaffolder = new Scaffolder($scope.urls, $scope.layout);
+  }, true);
 
 });

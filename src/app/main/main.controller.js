@@ -1,15 +1,18 @@
 'use strict';
 
-angular.module('iframeScaffolder').controller('MainCtrl', function ($scope, $state, $http) {
+angular.module('iframeScaffolder').controller('MainCtrl', function ($scope, $state, $http, Scaffolder) {
 
-  $scope.layout   = 'head';
-  $scope.urls     = [];
-  $scope.width    = 600;
-  $scope.height   = 450;
-  $scope.examples = [];
+  $scope.scaffolder = new Scaffolder();
+  $scope.layout     = 'menu';
+  $scope.urls       = [];
+  $scope.width      = 600;
+  $scope.height     = 450;
+  $scope.examples   = [];
+
   // Get sample datasets
   $http.get('assets/examples.json').success(function(data) {
     $scope.examples = data;
+    $scope.pickExample()
   });
 
   $scope.addUrl = function() {
@@ -44,5 +47,28 @@ angular.module('iframeScaffolder').controller('MainCtrl', function ($scope, $sta
     var example = $scope.examples[Math.floor(Math.random() * $scope.examples.length)];
     angular.extend($scope, angular.copy(example));
   };
+
+  $scope.editLabel = function(index) {
+    $scope.labels = {};
+    $scope.labels[index] = $scope.scaffolder.label(index, '');
+  };
+
+  $scope.saveLabel = function(index) {
+    // Get the label
+    var label = $scope.labels[index] || '';
+    $scope.labels = {};
+    // Create a new URL with the label as prefix
+    if(label !== '') {
+      $scope.urls[index] = label + '|' + $scope.scaffolder.url(index, true);
+    // Create a new URL without prefix
+    } else {
+      $scope.urls[index] = $scope.scaffolder.url(index, true);
+    }
+  };
+
+  $scope.$watch('urls + layout', function() {
+    // New instance of the scaffolder class
+    $scope.scaffolder = new Scaffolder($scope.urls, $scope.layout);
+  }, true);
 
 });

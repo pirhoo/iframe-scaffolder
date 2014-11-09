@@ -3,14 +3,25 @@
   height: 100%;
   position:relative;
 
+  &__menu {
+    width:25%;
+    padding:5px;
+    &__item {
+      cursor: pointer;
+    }
+  }
+
   &__iframe {
     display: block;
     float:left;
   }
 
-  &--horizontal {
+  &--menu {
     .scaffolder__iframe {
-      height:100%;
+      float:none;
+      position:absolute;
+      left:25%;
+      top:0;
     }
   }
 
