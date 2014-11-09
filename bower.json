@@ -6,7 +6,7 @@
     "angular": "1.3.x",
     "jquery": "2.x.x",
     "angular-sanitize": "1.3.x",
-    "angular-ui-router": "0.2.x",
+    "angular-ui-router": "0.2.11",
     "bootstrap": "3.3.x",
     "angular-zeroclipboard": "~0.3.2"
   },
