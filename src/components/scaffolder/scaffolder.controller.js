@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('iframeLayout').controller('ScaffolderCtrl', function ($scope) {
+angular.module('iframeScaffolder').controller('ScaffolderCtrl', function ($scope) {
 
   $scope.iframeWidth = function(index, first, last) {
     switch($scope.layout) {
