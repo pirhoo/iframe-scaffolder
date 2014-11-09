@@ -2,13 +2,13 @@
 
 angular.module('iframeScaffolder').controller('MainCtrl', function ($scope, $state, $http) {
 
-  $scope.layout   = "head";
+  $scope.layout   = 'head';
   $scope.urls     = [];
   $scope.width    = 600;
   $scope.height   = 450;
   $scope.examples = []
   // Get sample datasets
-  $http.get("assets/examples.json").success(function(data) {
+  $http.get('assets/examples.json').success(function(data) {
     $scope.examples = data;
   });
 
@@ -27,7 +27,7 @@ angular.module('iframeScaffolder').controller('MainCtrl', function ($scope, $sta
 
   $scope.getViewUrl = function() {
     var params = {
-      urls: $scope.urls.join(","),
+      urls: $scope.urls.join(','),
       layout: $scope.layout
     };
     return $state.href('view', params, {absolute: true});
