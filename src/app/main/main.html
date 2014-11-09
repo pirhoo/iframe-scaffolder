@@ -23,10 +23,10 @@
           <li class="list-group-item editor__step__url" ng-repeat="url in urls track by $index">
             <div>
               <div class="btn-group btn-group-xs pull-right editor__step__url__actions">
-                <button type="button" class="btn btn-default" ng-click="editLabel($index)">
+                <button type="button" class="btn btn-default" tooltip="Change the label describing this iframe" ng-click="editLabel($index)">
                   Edit label
                 </button>
-                <button type="button" class="btn btn-default" ng-click="removeUrl($index)">
+                <button type="button" class="btn btn-default" ng-click="removeUrl($index)" tooltip="Remove this iframe">
                   <i class="glyphicon glyphicon-trash"></i>
                 </button>
               </div>
@@ -74,7 +74,7 @@
         <div class="editor__step__label"></div>
         <div class="panel-body">
           <p>
-            <button class="btn btn-default btn-xs pull-right" ui-zeroclip zeroclip-model="getViewIframe()">
+            <button class="btn btn-default btn-xs pull-right" ui-zeroclip zeroclip-model="getViewIframe()" tooltip="Copy the embed code to you clipboard.">
               Copy
             </button>
             Export the iframe
@@ -124,7 +124,7 @@
           <div class="input-group">
             <input class="form-control" type="text" value="{{getViewUrl()}}" readonly />
             <span class="input-group-btn">
-              <a class="btn btn-link" href="{{getViewUrl()}}" target="_blank">
+              <a class="btn btn-link" href="{{getViewUrl()}}" target="_blank" tooltip="Open the iframe in a new window">
                 <i class="glyphicon glyphicon-new-window"></i>
               </a>
             </span>

@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('iframeScaffolder', ['ngSanitize', 'ui.router', 'zeroclipboard', 'ui.bootstrap'])
-  .config(function ($stateProvider, $urlRouterProvider, $sceProvider, uiZeroclipConfigProvider) {
+  .config(function ($stateProvider, $urlRouterProvider, $sceProvider, $tooltipProvider, uiZeroclipConfigProvider) {
     $stateProvider
       .state('home', {
         url: '/?urls&layout',
@@ -20,6 +20,8 @@ angular.module('iframeScaffolder', ['ngSanitize', 'ui.router', 'zeroclipboard', 
 
     $urlRouterProvider.otherwise('/');
     $sceProvider.enabled(false);
+    // config ui-bootstrap
+    $tooltipProvider.options({ appendToBody: true });
     // config ZeroClipboard
     uiZeroclipConfigProvider.setZcConf({
       swfPath: 'bower_components/zeroclipboard/dist/ZeroClipboard.swf'
