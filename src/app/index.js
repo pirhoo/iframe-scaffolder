@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('iframeScaffolder', ['ngSanitize', 'ui.router', 'zeroclipboard'])
+angular.module('iframeScaffolder', ['ngSanitize', 'ui.router', 'zeroclipboard', 'ui.bootstrap'])
   .config(function ($stateProvider, $urlRouterProvider, $sceProvider, uiZeroclipConfigProvider) {
     $stateProvider
       .state('home', {
