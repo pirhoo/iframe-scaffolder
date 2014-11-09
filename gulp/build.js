@@ -65,7 +65,7 @@ gulp.task('html', ['styles', 'scripts', 'partials'], function () {
     .pipe($.rev())
     .pipe(jsFilter)
     .pipe($.ngAnnotate())
-    .pipe($.replace('bower_components/zeroclipboard/dist/','./assets/swf'))
+    .pipe($.replace('bower_components/zeroclipboard/dist/','./assets/swf/'))
     .pipe($.uglify({preserveComments: $.uglifySaveLicense}))
     .pipe(jsFilter.restore())
     .pipe(cssFilter)
