@@ -1,6 +1,7 @@
 'use strict';
 
 var gulp = require('gulp');
+var deploy = require("gulp-gh-pages");
 
 var $ = require('gulp-load-plugins')({
   pattern: ['gulp-*', 'main-bower-files', 'uglify-save-license', 'del']
@@ -41,7 +42,7 @@ gulp.task('partials', function () {
       quotes: true
     }))
     .pipe($.ngHtml2js({
-      moduleName: 'iframeLayout'
+      moduleName: 'iframeScaffolder'
     }))
     .pipe(gulp.dest('.tmp'))
     .pipe($.size());
@@ -111,6 +112,12 @@ gulp.task('misc', function () {
 
 gulp.task('clean', function (done) {
   $.del(['.tmp', 'dist'], done);
+});
+
+gulp.task('deploy', function() {
+  gulp.src("./dist/**/*").pipe(deploy({
+    remoteUrl: "git@github.com:Pirhoo/iframe-scaffolder.git"
+  }));
 });
 
 gulp.task('build', ['html', 'images', 'fonts', 'misc']);
