@@ -6,13 +6,6 @@ var gulp = require('gulp');
 gulp.task('wiredep', function () {
   var wiredep = require('wiredep').stream;
 
-  gulp.src('src/{app,components}/*.less')
-    .pipe(wiredep({
-      directory: 'bower_components',
-      ignorePath: /^\/|\.\.\//
-    }))
-    .pipe(gulp.dest('src'));
-
   gulp.src('src/*.html')
     .pipe(wiredep({
       directory: 'bower_components',
