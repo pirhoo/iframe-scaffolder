@@ -69,7 +69,7 @@ gulp.task('html', ['styles', 'scripts', 'partials'], function () {
     .pipe($.uglify({preserveComments: $.uglifySaveLicense}))
     .pipe(jsFilter.restore())
     .pipe(cssFilter)
-    .pipe($.replace('bower_components/bootstrap/fonts','../fonts'))
+    .pipe($.replace('bower_components/bootstrap/fonts','fonts'))
     .pipe($.replace('../assets','assets'))
     .pipe($.csso())
     .pipe(cssFilter.restore())
