@@ -23,7 +23,8 @@ gulp.task('styles', function () {
     }))
     .on('error', handleError)
     .pipe($.autoprefixer('last 1 version'))
-    .pipe(gulp.dest('.tmp'))
+    .pipe($.flatten())
+    .pipe(gulp.dest('.tmp/app'))
     .pipe($.size());
 });
 
