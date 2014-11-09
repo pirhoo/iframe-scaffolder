@@ -4,7 +4,11 @@ angular.module('iframeScaffolder', ['ngSanitize', 'ui.router', 'zeroclipboard'])
   .config(function ($stateProvider, $urlRouterProvider, $sceProvider, uiZeroclipConfigProvider) {
     $stateProvider
       .state('home', {
-        url: '/',
+        url: '/?urls&layout',
+        params: {
+          urls: { value: ''},
+          layout: { value: 'menu'}
+        },
         templateUrl: 'app/main/main.html',
         controller: 'MainCtrl'
       })

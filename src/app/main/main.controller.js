@@ -1,10 +1,10 @@
 'use strict';
 
-angular.module('iframeScaffolder').controller('MainCtrl', function ($scope, $state, $http, Scaffolder) {
+angular.module('iframeScaffolder').controller('MainCtrl', function ($scope, $state, $stateParams, $http, Scaffolder) {
 
   $scope.scaffolder = new Scaffolder();
-  $scope.layout     = 'menu';
-  $scope.urls       = [];
+  $scope.layout     = $stateParams.layout || 'menu';
+  $scope.urls       = $stateParams.urls === '' ? [] : $stateParams.urls.split(',');
   $scope.width      = 600;
   $scope.height     = 450;
   $scope.examples   = [];
@@ -12,7 +12,6 @@ angular.module('iframeScaffolder').controller('MainCtrl', function ($scope, $sta
   // Get sample datasets
   $http.get('assets/examples.json').success(function(data) {
     $scope.examples = data;
-    $scope.pickExample()
   });
 
   $scope.addUrl = function() {
