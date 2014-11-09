@@ -1,0 +1,8 @@
+<div class="scaffolder scaffolder--{{layout}}">
+  <iframe frameborder="0"
+          class="scaffolder__iframe"
+          width="{{iframeWidth($index, $first, $last)}}"
+          height="{{iframeHeight($index, $first, $last)}}"
+          ng-src="{{url}}"
+          ng-repeat="url in urls track by $index"></iframe>
+</div>

@@ -1,0 +1,97 @@
+@import "../bootstrap.variables.less";
+@import "../../../bower_components/bootstrap/less/mixins.less";
+
+.introduction {
+  padding:20px 0;
+  margin-bottom:20px;
+  background: white;
+}
+
+.editor {
+
+  position:relative;
+  counter-reset: step;
+
+  &__credits {
+    margin-top:40px;
+  }
+
+  &__step {
+    position:relative;
+    counter-increment:step;
+
+    &__label {
+      position:absolute;
+      bottom:0;
+      top:0;
+      right:100%;
+      color:white;
+      width:15px;
+      line-height: 20px;
+      text-align: center;
+      background: @brand-primary;
+      border-radius:@panel-border-radius 0 0 @panel-border-radius;
+
+      &:after {
+        position:absolute;
+        top:50%;
+        left:50%;
+        content:counter(step);
+        .translate(-50%, -50%);
+      }
+    }
+
+    &__url {
+      white-space: nowrap;
+      overflow: hidden;
+      position: relative;
+
+      &__actions {
+        position:relative;
+        background: white;
+        .box-shadow(0 0 10px 10px white);
+      }
+    }
+
+    &__actions {
+      position:absolute;
+      top:0;
+      left:0;
+    }
+
+    & &__size {
+      display:inline-block;
+      width:65px;
+    }
+  }
+
+  &__preview {
+    position: relative;
+    background:url("/assets/images/editor-bg.png") black 0 0;
+
+    &__scaffolder {
+      margin:20px;
+      height: 500px;
+      background:#fff;
+      .box-shadow(0 0 10px 0 fade(black, 20));
+    }
+
+    &__empty-alert {
+      position:absolute;
+      top:0;
+      left:0;
+      bottom:0;
+      right:0;
+      z-index: 100;
+      background: fade(#fff, 60);
+
+      &__message {
+        position:absolute;
+        top:50%;
+        left:50%;
+        text-align: center;
+        .translate(-50%, -50%);
+      }
+    }
+  }
+}

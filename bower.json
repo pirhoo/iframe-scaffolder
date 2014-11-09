@@ -1,0 +1,19 @@
+{
+  "name": "iframeScaffolder",
+  "version": "0.0.0",
+  "dependencies": {
+    "modernizr": "2.8.x",
+    "angular": "1.3.x",
+    "jquery": "2.x.x",
+    "angular-sanitize": "1.3.x",
+    "angular-ui-router": "0.2.x",
+    "bootstrap": "3.3.x",
+    "angular-zeroclipboard": "~0.3.2"
+  },
+  "devDependencies": {
+    "angular-mocks": "1.3.x"
+  },
+  "resolutions": {
+    "angular": "1.3.x"
+  }
+}

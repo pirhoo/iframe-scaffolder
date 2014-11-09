@@ -1,0 +1,42 @@
+.scaffolder {
+  width: 100%;
+  height: 100%;
+  position:relative;
+
+  &__iframe {
+    display: block;
+    float:left;
+  }
+
+  &--horizontal {
+    .scaffolder__iframe {
+      height:100%;
+    }
+  }
+
+  &--head {
+    .scaffolder__iframe {
+      margin-left:50%;
+    }
+
+    .scaffolder__iframe:first-child {
+      margin:0;
+      position:absolute;
+      left:0;
+      top:0;
+    }
+  }
+
+  &--tail {
+    .scaffolder__iframe {
+      margin-right:50%;
+    }
+
+    .scaffolder__iframe:last-child {
+      margin:0;
+      position:absolute;
+      right:0;
+      top:0;
+    }
+  }
+}
