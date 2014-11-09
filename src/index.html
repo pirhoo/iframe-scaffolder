@@ -20,7 +20,8 @@
     <script src="bower_components/modernizr/modernizr.js"></script>
     <!-- endbuild -->
     <script type="text/javascript">
-      document.write("<base href='" + document.location.href + "' />");
+      var href = document.location.protocol + "//" + document.location.host + document.location.pathname;
+      document.write("<base href='" + href + "' />");
     </script>
   </head>
   <body>
