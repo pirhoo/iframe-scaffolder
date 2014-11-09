@@ -14,6 +14,7 @@
           class="scaffolder__iframe"
           width="{{iframeWidth($index, $first, $last)}}"
           height="{{iframeHeight($index, $first, $last)}}"
+          ng-class="{'scaffolder__iframe--last': $last, 'scaffolder__iframe--first': $first}"
           ng-src="{{scaffolder.url($index)}}"
           ng-show="scaffolder.isVisible($index)"
           ng-repeat="url in urls track by $index"></iframe>
