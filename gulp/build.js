@@ -13,10 +13,10 @@ function handleError(err) {
 }
 
 gulp.task('styles', function () {
-  return gulp.src('src/{app,components}/**/*.less')
+  return gulp.src('src/app/index.less')
     .pipe($.less({
       paths: [
-        'bower_components',
+        '.',
         'src/app',
         'src/components'
       ]
