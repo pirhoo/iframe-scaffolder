@@ -11,7 +11,7 @@
         <div class="editor__step__label"></div>
         <form class="panel-body" role="form" ng-submit="addUrl()">
           <div class="input-group">
-            <input type="url" required ng-model="newUrl" class="form-control" placeholder="An URL to use as new iframe" />
+            <input type="url" required ng-model="newUrl" class="form-control" placeholder="URL of a new iframe" />
             <span class="input-group-btn">
               <button class="btn btn-primary" type="submit" tooltip="Create an iframe with this URL">
                 Add
@@ -47,7 +47,7 @@
           </li>
         </ul>
       </div>
-      <div class="panel editor__step panel-default">
+      <div class="panel editor__step panel-default" ng-class="{ 'editor__step--disable': !urls.length }">
         <div class="editor__step__label"></div>
         <div class="panel-body">
           <div class="pull-left">
@@ -70,7 +70,7 @@
           </div>
         </div>
       </div>
-      <div class="panel editor__step panel-default">
+      <div class="panel editor__step panel-default" ng-class="{ 'editor__step--disable': !urls.length }">
         <div class="editor__step__label"></div>
         <div class="panel-body">
           <p>
