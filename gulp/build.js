@@ -105,7 +105,7 @@ gulp.task('fonts', function () {
 });
 
 gulp.task('misc', function () {
-  return gulp.src('src/**/*.ico')
+  return gulp.src('src/**/*.{ico,json}')
     .pipe(gulp.dest('dist'))
     .pipe($.size());
 });
