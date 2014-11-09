@@ -65,10 +65,12 @@ gulp.task('html', ['styles', 'scripts', 'partials'], function () {
     .pipe($.rev())
     .pipe(jsFilter)
     .pipe($.ngAnnotate())
+    .pipe($.replace('bower_components/zeroclipboard/dist/','./assets/swf'))
     .pipe($.uglify({preserveComments: $.uglifySaveLicense}))
     .pipe(jsFilter.restore())
     .pipe(cssFilter)
-    .pipe($.replace('bower_components/bootstrap/fonts','fonts'))
+    .pipe($.replace('bower_components/bootstrap/fonts','../fonts'))
+    .pipe($.replace('../assets','assets'))
     .pipe($.csso())
     .pipe(cssFilter.restore())
     .pipe(assets.restore())
@@ -92,8 +94,8 @@ gulp.task('images', function () {
         progressive: true,
         interlaced: true
       }))
-    .pipe(gulp.dest('dist/assets/images'))
-    .pipe($.size());
+      .pipe(gulp.dest('dist/assets/images'))
+      .pipe($.size());
 });
 
 gulp.task('fonts', function () {
@@ -104,9 +106,17 @@ gulp.task('fonts', function () {
     .pipe($.size());
 });
 
-gulp.task('misc', function () {
+gulp.task('swf', [], function () {
+  return gulp.src('bower_components/**/*.swf')
+    .pipe($.flatten())
+    .pipe(gulp.dest('dist/assets/swf'))
+    .pipe($.size());
+});
+
+gulp.task('misc', ['swf'], function () {
   return gulp.src('src/**/*.{ico,json}')
-    .pipe(gulp.dest('dist'))
+    .pipe($.flatten())
+    .pipe(gulp.dest('dist/assets'))
     .pipe($.size());
 });
 
