@@ -6,7 +6,7 @@ angular.module('iframeScaffolder').controller('MainCtrl', function ($scope, $sta
   $scope.urls     = [];
   $scope.width    = 600;
   $scope.height   = 450;
-  $scope.examples = []
+  $scope.examples = [];
   // Get sample datasets
   $http.get('assets/examples.json').success(function(data) {
     $scope.examples = data;
@@ -14,7 +14,7 @@ angular.module('iframeScaffolder').controller('MainCtrl', function ($scope, $sta
 
   $scope.addUrl = function() {
     // Avoid adding null value
-    if(!$scope.newUrl) return
+    if(!$scope.newUrl) { return; }
     // Add the url to the list
     $scope.urls.push($scope.newUrl);
     // Reset form value
@@ -37,7 +37,7 @@ angular.module('iframeScaffolder').controller('MainCtrl', function ($scope, $sta
     var url = $scope.getViewUrl(),
       width = $scope.width || 600,
      height = $scope.height || 450;
-    return '<iframe src=' + url + ' width="' + width + '" height="' + height + '" frameborder="0" allowfullscreen></iframe>'
+    return '<iframe src=' + url + ' width="' + width + '" height="' + height + '" frameborder="0" allowfullscreen></iframe>';
   };
 
   $scope.pickExample = function() {

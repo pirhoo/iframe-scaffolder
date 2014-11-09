@@ -2,7 +2,7 @@
 
 angular.module('iframeScaffolder').controller('ScaffolderCtrl', function ($scope) {
 
-  $scope.iframeWidth = function(index, first, last) {
+  $scope.iframeWidth = function() {
     switch($scope.layout) {
       case 'horizontal':
         return (100/$scope.urls.length) + '%';
@@ -14,9 +14,9 @@ angular.module('iframeScaffolder').controller('ScaffolderCtrl', function ($scope
   };
 
   $scope.iframeHeight = function(index, first, last) {
-    if ($scope.layout === 'horizontal'
-    ||  $scope.layout === 'head' && first
-    ||  $scope.layout === 'tail' && last) {
+    if ($scope.layout === 'horizontal' ||
+        $scope.layout === 'head' && first ||
+        $scope.layout === 'tail' && last) {
       return '100%';
     } else {
       return (100/($scope.urls.length-1)) + '%';
