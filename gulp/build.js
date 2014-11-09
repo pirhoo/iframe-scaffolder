@@ -114,7 +114,7 @@ gulp.task('clean', function (done) {
   $.del(['.tmp', 'dist'], done);
 });
 
-gulp.task('deploy', function() {
+gulp.task('deploy', ['default'], function() {
   gulp.src("./dist/**/*").pipe(deploy({
     remoteUrl: "git@github.com:Pirhoo/iframe-scaffolder.git"
   }));
