@@ -8,6 +8,18 @@
     padding:5px;
     &__item {
       cursor: pointer;
+
+      & > a {
+        color:@text-color;
+      }
+
+      &&.active {
+        font-weight: bold;
+        & > a, & > a:hover {
+          color:@text-color;
+          background:@gray-lighter;
+        }
+      }
     }
   }
 
