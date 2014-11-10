@@ -1,10 +1,11 @@
 <div class="scaffolder scaffolder--{{layout}}">
-  <aside ng-show="layout == 'menu' || layout == 'tabs'" class="scaffolder__menu">
-    <ul class="nav  nav-pills">
+  <aside ng-show="scaffolder.hasMenu()" class="scaffolder__menu">
+    <ul class="nav nav-pills" ng-class="{
+        'nav-stacked': layout === 'menu'
+      }">
       <li ng-repeat="url in urls track by $index"
           ng-class="{
-            'active': scaffolder.isActive($index),
-            'nav-stacked': layout == 'menu'
+            'active': scaffolder.isActive($index)
           }"
           class="scaffolder__menu__item">
         <a ng-click="scaffolder.activate($index)">
