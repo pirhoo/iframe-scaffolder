@@ -2,10 +2,10 @@
   width: 100%;
   height: 100%;
   position:relative;
+  overflow: hidden;
 
   &__menu {
-    width:25%;
-    padding:5px;
+
     &__item {
       cursor: pointer;
 
@@ -23,18 +23,22 @@
     }
   }
 
-  &__iframe {
-    display: block;
-    float:left;
+  &--menu &__menu {
+    width:25%;
+    padding:5px;
   }
 
-  &--menu {
-    .scaffolder__iframe {
-      float:none;
-      position:absolute;
-      left:25%;
-      top:0;
-    }
+  &--menu &__iframe {
+    float:none;
+    position:absolute;
+    left:25%;
+    top:0;
+  }
+
+  &--tabs &__menu {
+    width:20000%;
+    padding:5px;
+    white-space: nowrap;
   }
 
   &--head {
@@ -62,4 +66,17 @@
       top:0;
     }
   }
+
+  &--tabs &__iframe {
+    position:absolute;
+    top: 50px;
+    left:0;
+    height:~"calc(100% - 50px)";
+  }
+
+  &__iframe {
+    display: block;
+    float:left;
+  }
+
 }

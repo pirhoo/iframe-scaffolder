@@ -50,23 +50,27 @@
       <div class="panel editor__step panel-default" ng-class="{ 'editor__step--disable': !urls.length }">
         <div class="editor__step__label"></div>
         <div class="panel-body">
-          <div class="pull-left">
-            Choose a layout<br />
-            <small class="text-muted">How iframes are arranged</small>
-          </div>
-          <div class="pull-right">
-            <button class="btn btn-default btn-sm" ng-class="{active: layout == 'menu'}" ng-click="layout = 'menu'">
+          <p>
+            Choose a layout&nbsp;
+            <small class="text-muted">(how iframes are arranged)</small>
+          </p>
+          <div class="text-center">
+            <button class="btn btn-default" ng-class="{active: layout == 'menu'}" ng-click="layout = 'menu'">
               ≡◻
             </button>
-            <button class="btn btn-default btn-sm" ng-class="{active: layout == 'horizontal'}" ng-click="layout = 'horizontal'">
+            <button class="btn btn-default" ng-class="{active: layout == 'tabs'}" ng-click="layout = 'tabs'">
+              ⎍⎍
+            </button>
+            <button class="btn btn-default" ng-class="{active: layout == 'horizontal'}" ng-click="layout = 'horizontal'">
               ▯▯▯
             </button>
-            <button class="btn btn-default btn-sm" ng-class="{active: layout == 'head'}" ng-click="layout = 'head'">
+            <button class="btn btn-default" ng-class="{active: layout == 'head'}" ng-click="layout = 'head'">
               ▯▤
             </button>
-            <button class="btn btn-default btn-sm" ng-class="{active: layout == 'tail'}" ng-click="layout = 'tail'">
+            <button class="btn btn-default" ng-class="{active: layout == 'tail'}" ng-click="layout = 'tail'">
               ▤▯
             </button>
+
           </div>
         </div>
       </div>

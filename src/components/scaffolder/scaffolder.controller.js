@@ -14,6 +14,8 @@ angular.module('iframeScaffolder').controller('ScaffolderCtrl', function ($scope
         return '50%';
       case 'menu':
         return '75%';
+      case 'tabs':
+        return '100%';
     }
   };
 
@@ -23,6 +25,8 @@ angular.module('iframeScaffolder').controller('ScaffolderCtrl', function ($scope
         $scope.layout === 'head' && first ||
         $scope.layout === 'tail' && last) {
       return '100%';
+    } else if ($scope.layout === 'tabs') {
+      return 'auto';
     } else {
       return (100/($scope.urls.length-1)) + '%';
     }

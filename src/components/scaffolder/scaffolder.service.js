@@ -35,7 +35,7 @@ angular.module('iframeScaffolder').service('Scaffolder', function() {
   };
 
   Scaffolder.prototype.isVisible = function(index) {
-    return this.layout !== 'menu' || this.isActive(index)
+    return !this.hasMenu() || this.isActive(index)
   };
 
   Scaffolder.prototype.hasLabel = function(index) {
@@ -55,6 +55,10 @@ angular.module('iframeScaffolder').service('Scaffolder', function() {
     } else {
       return url;
     }
+  };
+
+  Scaffolder.prototype.hasMenu = function() {
+    return ['menu', 'tabs'].indexOf(this.layout) > -1
   };
 
   return Scaffolder;
