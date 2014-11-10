@@ -7,7 +7,7 @@ angular.module('iframeScaffolder').service('Scaffolder', function() {
       layout: layout || 'menu'
     });
     // Activate the right url
-    this.activate(active || 0)
+    this.activate(active || 0);
     return this;
   }
 
@@ -19,27 +19,27 @@ angular.module('iframeScaffolder').service('Scaffolder', function() {
       // This url is prefixed by a label
       if( this.hasLabel(index) ) {
         // Returns the second part
-        return url.split("|")[1]
+        return url.split('|')[1];
       } else {
-        return url
+        return url;
       }
     }
   };
 
   Scaffolder.prototype.isActive = function(index) {
-    return index == this.active
+    return index === this.active;
   };
 
   Scaffolder.prototype.activate = function(index) {
-    return this.active = index < this.urls.length ? index : 0;
+    this.active = index < this.urls.length ? index : 0;
   };
 
   Scaffolder.prototype.isVisible = function(index) {
-    return !this.hasMenu() || this.isActive(index)
+    return !this.hasMenu() || this.isActive(index);
   };
 
   Scaffolder.prototype.hasLabel = function(index) {
-    return this.urls[index].indexOf("|http") > -1
+    return this.urls[index].indexOf('|http') > -1;
   };
 
   Scaffolder.prototype.label = function(index, replacement) {
@@ -47,9 +47,9 @@ angular.module('iframeScaffolder').service('Scaffolder', function() {
     // This url is prefixed by a label
     if( this.hasLabel(index) ) {
       // Returns the first part
-      return url.split("|")[0]
+      return url.split('|')[0];
     // A replacement value is given
-    } else if (typeof replacement !== "undefined" && replacement !== null) {
+    } else if (typeof replacement !== 'undefined' && replacement !== null) {
       return replacement;
     // Return the url as label
     } else {
@@ -58,7 +58,7 @@ angular.module('iframeScaffolder').service('Scaffolder', function() {
   };
 
   Scaffolder.prototype.hasMenu = function() {
-    return ['menu', 'tabs'].indexOf(this.layout) > -1
+    return ['menu', 'tabs'].indexOf(this.layout) > -1;
   };
 
   return Scaffolder;
