@@ -55,19 +55,19 @@
             <small class="text-muted">(how iframes are arranged)</small>
           </p>
           <div class="text-center">
-            <button class="btn btn-default" ng-class="{active: layout == 'menu'}" ng-click="layout = 'menu'">
+            <button class="btn btn-default" ng-class="{active: $parent.layout == 'menu'}" ng-click="$parent.layout = 'menu'" tooltip="Toggle iframes using a menu">
               ≡◻
             </button>
-            <button class="btn btn-default" ng-class="{active: layout == 'tabs'}" ng-click="layout = 'tabs'">
+            <button class="btn btn-default" ng-class="{active: $parent.layout == 'tabs'}" ng-click="$parent.layout = 'tabs'" tooltip="Toggle iframes using tabs">
               ⎍⎍
             </button>
-            <button class="btn btn-default" ng-class="{active: layout == 'horizontal'}" ng-click="layout = 'horizontal'">
+            <button class="btn btn-default" ng-class="{active: $parent.layout == 'horizontal'}" ng-click="$parent.layout = 'horizontal'" tooltip="All iframes have equal width">
               ▯▯▯
             </button>
-            <button class="btn btn-default" ng-class="{active: layout == 'head'}" ng-click="layout = 'head'">
+            <button class="btn btn-default" ng-class="{active: $parent.layout == 'head'}" ng-click="$parent.layout = 'head'" tooltip="The first iframe use half of the screen, the others a stacked">
               ▯▤
             </button>
-            <button class="btn btn-default" ng-class="{active: layout == 'tail'}" ng-click="layout = 'tail'">
+            <button class="btn btn-default" ng-class="{active: $parent.layout == 'tail'}" ng-click="$parent.layout = 'tail'" tooltip="The last iframe use half of the screen, the others a stacked">
               ▤▯
             </button>
 
