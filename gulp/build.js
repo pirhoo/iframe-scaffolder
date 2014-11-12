@@ -1,7 +1,6 @@
 'use strict';
 
 var gulp = require('gulp');
-var deploy = require("gulp-gh-pages");
 
 var $ = require('gulp-load-plugins')({
   pattern: ['gulp-*', 'main-bower-files', 'uglify-save-license', 'del']
@@ -126,7 +125,7 @@ gulp.task('clean', function (done) {
 });
 
 gulp.task('deploy', ['build'], function() {
-  gulp.src("./dist/**/*").pipe(deploy({
+  gulp.src("./dist/**/*").pipe($.ghPages({
     remoteUrl: "git@github.com:Pirhoo/iframe-scaffolder.git"
   }));
 });
