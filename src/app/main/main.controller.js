@@ -4,7 +4,6 @@ angular.module('iframeScaffolder').controller('MainCtrl', function ($scope, $sta
 
   // Regex code is obtained from angular https://github.com/angular/angular.js/blob/master/src/ng/directive/input.js
   var URL_REGEXP = /^(ftp|http|https):\/\/(\w+:{0,1}\w*@)?(\S+)(:[0-9]+)?(\/|\/([\w#!:.?+=&%@!\-\/]))?$/;
-  var IFRAME_REGEX =
 
   $scope.scaffolder = new Scaffolder();
   $scope.layout     = $stateParams.layout || 'menu';
@@ -19,25 +18,26 @@ angular.module('iframeScaffolder').controller('MainCtrl', function ($scope, $sta
   });
 
   $scope.isUrlValid = function(value) {
-    return $scope.extractUrl(value) !== null
-  }
+    return $scope.extractUrl(value) !== null;
+  };
 
   $scope.extractUrl = function(value) {
+    var url = null;
     // The given value can be an URL
     if( URL_REGEXP.test(value) ) { return value; }
     // Or an iframe...
     try {
       // We parse the code to extract the src value
-      var url = $(value).attr("src");
+      url = $(value).attr('src');
       // Some iframe use the // syntax which is not considered as a good value
-      if( url.indexOf("//") === 0) { url = 'http:' + url; }
+      if( url.indexOf('//') === 0) { url = 'http:' + url; }
     } catch(e) {
       // We could parse the value, there is nothing to do
       return null;
     }
     // The url extracted must also be valid
     return url !== undefined && URL_REGEXP.test(url) ? url : null;
-  }
+  };
 
   $scope.addUrl = function() {
     var url = $scope.extractUrl($scope.newUrl);

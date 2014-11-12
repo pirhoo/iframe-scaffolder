@@ -30,7 +30,7 @@ gulp.task('styles', function () {
 
 gulp.task('scripts', function () {
   return gulp.src('src/{app,components}/**/*.js')
-    .pipe($.jshint())
+    .pipe($.jshint({predef: ['angular', '$']}))
     .pipe($.jshint.reporter('jshint-stylish'))
     .pipe($.size());
 });
