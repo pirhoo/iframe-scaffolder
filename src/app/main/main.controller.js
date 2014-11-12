@@ -32,7 +32,7 @@ angular.module('iframeScaffolder').controller('MainCtrl', function ($scope, $sta
       // Some iframe use the // syntax which is not considered as a good value
       if( url.indexOf('//') === 0) { url = 'http:' + url; }
     } catch(e) {
-      // We could parse the value, there is nothing to do
+      // We couldnt't parse the value, there is nothing to do
       return null;
     }
     // The url extracted must also be valid
