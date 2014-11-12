@@ -9,7 +9,8 @@
     "angular-ui-router": "0.2.11",
     "bootstrap": "3.3.x",
     "angular-zeroclipboard": "~0.3.2",
-    "angular-bootstrap": "~0.11.2"
+    "angular-bootstrap": "~0.11.2",
+    "angular-ui-utils": "bower-validate"
   },
   "devDependencies": {
     "angular-mocks": "1.3.x"

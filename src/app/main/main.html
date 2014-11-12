@@ -9,14 +9,17 @@
     <div class="col-md-4">
       <div class="panel editor__step panel-default">
         <div class="editor__step__label"></div>
-        <form class="panel-body" role="form" ng-submit="addUrl()">
+        <form class="panel-body" name="addUrlForm" role="form" ng-submit="addUrl()">
           <div class="input-group">
-            <input type="url" required ng-model="newUrl" class="form-control" placeholder="URL of a new iframe" />
+            <input type="text" required ui-validate="{ isUrl: 'isUrlValid($value)' }" name="newUrl" ng-model="newUrl" class="form-control" placeholder="An URL or an iframe code" />
             <span class="input-group-btn">
-              <button class="btn btn-primary" type="submit" tooltip="Create an iframe with this URL">
+              <button class="btn btn-primary" ng-disabled="!addUrlForm.$valid" type="submit" tooltip="Create an iframe with this URL">
                 Add
               </button>
             </span>
+          </div>
+          <div ng-show="addUrlForm.newUrl.$error.isUrl && !addUrlForm.newUrl.$error.required" class="editor__step__error text-danger small">
+            This is not a valid URL or iframe.
           </div>
         </form>
         <ul class="list-group">

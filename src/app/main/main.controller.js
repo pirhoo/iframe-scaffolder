@@ -2,6 +2,10 @@
 
 angular.module('iframeScaffolder').controller('MainCtrl', function ($scope, $state, $stateParams, $http, Scaffolder) {
 
+  // Regex code is obtained from angular https://github.com/angular/angular.js/blob/master/src/ng/directive/input.js
+  var URL_REGEXP = /^(ftp|http|https):\/\/(\w+:{0,1}\w*@)?(\S+)(:[0-9]+)?(\/|\/([\w#!:.?+=&%@!\-\/]))?$/;
+  var IFRAME_REGEX =
+
   $scope.scaffolder = new Scaffolder();
   $scope.layout     = $stateParams.layout || 'menu';
   $scope.urls       = $stateParams.urls === '' ? [] : $stateParams.urls.split(',');
@@ -14,11 +18,31 @@ angular.module('iframeScaffolder').controller('MainCtrl', function ($scope, $sta
     $scope.examples = data;
   });
 
+  $scope.isUrlValid = function(value) {
+    return $scope.extractUrl(value) !== null
+  }
+
+  $scope.extractUrl = function(value) {
+    // The given value can be an URL
+    if( URL_REGEXP.test($scope.newUrl) ) { return value; }
+    // Or an iframe...
+    try {
+      // We parse the code to extract the src value
+      var url = $(value).attr("src");
+    } catch(e) {
+      // We could parse the value, there is nothing to do
+      return null;
+    }
+    // The url extracted must also be valid
+    return url !== undefined && URL_REGEXP.test(url) ? url : null;
+  }
+
   $scope.addUrl = function() {
+    var url = $scope.extractUrl($scope.newUrl);
     // Avoid adding null value
-    if(!$scope.newUrl) { return; }
+    if(url === null) { return; }
     // Add the url to the list
-    $scope.urls.push($scope.newUrl);
+    $scope.urls.push(url);
     // Reset form value
     $scope.newUrl = null;
   };
@@ -39,7 +63,7 @@ angular.module('iframeScaffolder').controller('MainCtrl', function ($scope, $sta
     var url = $scope.getViewUrl(),
       width = $scope.width || 600,
      height = $scope.height || 450;
-    return '<iframe src=' + url + ' width="' + width + '" height="' + height + '" frameborder="0" allowfullscreen></iframe>';
+    return '<iframe src="' + url + '" width="' + width + '" height="' + height + '" frameborder="0" allowfullscreen></iframe>';
   };
 
   $scope.pickExample = function() {
