@@ -24,7 +24,7 @@ angular.module('iframeScaffolder').controller('MainCtrl', function ($scope, $sta
 
   $scope.extractUrl = function(value) {
     // The given value can be an URL
-    if( URL_REGEXP.test($scope.newUrl) ) { return value; }
+    if( URL_REGEXP.test(value) ) { return value; }
     // Or an iframe...
     try {
       // We parse the code to extract the src value
