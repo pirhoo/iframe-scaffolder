@@ -79,8 +79,8 @@ angular.module('iframeScaffolder').controller('MainCtrl', function ($scope, $sta
   };
 
   $scope.saveLabel = function(index) {
-    // Get the label
-    var label = $scope.labels[index] || '';
+    // Get the label and remove unauthorized pipes
+    var label = ($scope.labels[index] || '').replace(/\|/gi, ' ');
     $scope.labels = {};
     // Create a new URL with the label as prefix
     if(label !== '') {
