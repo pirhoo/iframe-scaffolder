@@ -22,7 +22,7 @@
             This is not a valid URL or iframe.
           </div>
         </form>
-        <ul class="list-group">
+        <ul class="list-group" ui-sortable ng-model="urls">
           <li class="list-group-item editor__step__url" ng-repeat="url in urls track by $index">
             <div>
               <div class="btn-group btn-group-xs pull-right editor__step__url__actions">
@@ -32,6 +32,9 @@
                 <button type="button" class="btn btn-default" ng-click="removeUrl($index)" tooltip="Remove this iframe">
                   <i class="glyphicon glyphicon-trash"></i>
                 </button>
+                <span class="btn btn-default">
+                  <i class="glyphicon glyphicon-move"></i>
+                </span>
               </div>
               <a ng-href="{{scaffolder.url($index, true)}}" target="_blank" class="editor__step__url__value">
                 {{scaffolder.label($index)}}
