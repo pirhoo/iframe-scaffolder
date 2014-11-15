@@ -44,7 +44,7 @@ angular.module('iframeScaffolder').controller('MainCtrl', function ($scope, $sta
     // Avoid adding null value
     if(url === null) { return; }
     // Add the url to the list
-    $scope.urls.push(url);
+    $scope.urls.push(url.replace(/,/g, '%2C'));
     // Reset form value
     $scope.newUrl = null;
   };
@@ -80,7 +80,7 @@ angular.module('iframeScaffolder').controller('MainCtrl', function ($scope, $sta
 
   $scope.saveLabel = function(index) {
     // Get the label and remove unauthorized pipes
-    var label = ($scope.labels[index] || '').replace(/\|/gi, ' ');
+    var label = ($scope.labels[index] || '').replace(/\||,/gi, ' ');
     $scope.labels = {};
     // Create a new URL with the label as prefix
     if(label !== '') {
