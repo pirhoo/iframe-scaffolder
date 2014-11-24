@@ -12,7 +12,9 @@ angular.module('iframeScaffolder').controller('ScaffolderCtrl', function ($scope
         return '50%';
       case 'menu':
         return '75%';
-      case 'tabs', 'narrative':
+      case 'tabs':
+        return '100%';
+      case 'narrative':
         return '100%';
     }
   };
