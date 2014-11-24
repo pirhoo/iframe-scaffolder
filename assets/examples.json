@@ -7,5 +7,31 @@
       "GDP|http://charts-datawrapper.s3.amazonaws.com/q1QdD/index.html?rev=96"
     ],
     "layout": "menu"
+  },
+  {
+    "urls": [
+      "Impact: official view|http://charts-datawrapper.s3.amazonaws.com/ecHpQ/index.html?rev=21",
+      "What does it cost?|http://charts-datawrapper.s3.amazonaws.com/VUNcU/index.html?rev=79",
+      "Taxes v spending|http://charts-datawrapper.s3.amazonaws.com/mgalY/index.html?rev=18",
+      "GDP|http://charts-datawrapper.s3.amazonaws.com/q1QdD/index.html?rev=96"
+    ],
+    "layout": "narrative"
+  },
+  {
+    "urls": [
+      "Impact: official view|http://charts-datawrapper.s3.amazonaws.com/ecHpQ/index.html?rev=21",
+      "What does it cost?|http://charts-datawrapper.s3.amazonaws.com/VUNcU/index.html?rev=79",
+      "Taxes v spending|http://charts-datawrapper.s3.amazonaws.com/mgalY/index.html?rev=18",
+      "GDP|http://charts-datawrapper.s3.amazonaws.com/q1QdD/index.html?rev=96"
+    ],
+    "layout": "tabs"
+  },
+  {
+    "urls": [
+      "Victoires par pays|http://athomascommin.cartodb.com/viz/9cceb7c0-7165-11e4-a5d4-0e018d66dc29/embed_map",
+      "Ses victoires par discipline|http://chart.dwp.lequipe.fr/9fYO6/index.html",
+      "Victoires par saison|http://chart.dwp.lequipe.fr/vUO4B/index.html"
+    ],
+    "layout": "head"
   }
 ]
