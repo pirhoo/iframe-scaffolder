@@ -46,11 +46,11 @@ angular.module('iframeScaffolder').service('Scaffolder', function() {
   };
 
   Scaffolder.prototype.isPrevious = function(index) {
-    return index == this.active - 1
+    return index === this.active - 1;
   };
 
   Scaffolder.prototype.isNext = function(index) {
-    return index == this.active + 1
+    return index === this.active + 1;
   };
 
   Scaffolder.prototype.hasLabel = function(index) {
