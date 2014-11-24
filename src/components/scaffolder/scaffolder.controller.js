@@ -8,13 +8,11 @@ angular.module('iframeScaffolder').controller('ScaffolderCtrl', function ($scope
     switch($scope.layout) {
       case 'horizontal':
         return (100/$scope.urls.length) + '%';
-      case 'tail':
-        return '50%';
-      case 'head':
+      case 'tail', 'head':
         return '50%';
       case 'menu':
         return '75%';
-      case 'tabs':
+      case 'tabs', 'narrative':
         return '100%';
     }
   };
@@ -25,11 +23,25 @@ angular.module('iframeScaffolder').controller('ScaffolderCtrl', function ($scope
         $scope.layout === 'head' && first ||
         $scope.layout === 'tail' && last) {
       return '100%';
-    } else if ($scope.layout === 'tabs') {
+    } else if ($scope.layout === 'tabs'   ||
+               $scope.layout === 'narrative') {
       return 'auto';
     } else {
       return (100/($scope.urls.length-1)) + '%';
     }
+  };
+
+  $scope.menuLinkClasses = function(index) {
+
+    var scaffolder  = $scope.scaffolder,
+        isNarrative = $scope.layout === 'narrative';
+
+    return {
+      'active'    : scaffolder.isActive(index),
+      'pull-left' : isNarrative && scaffolder.isPrevious(index),
+      'pull-right': isNarrative && scaffolder.isNext(index),
+      'hidden'    : isNarrative && !scaffolder.isNext(index) && !scaffolder.isPrevious(index)
+    };
   };
 
   $scope.$watch('urls + layout', function() {

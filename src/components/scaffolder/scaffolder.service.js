@@ -34,8 +34,23 @@ angular.module('iframeScaffolder').service('Scaffolder', function() {
     this.active = index < this.urls.length ? index : 0;
   };
 
+  Scaffolder.prototype.getActive = function() {
+    return {
+      label: this.label(this.active),
+      url: this.url(this.active)
+    };
+  };
+
   Scaffolder.prototype.isVisible = function(index) {
     return !this.hasMenu() || this.isActive(index);
+  };
+
+  Scaffolder.prototype.isPrevious = function(index) {
+    return index == this.active - 1
+  };
+
+  Scaffolder.prototype.isNext = function(index) {
+    return index == this.active + 1
   };
 
   Scaffolder.prototype.hasLabel = function(index) {
@@ -58,7 +73,7 @@ angular.module('iframeScaffolder').service('Scaffolder', function() {
   };
 
   Scaffolder.prototype.hasMenu = function() {
-    return ['menu', 'tabs'].indexOf(this.layout) > -1;
+    return ['menu', 'tabs', 'narrative'].indexOf(this.layout) > -1;
   };
 
   return Scaffolder;
