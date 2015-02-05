@@ -6,7 +6,8 @@
       "Taxes v spending|http://charts-datawrapper.s3.amazonaws.com/mgalY/index.html?rev=18",
       "GDP|http://charts-datawrapper.s3.amazonaws.com/q1QdD/index.html?rev=96"
     ],
-    "layout": "menu"
+    "layout": "menu",
+    "theme": "sunset-orange"
   },
   {
     "urls": [
@@ -15,7 +16,8 @@
       "Taxes v spending|http://charts-datawrapper.s3.amazonaws.com/mgalY/index.html?rev=18",
       "GDP|http://charts-datawrapper.s3.amazonaws.com/q1QdD/index.html?rev=96"
     ],
-    "layout": "narrative"
+    "layout": "narrative",
+    "theme": "ebony-clay"
   },
   {
     "urls": [
@@ -24,7 +26,8 @@
       "Taxes v spending|http://charts-datawrapper.s3.amazonaws.com/mgalY/index.html?rev=18",
       "GDP|http://charts-datawrapper.s3.amazonaws.com/q1QdD/index.html?rev=96"
     ],
-    "layout": "tabs"
+    "layout": "tabs",
+    "theme": "eucalyptus"
   },
   {
     "urls": [
@@ -32,6 +35,7 @@
       "Ses victoires par discipline|http://chart.dwp.lequipe.fr/9fYO6/index.html",
       "Victoires par saison|http://chart.dwp.lequipe.fr/vUO4B/index.html"
     ],
-    "layout": "head"
+    "layout": "narrative",
+    "theme": "monza-red"
   }
 ]
