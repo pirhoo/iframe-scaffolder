@@ -60,23 +60,23 @@
             Choose a layout&nbsp;
             <small class="text-muted">(how iframes are arranged)</small>
           </p>
-          <div class="text-center">
-            <button class="btn btn-default" ng-class="{active: $parent.layout == 'menu'}" ng-click="$parent.layout = 'menu'" tooltip="Toggle iframes using a menu">
+          <div class="text-center btn-group">
+            <button class="btn btn-default btn-sm" ng-class="{active: $parent.layout == 'menu'}" ng-click="$parent.layout = 'menu'" tooltip="Toggle iframes using a menu">
               ≡◻
             </button>
-            <button class="btn btn-default" ng-class="{active: $parent.layout == 'narrative'}" ng-click="$parent.layout = 'narrative'" tooltip="Toggle iframes using next and previous buttons">
+            <button class="btn btn-default btn-sm" ng-class="{active: $parent.layout == 'narrative'}" ng-click="$parent.layout = 'narrative'" tooltip="Toggle iframes using next and previous buttons">
               ⍃ ⍄
             </button>
-            <button class="btn btn-default" ng-class="{active: $parent.layout == 'tabs'}" ng-click="$parent.layout = 'tabs'" tooltip="Toggle iframes using tabs">
+            <button class="btn btn-default btn-sm" ng-class="{active: $parent.layout == 'tabs'}" ng-click="$parent.layout = 'tabs'" tooltip="Toggle iframes using tabs">
               ⎍⎍
             </button>
-            <button class="btn btn-default" ng-class="{active: $parent.layout == 'horizontal'}" ng-click="$parent.layout = 'horizontal'" tooltip="All iframes have equal width">
+            <button class="btn btn-default btn-sm" ng-class="{active: $parent.layout == 'horizontal'}" ng-click="$parent.layout = 'horizontal'" tooltip="All iframes have equal width">
               ▯▯▯
             </button>
-            <button class="btn btn-default" ng-class="{active: $parent.layout == 'head'}" ng-click="$parent.layout = 'head'" tooltip="The first iframe use half of the screen, the others a stacked">
+            <button class="btn btn-default btn-sm" ng-class="{active: $parent.layout == 'head'}" ng-click="$parent.layout = 'head'" tooltip="The first iframe use half of the screen, the others a stacked">
               ▯▤
             </button>
-            <button class="btn btn-default" ng-class="{active: $parent.layout == 'tail'}" ng-click="$parent.layout = 'tail'" tooltip="The last iframe use half of the screen, the others a stacked">
+            <button class="btn btn-default btn-sm" ng-class="{active: $parent.layout == 'tail'}" ng-click="$parent.layout = 'tail'" tooltip="The last iframe use half of the screen, the others a stacked">
               ▤▯
             </button>
 
@@ -87,7 +87,7 @@
         <div class="editor__step__label"></div>
         <div class="panel-body">
           <p>
-            <button class="btn btn-default btn-xs pull-right" ui-zeroclip zeroclip-model="getViewIframe()" tooltip="Copy the embed code to you clipboard.">
+            <button class="btn btn-primary btn-xs pull-right" ui-zeroclip zeroclip-model="getViewIframe()" tooltip="Copy the embed code to you clipboard.">
               Copy
             </button>
             Export the iframe
