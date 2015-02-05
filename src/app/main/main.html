@@ -88,33 +88,13 @@
         <div class="panel-body">
           <div class="pull-right dropdown">
             <button class="btn btn-default btn-xs dropdown-toggle">
-              {{ themeLabels[theme] }} &nbsp;<i class="caret"></i>
+              {{ themes[theme] }} &nbsp;<i class="caret"></i>
             </button>
             <ul class="dropdown-menu" role="menu">
-              <li>
-                <a ng-click="theme = 'default'">
-                  Default
+              <li ng-repeat="(theme, label) in themes">
+                <a ng-click="$parent.theme = theme">
+                  {{label}}
                 </a>
-              </li>
-              <li>
-                <a ng-click="theme = 'black'">
-                  Black
-                </a>
-              </li>
-              <li>
-                <a ng-click="theme = 'blue'">
-                  Blue
-                </a>
-              </li>
-              <li>
-                <a ng-click="theme = 'green'">
-                  Green
-                </a>
-              <li>
-                <a ng-click="theme = 'red'">
-                  Red
-                </a>
-              </li>
               </li>
             </ul>
           </div>

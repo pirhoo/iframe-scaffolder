@@ -1,0 +1,19 @@
+.scaffolder-theme(@iframe-bg:white,
+                  @iframe-color: @text-color,
+                  @active-bg: darken(@iframe-bg, 10),
+                  @active-color: contrast(@iframe-bg),
+                  @hover-bg: lighten(@active-bg, 10),
+                  @hover-color: @active-color) {
+  color: @iframe-color;
+  background: @iframe-bg;
+
+  .scaffolder__menu__item.active a,
+  .scaffolder__menu__item.active a:hover {
+    color: @active-color;
+    background: @active-bg;
+  }
+  .scaffolder__menu__item a:hover {
+    color: @hover-color;
+    background: @hover-bg;
+  }
+}

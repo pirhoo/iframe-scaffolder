@@ -12,12 +12,14 @@ angular.module('iframeScaffolder').controller('MainCtrl', function ($scope, $sta
   $scope.width      = 600;
   $scope.height     = 450;
   $scope.examples   = [];
-  $scope.themeLabels = {
+  $scope.themes     = {
     "default": "Default",
-    "black": "Black",
-    "blue": "Blue",
-    "green": "Green",
-    "red": "Red"
+    "ebony-clay": "Ebony clay",
+    "picton-blue": "Picton blue",
+    "silver-tree": "Silver tree",
+    "eucalyptus": "Eucalyptus",
+    "sunset-orange": "Sunset orange",
+    "monza-red": "Monza red"
   };
 
   // Get sample datasets
