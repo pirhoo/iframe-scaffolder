@@ -7,7 +7,8 @@ angular.module('iframeScaffolder', ['ngSanitize', 'ui.router', 'ui.bootstrap', '
         url: '/?urls&layout&theme',
         params: {
           urls: { value: ''},
-          layout: { value: 'menu'}
+          layout: { value: 'menu'},
+          theme: { value: 'default'}
         },
         templateUrl: 'app/main/main.html',
         controller: 'MainCtrl'

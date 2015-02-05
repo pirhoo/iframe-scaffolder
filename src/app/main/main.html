@@ -87,12 +87,16 @@
         <div class="editor__step__label"></div>
         <div class="panel-body">
           <div class="pull-right dropdown">
-            <button class="btn btn-default btn-xs dropdown-toggle">
-              {{ themes[theme] }} &nbsp;<i class="caret"></i>
-            </button>
+            <span class="btn-group">
+              <i class="scaffolder--{{theme}}__preview editor__step__theme-preview disabled btn btn-xs"></i>
+              <button class="btn btn-default btn-xs dropdown-toggle">
+                {{ themes[theme] }} &nbsp;<i class="caret"></i>
+              </button>
+            </span>
             <ul class="dropdown-menu" role="menu">
-              <li ng-repeat="(theme, label) in themes">
+              <li ng-repeat="(theme, label) in themes" class="editor__step__theme">
                 <a ng-click="$parent.theme = theme">
+                  <i class="scaffolder--{{theme}}__preview editor__step__theme__preview"></i>
                   {{label}}
                 </a>
               </li>

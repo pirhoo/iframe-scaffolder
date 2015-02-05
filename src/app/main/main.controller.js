@@ -25,7 +25,6 @@ angular.module('iframeScaffolder').controller('MainCtrl', function ($scope, $sta
   // Get sample datasets
   $http.get('assets/examples.json').success(function(data) {
     $scope.examples = data;
-    $scope.pickExample();
   });
 
   $scope.isUrlValid = function(value) {

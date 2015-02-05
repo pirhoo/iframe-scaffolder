@@ -4,8 +4,23 @@
                   @active-color: contrast(@iframe-bg),
                   @hover-bg: lighten(@active-bg, 10),
                   @hover-color: @active-color) {
+
   color: @iframe-color;
   background: @iframe-bg;
+
+  &__preview {
+    &:after {
+      content:"Abc";
+      display:inline-block;
+      color: @active-color;
+      background: @active-bg;
+      padding:1px 4px;
+      font-size:0.9em;
+      border-radius: @border-radius-base;
+      border-left: 4px solid @iframe-bg;
+      border-right: 4px solid @hover-bg;
+    }
+  }
 
   .scaffolder__menu__item.active a,
   .scaffolder__menu__item.active a:hover {
