@@ -86,6 +86,44 @@
       <div class="panel editor__step panel-default" ng-class="{ 'editor__step--disable': !urls.length }">
         <div class="editor__step__label"></div>
         <div class="panel-body">
+          <div class="pull-right dropdown">
+            <button class="btn btn-default btn-xs dropdown-toggle">
+              {{ themeLabels[theme] }} &nbsp;<i class="caret"></i>
+            </button>
+            <ul class="dropdown-menu" role="menu">
+              <li>
+                <a ng-click="theme = 'default'">
+                  Default
+                </a>
+              </li>
+              <li>
+                <a ng-click="theme = 'black'">
+                  Black
+                </a>
+              </li>
+              <li>
+                <a ng-click="theme = 'blue'">
+                  Blue
+                </a>
+              </li>
+              <li>
+                <a ng-click="theme = 'green'">
+                  Green
+                </a>
+              <li>
+                <a ng-click="theme = 'red'">
+                  Red
+                </a>
+              </li>
+              </li>
+            </ul>
+          </div>
+          Choose a theme&nbsp;
+        </div>
+      </div>
+      <div class="panel editor__step panel-default" ng-class="{ 'editor__step--disable': !urls.length }">
+        <div class="editor__step__label"></div>
+        <div class="panel-body">
           <p>
             <button class="btn btn-primary btn-xs pull-right" ui-zeroclip zeroclip-model="getViewIframe()" tooltip="Copy the embed code to you clipboard.">
               Copy
@@ -150,7 +188,7 @@
           </div>
         </div>
         <div class="editor__preview__scaffolder">
-          <scaffolder urls="urls" layout="layout" />
+          <scaffolder urls="urls" layout="layout" theme="theme" />
         </div>
       </div>
     </div>

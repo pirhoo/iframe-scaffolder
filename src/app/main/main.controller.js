@@ -7,10 +7,18 @@ angular.module('iframeScaffolder').controller('MainCtrl', function ($scope, $sta
 
   $scope.scaffolder = new Scaffolder();
   $scope.layout     = $stateParams.layout || 'menu';
+  $scope.theme       =$stateParams.theme || 'default';
   $scope.urls       = $stateParams.urls === '' ? [] : $stateParams.urls.split(',');
   $scope.width      = 600;
   $scope.height     = 450;
   $scope.examples   = [];
+  $scope.themeLabels = {
+    "default": "Default",
+    "black": "Black",
+    "blue": "Blue",
+    "green": "Green",
+    "red": "Red"
+  };
 
   // Get sample datasets
   $http.get('assets/examples.json').success(function(data) {
@@ -57,7 +65,8 @@ angular.module('iframeScaffolder').controller('MainCtrl', function ($scope, $sta
   $scope.getViewUrl = function() {
     var params = {
       urls: $scope.urls.join(','),
-      layout: $scope.layout
+      layout: $scope.layout,
+      theme: $scope.theme
     };
     return $state.href('view', params, {absolute: true});
   };
