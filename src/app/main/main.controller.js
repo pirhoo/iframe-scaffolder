@@ -15,6 +15,7 @@ angular.module('iframeScaffolder').controller('MainCtrl', function ($scope, $sta
   // Get sample datasets
   $http.get('assets/examples.json').success(function(data) {
     $scope.examples = data;
+    $scope.pickExample();
   });
 
   $scope.isUrlValid = function(value) {
@@ -63,7 +64,7 @@ angular.module('iframeScaffolder').controller('MainCtrl', function ($scope, $sta
 
   $scope.getViewIframe = function() {
     var url = $scope.getViewUrl(),
-      width = $scope.width || 600,
+      width = $scope.useFluid ? '100%' : $scope.width || 600,
      height = $scope.height || 450;
     return '<iframe src="' + url + '" width="' + width + '" height="' + height + '" frameborder="0" allowfullscreen></iframe>';
   };
