@@ -7,7 +7,7 @@
     "jquery": "2.x.x",
     "angular-sanitize": "1.2.x",
     "angular-ui-router": "0.2.11",
-    "bootstrap": "3.3.x",
+    "bootstrap": "3.3.1",
     "angular-zeroclipboard": "~0.3.2",
     "angular-bootstrap": "~0.11.2",
     "angular-ui-utils": "bower-validate",
