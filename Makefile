@@ -3,3 +3,6 @@ run:
 
 deploy:
 	gulp deploy
+
+install:
+	npm install
