@@ -125,8 +125,8 @@ gulp.task('clean', function (done) {
 });
 
 gulp.task('deploy', ['build'], function() {
-  gulp.src("./dist/**/*").pipe($.ghPages({
-    remoteUrl: "git@github.com:Pirhoo/iframe-scaffolder.git"
+  gulp.src('./dist/**/*').pipe($.ghPages({
+    remoteUrl: require('../package.json').staticRemote
   }));
 });
 
