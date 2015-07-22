@@ -1,6 +1,6 @@
-<div class="scaffolder scaffolder--{{layout}} scaffolder--{{theme}}">
+<div class="scaffolder scaffolder--{{iframeLayout}} scaffolder--{{theme}}">
   <aside ng-show="scaffolder.hasMenu()" class="scaffolder__menu">
-    <ul class="nav nav-pills" ng-class="{ 'nav-stacked': layout === 'menu' }">
+    <ul class="nav nav-pills" ng-class="{ 'nav-stacked': iframeLayout === 'menu' }">
       <li ng-repeat="url in urls track by $index"
           ng-class="menuLinkClasses($index)"
           class="scaffolder__menu__item">

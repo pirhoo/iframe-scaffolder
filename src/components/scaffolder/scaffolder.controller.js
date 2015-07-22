@@ -5,7 +5,7 @@ angular.module('iframeScaffolder').controller('ScaffolderCtrl', function ($scope
   $scope.scaffolder = new Scaffolder();
 
   $scope.iframeWidth = function() {
-    switch($scope.layout) {
+    switch($scope.iframeLayout) {
       case 'horizontal':
         return (100/$scope.urls.length) + '%';
       case 'tail', 'head':
@@ -20,13 +20,13 @@ angular.module('iframeScaffolder').controller('ScaffolderCtrl', function ($scope
   };
 
   $scope.iframeHeight = function(index, first, last) {
-    if ($scope.layout === 'horizontal'    ||
-        $scope.layout === 'menu'          ||
-        $scope.layout === 'head' && first ||
-        $scope.layout === 'tail' && last) {
+    if ($scope.iframeLayout === 'horizontal'    ||
+        $scope.iframeLayout === 'menu'          ||
+        $scope.iframeLayout === 'head' && first ||
+        $scope.iframeLayout === 'tail' && last) {
       return '100%';
-    } else if ($scope.layout === 'tabs'   ||
-               $scope.layout === 'narrative') {
+    } else if ($scope.iframeLayout === 'tabs'   ||
+               $scope.iframeLayout === 'narrative') {
       return 'auto';
     } else {
       return (100/($scope.urls.length-1)) + '%';
@@ -36,7 +36,7 @@ angular.module('iframeScaffolder').controller('ScaffolderCtrl', function ($scope
   $scope.menuLinkClasses = function(index) {
 
     var scaffolder  = $scope.scaffolder,
-        isNarrative = $scope.layout === 'narrative';
+        isNarrative = $scope.iframeLayout === 'narrative';
 
     return {
       'active'    : scaffolder.isActive(index),
@@ -46,9 +46,9 @@ angular.module('iframeScaffolder').controller('ScaffolderCtrl', function ($scope
     };
   };
 
-  $scope.$watch('urls + layout', function() {
+  $scope.$watch('urls + iframeLayout', function() {
     // New instance of the scaffolder class
-    $scope.scaffolder = new Scaffolder($scope.urls, $scope.layout);
+    $scope.scaffolder = new Scaffolder($scope.urls, $scope.iframeLayout);
   }, true);
 
 });
