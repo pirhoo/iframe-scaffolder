@@ -2,6 +2,7 @@
   "name": "iframeScaffolder",
   "version": "0.0.0",
   "dependencies": {},
+  "repository": "https://github.com/pirhoo/iframe-scaffolder/",
   "devDependencies": {
     "gulp": "^3.8.0",
     "gulp-autoprefixer": "^0.0.6",
