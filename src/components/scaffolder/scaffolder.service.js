@@ -54,7 +54,7 @@ angular.module('iframeScaffolder').service('Scaffolder', function() {
   };
 
   Scaffolder.prototype.hasLabel = function(index) {
-    return this.urls[index].indexOf('|http') > -1;
+    return this.urls[index] && this.urls[index].indexOf('|http') > -1;
   };
 
   Scaffolder.prototype.label = function(index, replacement) {
