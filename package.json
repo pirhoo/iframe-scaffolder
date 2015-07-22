@@ -29,6 +29,7 @@
     "main-bower-files": "^2.0.0",
     "jshint-stylish": "^0.4.0",
     "wiredep": "^1.8.5",
+    "karma": "~0.12",
     "karma-jasmine": "^0.1.5",
     "karma-phantomjs-launcher": "^0.1.4",
     "require-dir": "^0.1.0",
