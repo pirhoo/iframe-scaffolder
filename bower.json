@@ -9,7 +9,7 @@
     "angular-ui-router": "0.2.11",
     "bootstrap": "3.3.1",
     "angular-zeroclipboard": "~0.3.2",
-    "angular-bootstrap": "~0.11.2",
+    "angular-bootstrap": "0.13.1",
     "angular-ui-utils": "bower-validate",
     "angular-ui-sortable": "~0.13.0",
     "angular-material": "~0.10.0"
