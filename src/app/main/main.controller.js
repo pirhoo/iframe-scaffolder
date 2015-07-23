@@ -8,7 +8,7 @@ angular.module('iframeScaffolder').controller('MainCtrl', function ($scope, $sta
   $scope.scaffolder = new Scaffolder();
   $scope.layout     = $stateParams.layout || 'menu';
   $scope.theme       =$stateParams.theme || 'default';
-  $scope.urls       = $stateParams.urls === '' ? [] : $stateParams.urls.split(',');
+  $scope.urls       = !$stateParams.urls || $stateParams.urls === '' ? [] : $stateParams.urls.split(',');
   $scope.width      = 600;
   $scope.height     = 450;
   $scope.examples   = [];
