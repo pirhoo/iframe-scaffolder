@@ -67,13 +67,16 @@ angular.module('iframeScaffolder').controller('MainCtrl', function ($scope, $sta
     $scope.settings.urls.splice(index, 1);
   };
 
-  $scope.getViewUrl = function() {
-    var params = {
+  $scope.getViewParams = function() {
+    return {
       urls: $scope.settings.urls.join(','),
       layout: $scope.settings.layout,
       theme: $scope.settings.theme
     };
-    return $state.href('view', params, {absolute: true});
+  };
+
+  $scope.getViewUrl = function() {
+    return $state.href('view', $scope.getViewParams(), {absolute: true});
   };
 
   $scope.getViewIframe = function() {
