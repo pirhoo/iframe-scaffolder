@@ -1,5 +1,6 @@
-<div class="scaffolder scaffolder--{{iframeLayout}} scaffolder--{{theme}}">
-  <div class="scaffolder__container">
+<div class="scaffolder scaffolder--{{iframeLayout}} scaffolder--{{theme}}"  layout="column" layout-align="start start">
+  <div class="scaffolder__header"></div>
+  <div class="scaffolder__container" flex>
     <aside ng-show="scaffolder.hasMenu()" class="scaffolder__container__menu">
       <ul class="nav nav-pills" ng-class="{ 'nav-stacked': iframeLayout === 'menu' }">
         <li ng-repeat="url in urls track by $index"
@@ -21,4 +22,5 @@
             ng-show="scaffolder.isVisible($index)"
             ng-repeat="url in urls track by $index"></iframe>
   </div>
+  <div class="scaffolder__footer"></div>
 </div>
