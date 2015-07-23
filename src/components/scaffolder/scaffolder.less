@@ -3,55 +3,62 @@
   height: 100%;
   position:relative;
   overflow: hidden;
-  &__menu {
 
-    &__item {
-      cursor: pointer;
+  &__container {
+    width: 100%;
+    height: 100%;
+    position:relative;
 
-      & > a {
-        color:@text-color;
-      }
+    &__menu {
 
-      &&.active {
-        font-weight: bold;
-        & > a, & > a:hover {
+      &__item {
+        cursor: pointer;
+
+        & > a {
           color:@text-color;
-          background:@gray-lighter;
+        }
+
+        &&.active {
+          font-weight: bold;
+          & > a, & > a:hover {
+            color:@text-color;
+            background:@gray-lighter;
+          }
         }
       }
     }
   }
 
-  &--menu &__menu {
+  &--menu &__container__menu {
     width:25%;
     padding:5px;
   }
 
-  &--menu &__iframe {
+  &--menu &__container__iframe {
     float:none;
     position:absolute;
     left:25%;
     top:0;
   }
 
-  &--tabs &__menu {
+  &--tabs &__container__menu {
     width:20000%;
     padding:5px;
     white-space: nowrap;
   }
 
-  &--narrative &__menu {
+  &--narrative &__container__menu {
     width:100%;
     padding:5px;
     white-space: nowrap;
   }
 
   &--head {
-    .scaffolder__iframe {
+    .scaffolder__container__iframe {
       margin-left:50%;
     }
 
-    .scaffolder__iframe--first {
+    .scaffolder__container__iframe--first {
       margin:0;
       position:absolute;
       left:0;
@@ -60,11 +67,11 @@
   }
 
   &--tail {
-    .scaffolder__iframe {
+    .scaffolder__container__iframe {
       margin-right:50%;
     }
 
-    .scaffolder__iframe--last {
+    .scaffolder__container__iframe--last {
       margin:0;
       position:absolute;
       right:0;
@@ -72,15 +79,15 @@
     }
   }
 
-  &--tabs &__iframe,
-  &--narrative &__iframe {
+  &--tabs &__container__iframe,
+  &--narrative &__container__iframe {
     position:absolute;
     top: 50px;
     left:0;
     height:~"calc(100% - 50px)";
   }
 
-  &--narrative &__menu {
+  &--narrative &__container__menu {
     .pull-left, .pull-right {
       position:relative;
       a:after, a:before {
@@ -106,7 +113,7 @@
     }
   }
 
-  &__title {
+  &__container__title {
     display: none;
     position:absolute;
     top:10px;
@@ -119,11 +126,11 @@
     .translate(-50%, 0);
   }
 
-  &--narrative &__title {
+  &--narrative &__container__title {
     display: block;
   }
 
-  &__iframe {
+  &__container__iframe {
     display: block;
     float:left;
   }

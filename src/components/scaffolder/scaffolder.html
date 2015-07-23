@@ -1,22 +1,24 @@
 <div class="scaffolder scaffolder--{{iframeLayout}} scaffolder--{{theme}}">
-  <aside ng-show="scaffolder.hasMenu()" class="scaffolder__menu">
-    <ul class="nav nav-pills" ng-class="{ 'nav-stacked': iframeLayout === 'menu' }">
-      <li ng-repeat="url in urls track by $index"
-          ng-class="menuLinkClasses($index)"
-          class="scaffolder__menu__item">
-        <a ng-click="scaffolder.activate($index)">
-          {{scaffolder.label($index, "Iframe " + ($index+1))}}
-        </a>
-      </li>
-    </ul>
-    <h4 class="scaffolder__title">{{scaffolder.getActive().label}}</h4>
-  </aside>
-  <iframe frameborder="0"
-          class="scaffolder__iframe"
-          width="{{iframeWidth($index, $first, $last)}}"
-          height="{{iframeHeight($index, $first, $last)}}"
-          ng-class="{'scaffolder__iframe--last': $last, 'scaffolder__iframe--first': $first}"
-          ng-src="{{scaffolder.url($index)}}"
-          ng-show="scaffolder.isVisible($index)"
-          ng-repeat="url in urls track by $index"></iframe>
+  <div class="scaffolder__container">
+    <aside ng-show="scaffolder.hasMenu()" class="scaffolder__container__menu">
+      <ul class="nav nav-pills" ng-class="{ 'nav-stacked': iframeLayout === 'menu' }">
+        <li ng-repeat="url in urls track by $index"
+            ng-class="menuLinkClasses($index)"
+            class="scaffolder__container__menu__item">
+          <a ng-click="scaffolder.activate($index)">
+            {{scaffolder.label($index, "Iframe " + ($index+1))}}
+          </a>
+        </li>
+      </ul>
+      <h4 class="scaffolder__container__title">{{scaffolder.getActive().label}}</h4>
+    </aside>
+    <iframe frameborder="0"
+            class="scaffolder__container__iframe"
+            width="{{iframeWidth($index, $first, $last)}}"
+            height="{{iframeHeight($index, $first, $last)}}"
+            ng-class="{'scaffolder__container__iframe--last': $last, 'scaffolder__container__iframe--first': $first}"
+            ng-src="{{scaffolder.url($index)}}"
+            ng-show="scaffolder.isVisible($index)"
+            ng-repeat="url in urls track by $index"></iframe>
+  </div>
 </div>
