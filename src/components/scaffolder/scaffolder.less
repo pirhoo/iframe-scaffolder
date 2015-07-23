@@ -90,23 +90,25 @@
     .pull-left, .pull-right {
       position:relative;
       a:after, a:before {
+        font-family: "Glyphicons Halflings";
+        font-size:0.9em;
         position: absolute;
-        top:45%;
+        top:55%;
         .translate(0, -50%);
       }
     }
 
     .pull-left a {
-      padding-left:25px;
+      padding-left:30px;
       &:before {
-        content:"◂";
+        content: "\e079";
         left:10px;
       }
     }
     .pull-right a {
-      padding-right:25px;
+      padding-right:30px;
       &:after {
-        content:"▸";
+        content: "\e080";
         right:10px;
       }
     }
