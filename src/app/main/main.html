@@ -22,8 +22,8 @@
             This is not a valid URL or iframe.
           </div>
         </form>
-        <ul class="list-group" ui-sortable ng-model="settings.urls">
-          <li class="list-group-item editor__step__url" ng-repeat="url in settings.urls track by $index">
+        <ul class="list-group" ui-sortable ng-model="options.urls">
+          <li class="list-group-item editor__step__url" ng-repeat="url in options.urls track by $index">
             <div>
               <div class="btn-group btn-group-xs pull-right editor__step__url__actions">
                 <button type="button" class="btn btn-default" tooltip="Change the label describing this iframe" ng-click="editLabel($index)">
@@ -53,7 +53,7 @@
           </li>
         </ul>
       </div>
-      <div class="panel editor__step panel-default" ng-class="{ 'editor__step--disable': !settings.urls.length }">
+      <div class="panel editor__step panel-default" ng-class="{ 'editor__step--disable': !options.urls.length }">
         <div class="editor__step__label"></div>
         <div class="panel-body">
           <p>
@@ -61,41 +61,41 @@
             <small class="text-muted">(how iframes are arranged)</small>
           </p>
           <div class="text-center btn-group">
-            <button class="btn btn-default btn-sm" ng-class="{active: settings.layout == 'menu'}" ng-click="settings.layout = 'menu'" tooltip="Toggle iframes using a menu">
+            <button class="btn btn-default btn-sm" ng-class="{active: options.layout == 'menu'}" ng-click="options.layout = 'menu'" tooltip="Toggle iframes using a menu">
               ≡◻
             </button>
-            <button class="btn btn-default btn-sm" ng-class="{active: settings.layout == 'narrative'}" ng-click="settings.layout = 'narrative'" tooltip="Toggle iframes using next and previous buttons">
+            <button class="btn btn-default btn-sm" ng-class="{active: options.layout == 'narrative'}" ng-click="options.layout = 'narrative'" tooltip="Toggle iframes using next and previous buttons">
               ⍃ ⍄
             </button>
-            <button class="btn btn-default btn-sm" ng-class="{active: settings.layout == 'tabs'}" ng-click="settings.layout = 'tabs'" tooltip="Toggle iframes using tabs">
+            <button class="btn btn-default btn-sm" ng-class="{active: options.layout == 'tabs'}" ng-click="options.layout = 'tabs'" tooltip="Toggle iframes using tabs">
               ⎍⎍
             </button>
-            <button class="btn btn-default btn-sm" ng-class="{active: settings.layout == 'horizontal'}" ng-click="settings.layout = 'horizontal'" tooltip="All iframes have equal width">
+            <button class="btn btn-default btn-sm" ng-class="{active: options.layout == 'horizontal'}" ng-click="options.layout = 'horizontal'" tooltip="All iframes have equal width">
               ▯▯▯
             </button>
-            <button class="btn btn-default btn-sm" ng-class="{active: settings.layout == 'head'}" ng-click="settings.layout = 'head'" tooltip="The first iframe use half of the screen, the others a stacked">
+            <button class="btn btn-default btn-sm" ng-class="{active: options.layout == 'head'}" ng-click="options.layout = 'head'" tooltip="The first iframe use half of the screen, the others a stacked">
               ▯▤
             </button>
-            <button class="btn btn-default btn-sm" ng-class="{active: settings.layout == 'tail'}" ng-click="settings.layout = 'tail'" tooltip="The last iframe use half of the screen, the others a stacked">
+            <button class="btn btn-default btn-sm" ng-class="{active: options.layout == 'tail'}" ng-click="options.layout = 'tail'" tooltip="The last iframe use half of the screen, the others a stacked">
               ▤▯
             </button>
 
           </div>
         </div>
       </div>
-      <div class="panel editor__step panel-default" ng-class="{ 'editor__step--disable': !settings.urls.length }">
+      <div class="panel editor__step panel-default" ng-class="{ 'editor__step--disable': !options.urls.length }">
         <div class="editor__step__label"></div>
         <div class="panel-body">
           <div class="pull-right" dropdown>
             <span class="btn-group">
-              <i class="scaffolder--{{settings.theme}}__preview editor__step__theme-preview disabled btn btn-xs"></i>
+              <i class="scaffolder--{{options.theme}}__preview editor__step__theme-preview disabled btn btn-xs"></i>
               <button class="btn btn-default btn-xs" dropdown-toggle>
-                {{ themes[settings.theme] }} &nbsp;<i class="caret"></i>
+                {{ themes[options.theme] }} &nbsp;<i class="caret"></i>
               </button>
             </span>
             <ul class="dropdown-menu" role="menu">
               <li ng-repeat="(theme, label) in themes" class="editor__step__theme">
-                <a ng-click="settings.theme = theme">
+                <a ng-click="options.theme = theme">
                   <i class="scaffolder--{{theme}}__preview editor__step__theme__preview"></i>
                   {{label}}
                 </a>
@@ -105,7 +105,7 @@
           Choose a theme&nbsp;
         </div>
       </div>
-      <div class="panel editor__step panel-default" ng-class="{ 'editor__step--disable': !settings.urls.length }">
+      <div class="panel editor__step panel-default" ng-class="{ 'editor__step--disable': !options.urls.length }">
         <div class="editor__step__label"></div>
         <div class="panel-body">
           <p>
@@ -148,7 +148,7 @@
     </div>
     <div class="col-md-8">
       <div class="panel panel-default editor__preview">
-        <div class="editor__preview__empty-alert" ng-hide="settings.urls.length">
+        <div class="editor__preview__empty-alert" ng-hide="options.urls.length">
           <div class="lead editor__preview__empty-alert__message">
             <p>
               Add an iframe's URL on the <span class="hidden-sm hidden-xs">left&nbsp;</span>panel to preview the mosaic here.
@@ -175,7 +175,7 @@
           </div>
         </div>
         <div class="editor__preview__scaffolder">
-          <scaffolder options="settings" />
+          <scaffolder options="options" />
         </div>
       </div>
     </div>

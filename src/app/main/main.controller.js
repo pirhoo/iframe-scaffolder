@@ -6,8 +6,8 @@ angular.module('iframeScaffolder').controller('MainCtrl', function ($scope, $sta
   var URL_REGEXP = /^(ftp|http|https):\/\/(\w+:{0,1}\w*@)?(\S+)(:[0-9]+)?(\/|\/([\w#!:.?+=&%@!\-\/]))?$/;
 
   $scope.scaffolder = new Scaffolder();
-  // Mosaic settings
-  $scope.settings = {
+  // Mosaic options
+  $scope.options = {
     'layout': $stateParams.layout || 'menu',
     'theme': $stateParams.theme || 'default',
     'urls': !$stateParams.urls || $stateParams.urls === '' ? [] : $stateParams.urls.split(',')
@@ -58,20 +58,20 @@ angular.module('iframeScaffolder').controller('MainCtrl', function ($scope, $sta
     // Avoid adding null value
     if(url === null) { return; }
     // Add the url to the list
-    $scope.settings.urls.push(url.replace(/,/g, '%2C'));
+    $scope.options.urls.push(url.replace(/,/g, '%2C'));
     // Reset form value
     $scope.newUrl = null;
   };
 
   $scope.removeUrl = function(index) {
-    $scope.settings.urls.splice(index, 1);
+    $scope.options.urls.splice(index, 1);
   };
 
   $scope.getViewParams = function() {
     return {
-      urls: $scope.settings.urls.join(','),
-      layout: $scope.settings.layout,
-      theme: $scope.settings.theme
+      urls: $scope.options.urls.join(','),
+      layout: $scope.options.layout,
+      theme: $scope.options.theme
     };
   };
 
@@ -88,7 +88,7 @@ angular.module('iframeScaffolder').controller('MainCtrl', function ($scope, $sta
 
   $scope.pickExample = function() {
     var example = $scope.examples[Math.floor(Math.random() * $scope.examples.length)];
-    angular.extend($scope.settings, angular.copy(example));
+    angular.extend($scope.options, angular.copy(example));
   };
 
   $scope.editLabel = function(index) {
@@ -102,16 +102,16 @@ angular.module('iframeScaffolder').controller('MainCtrl', function ($scope, $sta
     $scope.labels = {};
     // Create a new URL with the label as prefix
     if(label !== '') {
-      $scope.settings.urls[index] = label + '|' + $scope.scaffolder.url(index, true);
+      $scope.options.urls[index] = label + '|' + $scope.scaffolder.url(index, true);
     // Create a new URL without prefix
     } else {
-      $scope.settings.urls[index] = $scope.scaffolder.url(index, true);
+      $scope.options.urls[index] = $scope.scaffolder.url(index, true);
     }
   };
 
-  $scope.$watch('settings', function() {
+  $scope.$watch('options', function() {
     // New instance of the scaffolder class
-    $scope.scaffolder = new Scaffolder($scope.settings.urls, $scope.settings.layout);
+    $scope.scaffolder = new Scaffolder($scope.options.urls, $scope.options.layout);
   }, true);
 
 });
