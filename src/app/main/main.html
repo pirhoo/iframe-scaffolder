@@ -30,7 +30,7 @@
                   Edit label
                 </button>
                 <button type="button" class="btn btn-default" ng-click="removeUrl($index)" tooltip="Remove this iframe">
-                  <i class="glyphicon glyphicon-trash"></i>
+                  <i class="fa fa-trash"></i>
                 </button>
               </div>
               <a ng-href="{{scaffolder.url($index, true)}}" target="_blank" class="editor__step__url__value">
@@ -184,10 +184,10 @@
             <input class="form-control" type="text" value="{{getViewUrl()}}" readonly />
             <span class="input-group-btn">
               <a class="btn btn-link" href="{{getViewUrl()}}" target="_blank" tooltip="Open the iframe in a new window">
-                <i class="glyphicon glyphicon-new-window"></i>
+                <i class="fa fa-external-link"></i>
               </a>
               <a class="btn btn-link" tooltip="Permalink to edit the same mosaic" ui-sref="fork(getViewParams())">
-                <i class="glyphicon glyphicon-edit"></i>
+                <i class="fa fa-edit"></i>
               </a>
             </span>
           </div>
