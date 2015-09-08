@@ -32,6 +32,17 @@
       }
     }
 
+    &__show-more-options {
+      display: block;
+      .caret { .rotate(-90deg); }
+
+      &--active {
+        margin-bottom:10px;
+        .caret { .rotate(0); }
+      }
+
+    }
+
     &__label {
       position:absolute;
       bottom:0;
