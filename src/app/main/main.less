@@ -21,7 +21,7 @@
     &--disable {
       opacity:0.2;
       filter:grayscale(1);
-      
+
       &:after {
         position:absolute;
         content:"";
@@ -62,6 +62,20 @@
       overflow: hidden;
       cursor: move;
       position: relative;
+
+      &:after {
+        content:"";
+        position: absolute;
+        right:2px;
+        top:4px;
+        bottom:4px;
+        width:6px;
+        border-left:2px dotted #aaa;
+        border-right:2px dotted #aaa;
+        z-index: 100;
+        display: block;
+        cursor:move;
+      }
 
       &__actions {
         z-index: 15;
