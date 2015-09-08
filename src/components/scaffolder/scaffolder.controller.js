@@ -47,9 +47,9 @@ angular.module('iframeScaffolder').controller('ScaffolderCtrl', function ($scope
     };
   };
 
-  $scope.$watch('options.urls + options.layout', function() {
+  $scope.$watch('options.urls + options.layout + options.active', function() {
     // New instance of the scaffolder class
-    $scope.scaffolder = new Scaffolder(options.urls, options.layout);
+    $scope.scaffolder = new Scaffolder(options.urls, options.layout, options.active);
   }, true);
 
 });

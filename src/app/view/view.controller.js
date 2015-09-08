@@ -5,6 +5,7 @@ angular.module('iframeScaffolder').controller('ViewCtrl', function ($scope, $sta
   $scope.options = {
     layout: $stateParams.layout,
     theme : $stateParams.theme || 'default',
-    urls  : $stateParams.urls.split(',')
+    urls  : $stateParams.urls.split(','),
+    active: parseInt($stateParams.active || 0)
   };
 });
