@@ -109,12 +109,12 @@
             <button class="btn btn-primary btn-xs pull-right" ui-zeroclip zeroclip-model="getViewIframe()" title="Copy the embed code to you clipboard.">
               Copy
             </button>
-            Export the iframe
+            Export the mosaic
           </p>
           <p>
             <textarea class="form-control" readonly>{{getViewIframe()}}</textarea>
           </p>
-          <div class="">
+          <div>
             <div class="pull-left editor__step__iframe-label">
               <strong>Change the size&nbsp;</strong><br />
               <label class="editor__step__iframe-label__fluid">
@@ -126,6 +126,21 @@
               <input type="number" ng-disabled="useFluid" ng-model="width" min="50" class="form-control input-sm editor__step__iframe-size__size" />
               x
               <input type="number" ng-model="height" min="50" class="form-control input-sm editor__step__iframe-size__size" />
+            </div>
+          </div>
+          <br class="clearfix" />
+          <div class="row">
+            <div class="col-xs-6">
+              <label>
+                Choose the 1<sup>st</sup> iframe
+              </label>
+            </div>
+            <div class="col-xs-6">
+              <select ng-model="options.active" class="form-control input-sm">
+                <option value="{{$index}}" ng-repeat="url in options.urls track by $index">
+                  {{scaffolder.label($index)}}
+                </option>
+              </select>
             </div>
           </div>
         </div>

@@ -8,6 +8,7 @@ angular.module('iframeScaffolder').controller('MainCtrl', function ($scope, $sta
   $scope.scaffolder = new Scaffolder();
   // Mosaic options
   $scope.options = {
+    'active': 0,
     'layout': $stateParams.layout || 'menu',
     'theme': $stateParams.theme || 'default',
     'urls': !$stateParams.urls || $stateParams.urls === '' ? [] : $stateParams.urls.split(',')
@@ -71,7 +72,8 @@ angular.module('iframeScaffolder').controller('MainCtrl', function ($scope, $sta
     return {
       urls: $scope.options.urls.join(','),
       layout: $scope.options.layout,
-      theme: $scope.options.theme
+      theme: $scope.options.theme,
+      active: $scope.options.active
     };
   };
 
@@ -111,7 +113,7 @@ angular.module('iframeScaffolder').controller('MainCtrl', function ($scope, $sta
 
   $scope.$watch('options', function() {
     // New instance of the scaffolder class
-    $scope.scaffolder = new Scaffolder($scope.options.urls, $scope.options.layout);
+    $scope.scaffolder = new Scaffolder($scope.options.urls, $scope.options.layout, $scope.options.active);
   }, true);
 
 });

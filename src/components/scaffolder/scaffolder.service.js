@@ -7,7 +7,7 @@ angular.module('iframeScaffolder').service('Scaffolder', function() {
       layout: layout || 'menu'
     });
     // Activate the right url
-    this.activate(active || 0);
+    this.activate( parseInt(active || 0) );
     return this;
   }
 
