@@ -136,5 +136,19 @@
     float:left;
   }
 
+  &__footer {
+    width:100%;
+    padding:5px 15px;
+    border-top:1px solid #ddd;
+    background:white;
+    color: @gray;
+    font-size:0.9em;
+    filter:grayscale(0.7);
+    .transition(0.6s);
+    &:hover {
+      filter:grayscale(0);
+    }
+  }
+
 
 }
