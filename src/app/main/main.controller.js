@@ -9,6 +9,7 @@ angular.module('iframeScaffolder').controller('MainCtrl', function ($scope, $sta
   // Mosaic options
   $scope.options = {
     'active': 0,
+    'sharing': 1,
     'layout': $stateParams.layout || 'menu',
     'theme': $stateParams.theme || 'default',
     'urls': !$stateParams.urls || $stateParams.urls === '' ? [] : $stateParams.urls.split(',')
@@ -69,12 +70,10 @@ angular.module('iframeScaffolder').controller('MainCtrl', function ($scope, $sta
   };
 
   $scope.getViewParams = function() {
-    return {
-      urls: $scope.options.urls.join(','),
-      layout: $scope.options.layout,
-      theme: $scope.options.theme,
-      active: $scope.options.active
-    };
+    var options = angular.copy($scope.options);
+    // Override URLs list for better serialization
+    options.urls = options.urls.join(',');
+    return options;
   };
 
   $scope.getViewUrl = function() {

@@ -136,17 +136,24 @@
             <br class="clearfix" />
             <div class="row">
               <div class="col-xs-6">
-                <label>
+                <label for="input-active">
                   Choose the 1<sup>st</sup> iframe
                 </label>
               </div>
               <div class="col-xs-6">
-                <select ng-model="options.active" class="form-control input-sm">
+                <select id="input-active" ng-model="options.active" class="form-control input-sm">
                   <option value="{{$index}}" ng-repeat="url in options.urls track by $index">
                     {{scaffolder.label($index)}}
                   </option>
                 </select>
               </div>
+            </div>
+            <div class="checkbox">
+              <label for="input-sharing">
+                <input type="checkbox" ng-model="options.sharing" ng-true-value="1" ng-false-value="0" id="input-sharing" />
+                Allow iframe sharing
+              </label>
+              <p class="text-muted small">The user will be able to share each iframe individually.</p>
             </div>
           </div>
         </div>

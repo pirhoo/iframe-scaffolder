@@ -24,14 +24,17 @@
   </div>
   <div class="scaffolder__footer">
     Built with <a href="//pirhoo.github.io/iframe-scaffolder/" target="_blank">Iframe Scaffolder</a>
-    <div class="scaffolder__footer__sharing pull-right hidden">
+    <div class="scaffolder__footer__sharing pull-right" ng-if="options.sharing">
+      Share this view&nbsp;
       <a socialshare
          socialshare-provider="twitter">
-        T
+        <i class="fa fa-fw fa-twitter"></i>
+        <span class="sr-only">Twitter</span>
       </a>
       <a socialshare
          socialshare-provider="facebook">
-        F
+        <i class="fa fa-fw fa-facebook"></i>
+        <span class="sr-only">Facebook</span>
       </a>
     </div>
   </div>
