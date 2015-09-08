@@ -2,12 +2,13 @@
 
 angular.module('iframeScaffolder').controller('ScaffolderCtrl', function ($scope, Scaffolder) {
 
+  var options = $scope.options;
   $scope.scaffolder = new Scaffolder();
 
   $scope.iframeWidth = function() {
-    switch($scope.iframeLayout) {
+    switch(options.layout) {
       case 'horizontal':
-        return (100/$scope.urls.length) + '%';
+        return (100/options.urls.length) + '%';
       case 'tail', 'head':
         return '50%';
       case 'menu':
@@ -20,23 +21,23 @@ angular.module('iframeScaffolder').controller('ScaffolderCtrl', function ($scope
   };
 
   $scope.iframeHeight = function(index, first, last) {
-    if ($scope.iframeLayout === 'horizontal'    ||
-        $scope.iframeLayout === 'menu'          ||
-        $scope.iframeLayout === 'head' && first ||
-        $scope.iframeLayout === 'tail' && last) {
+    if (options.layout === 'horizontal'    ||
+        options.layout === 'menu'          ||
+        options.layout === 'head' && first ||
+        options.layout === 'tail' && last) {
       return '100%';
-    } else if ($scope.iframeLayout === 'tabs'   ||
-               $scope.iframeLayout === 'narrative') {
+    } else if (options.layout === 'tabs'   ||
+               options.layout === 'narrative') {
       return 'auto';
     } else {
-      return (100/($scope.urls.length-1)) + '%';
+      return (100/(options.urls.length-1)) + '%';
     }
   };
 
   $scope.menuLinkClasses = function(index) {
 
     var scaffolder  = $scope.scaffolder,
-        isNarrative = $scope.iframeLayout === 'narrative';
+        isNarrative = options.layout === 'narrative';
 
     return {
       'active'    : scaffolder.isActive(index),
@@ -46,9 +47,9 @@ angular.module('iframeScaffolder').controller('ScaffolderCtrl', function ($scope
     };
   };
 
-  $scope.$watch('urls + iframeLayout', function() {
+  $scope.$watch('options.urls + options.layout', function() {
     // New instance of the scaffolder class
-    $scope.scaffolder = new Scaffolder($scope.urls, $scope.iframeLayout);
+    $scope.scaffolder = new Scaffolder(options.urls, options.layout);
   }, true);
 
 });

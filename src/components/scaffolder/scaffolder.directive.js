@@ -6,9 +6,7 @@ angular.module('iframeScaffolder').directive('scaffolder', function() {
     controller: 'ScaffolderCtrl',
     templateUrl: 'components/scaffolder/scaffolder.html',
     scope: {
-      urls: '=',
-      iframeLayout: '=',
-      theme: '='
+      options: '='
     }
   };
 });

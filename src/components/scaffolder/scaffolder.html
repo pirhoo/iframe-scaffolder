@@ -1,9 +1,9 @@
-<div class="scaffolder scaffolder--{{iframeLayout}} scaffolder--{{theme}}"  layout="column" layout-align="start start">
+<div class="scaffolder scaffolder--{{options.layout}} scaffolder--{{options.theme}}"  layout="column" layout-align="start start">
   <div class="scaffolder__header"></div>
   <div class="scaffolder__container" flex>
     <aside ng-show="scaffolder.hasMenu()" class="scaffolder__container__menu">
-      <ul class="nav nav-pills" ng-class="{ 'nav-stacked': iframeLayout === 'menu' }">
-        <li ng-repeat="url in urls track by $index"
+      <ul class="nav nav-pills" ng-class="{ 'nav-stacked': options.layout === 'menu' }">
+        <li ng-repeat="url in options.urls track by $index"
             ng-class="menuLinkClasses($index)"
             class="scaffolder__container__menu__item">
           <a ng-click="scaffolder.activate($index)">
@@ -20,7 +20,7 @@
             ng-class="{'scaffolder__container__iframe--last': $last, 'scaffolder__container__iframe--first': $first}"
             ng-src="{{scaffolder.url($index)}}"
             ng-show="scaffolder.isVisible($index)"
-            ng-repeat="url in urls track by $index"></iframe>
+            ng-repeat="url in options.urls track by $index"></iframe>
   </div>
   <div class="scaffolder__footer"></div>
 </div>
