@@ -116,7 +116,8 @@ gulp.task('swf', [], function () {
 gulp.task('facebookAppId',  function () {
   return gulp.src('dist/**/*')
     .pipe($.replace('%%FACEBOOK_APP_ID%%', require('../package.json').facebookAppId))
-    .pipe(gulp.dest('dist'));
+    .pipe(gulp.dest('dist'))
+    .pipe($.size());
 });
 
 gulp.task('misc', ['swf', 'facebookAppId'], function () {
