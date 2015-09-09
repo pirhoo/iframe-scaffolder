@@ -24,7 +24,7 @@
   </div>
   <div class="scaffolder__footer">
     Built with <a href="//pirhoo.github.io/iframe-scaffolder/" target="_blank">Iframe Scaffolder</a>
-    <div class="scaffolder__footer__sharing pull-right" ng-if="options.sharing">
+    <div class="scaffolder__footer__sharing pull-right" ng-if="options.sharing && scaffolder.hasMenu() && scaffolder.urls.length">
       Share this view&nbsp;
       <a socialshare
          socialshare-text="{{ scaffolder.getActive( 'Iframe ' + ($index + 1) ).label }}"
@@ -35,7 +35,7 @@
         <span class="sr-only">Twitter</span>
       </a>
       <a socialshare
-         socialshare-name="{{ scaffolder.getActive().label }}"
+         socialshare-text="{{ scaffolder.getActive().label }}"
          socialshare-url="{{ scaffolder.viewUrl(scaffolder.active) }}"
          socialshare-provider="facebook"
          socialshare-type="feed"
