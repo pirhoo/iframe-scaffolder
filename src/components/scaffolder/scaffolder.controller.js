@@ -3,7 +3,7 @@
 angular.module('iframeScaffolder').controller('ScaffolderCtrl', function ($scope, Scaffolder) {
 
   var options = $scope.options;
-  $scope.scaffolder = new Scaffolder();
+  $scope.scaffolder = new Scaffolder(options);
 
   $scope.iframeWidth = function() {
     switch(options.layout) {
@@ -47,9 +47,9 @@ angular.module('iframeScaffolder').controller('ScaffolderCtrl', function ($scope
     };
   };
 
-  $scope.$watch('options.urls + options.layout + options.active', function() {
+  $scope.$watch('options', function() {
     // New instance of the scaffolder class
-    $scope.scaffolder = new Scaffolder(options.urls, options.layout, options.active);
+    $scope.scaffolder = new Scaffolder(options);
   }, true);
 
 });

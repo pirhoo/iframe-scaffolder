@@ -27,11 +27,13 @@
     <div class="scaffolder__footer__sharing pull-right" ng-if="options.sharing">
       Share this view&nbsp;
       <a socialshare
+         socialshare-text="{{ scaffolder.getActive().label }}"
          socialshare-provider="twitter">
         <i class="fa fa-fw fa-twitter"></i>
         <span class="sr-only">Twitter</span>
       </a>
       <a socialshare
+         socialshare-text="{{ scaffolder.getActive().label }}"
          socialshare-provider="facebook">
         <i class="fa fa-fw fa-facebook"></i>
         <span class="sr-only">Facebook</span>

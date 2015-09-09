@@ -1,15 +1,19 @@
 'use strict';
 
 angular.module('iframeScaffolder').service('Scaffolder', function() {
-  function Scaffolder(urls, layout, active) {
+  function Scaffolder(options) {
     angular.extend(this, {
-      urls  : urls   || [],
-      layout: layout || 'menu'
+      urls  : options.urls   || [],
+      layout: options.layout || 'menu'
     });
     // Activate the right url
-    this.activate( parseInt(active || 0) );
+    this.activate( parseInt(options.active || 0) );
     return this;
   }
+
+  Scaffolder.prototype.sharingUrl = function() {
+
+  };
 
   Scaffolder.prototype.url = function(index, getter) {
     var url = this.urls[index];
