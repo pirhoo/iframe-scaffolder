@@ -37,7 +37,6 @@
       .caret { .rotate(-90deg); }
 
       &--active {
-        margin-bottom:10px;
         .caret { .rotate(0); }
       }
 
@@ -45,6 +44,16 @@
         outline:0;
       }
 
+    }
+
+    &__option {
+      .clearfix();
+      .panel-body();
+      padding: 5px @panel-body-padding;
+      border-top:1px dashed @gray-lighter;
+      .checkbox {
+        margin:0;
+      }
     }
 
     &__label {

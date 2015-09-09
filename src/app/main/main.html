@@ -118,22 +118,23 @@
             <i class="caret"></i>&nbsp;
             More options
           </a>
-          <div ng-show="showMoreOptions">
-            <div>
-              <div class="pull-left editor__step__iframe-label">
-                <strong>Change the size&nbsp;</strong><br />
-                <label class="editor__step__iframe-label__fluid">
-                  <input type="checkbox" ng-model="useFluid" />
-                  Use a fluid width
-                </label>
-              </div>
-              <div class="text-right editor__step__iframe-size">
-                <input type="number" ng-disabled="useFluid" ng-model="width" min="50" class="form-control input-sm editor__step__iframe-size__size" />
-                x
-                <input type="number" ng-model="height" min="50" class="form-control input-sm editor__step__iframe-size__size" />
-              </div>
+        </div>
+        <div ng-show="showMoreOptions">
+          <div class="editor__step__option">
+            <div class="pull-left editor__step__iframe-label">
+              <strong>Change the size&nbsp;</strong><br />
+              <label class="editor__step__iframe-label__fluid">
+                <input type="checkbox" ng-model="useFluid" />
+                Use a fluid width
+              </label>
             </div>
-            <br class="clearfix" />
+            <div class="text-right editor__step__iframe-size">
+              <input type="number" ng-disabled="useFluid" ng-model="width" min="50" class="form-control input-sm editor__step__iframe-size__size" />
+              x
+              <input type="number" ng-model="height" min="50" class="form-control input-sm editor__step__iframe-size__size" />
+            </div>
+          </div>
+          <div class="editor__step__option">
             <div class="row">
               <div class="col-xs-6">
                 <label for="input-active">
@@ -148,6 +149,8 @@
                 </select>
               </div>
             </div>
+          </div>
+          <div class="editor__step__option">
             <div class="checkbox">
               <label for="input-sharing">
                 <input type="checkbox" ng-model="options.sharing" ng-true-value="1" ng-false-value="0" id="input-sharing" />
