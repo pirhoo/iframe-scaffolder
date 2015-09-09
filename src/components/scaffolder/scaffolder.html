@@ -29,13 +29,23 @@
       <a socialshare
          socialshare-text="{{ scaffolder.getActive( 'Iframe ' + ($index + 1) ).label }}"
          socialshare-url="{{ scaffolder.viewUrl(scaffolder.active) }}"
-         socialshare-provider="twitter">
+         socialshare-provider="twitter"
+         class="scaffolder__footer__sharing__twitter">
         <i class="fa fa-fw fa-twitter"></i>
         <span class="sr-only">Twitter</span>
       </a>
       <a socialshare
-         socialshare-text="{{ scaffolder.getActive().label }}"
-         socialshare-provider="facebook">
+         socialshare-caption="{{ scaffolder.getActive().label }}"
+         socialshare-url="{{ scaffolder.viewUrl(scaffolder.active) }}"
+         socialshare-provider="facebook"
+         socialshare-type="feed"
+         socialshare-to=""
+         socialshare-from=""
+         socialshare-ref=""
+         socialshare-display="popup"
+         socialshare-via="883059891808177"
+         socialshare-redirect-uri="https:/facebook.com"
+         class="scaffolder__footer__sharing__facebook">
         <i class="fa fa-fw fa-facebook"></i>
         <span class="sr-only">Facebook</span>
       </a>
