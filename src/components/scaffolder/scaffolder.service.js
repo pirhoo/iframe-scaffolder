@@ -17,17 +17,19 @@ angular.module('iframeScaffolder').service('Scaffolder', function($state) {
     return this;
   }
 
-  Scaffolder.prototype.serialized = function() {
+  Scaffolder.prototype.serialized = function(active) {
     // Exclude unserializable attributes
     var options = angular.fromJson( angular.toJson(this) );
     // Override URLs list for better serialization
     options.urls = options.urls.join(',');
+    // Override active iframe
+    options.active = active || options.active || 0;
     // Returns the copy of the object
     return options;
   };
 
-  Scaffolder.prototype.viewUrl = function() {
-    return $state.href('view', this.serialized(), {absolute: true});
+  Scaffolder.prototype.viewUrl = function(active) {
+    return $state.href('view', this.serialized(active), {absolute: true});
   };
 
   Scaffolder.prototype.url = function(index, getter) {
