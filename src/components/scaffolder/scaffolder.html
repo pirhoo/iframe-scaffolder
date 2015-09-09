@@ -11,7 +11,7 @@
           </a>
         </li>
       </ul>
-      <h4 class="scaffolder__container__title">{{scaffolder.getActive().label}}</h4>
+      <h4 class="scaffolder__container__title">{{ scaffolder.getActive( 'Iframe ' + ($index + 1) ).label }}</h4>
     </aside>
     <iframe frameborder="0"
             class="scaffolder__container__iframe"
@@ -27,7 +27,7 @@
     <div class="scaffolder__footer__sharing pull-right" ng-if="options.sharing">
       Share this view&nbsp;
       <a socialshare
-         socialshare-text="{{ scaffolder.getActive().label }}"
+         socialshare-text="{{ scaffolder.getActive( 'Iframe ' + ($index + 1) ).label }}"
          socialshare-url="{{ scaffolder.viewUrl(scaffolder.active) }}"
          socialshare-provider="twitter">
         <i class="fa fa-fw fa-twitter"></i>

@@ -55,9 +55,9 @@ angular.module('iframeScaffolder').service('Scaffolder', function($state) {
     this.active = index < this.urls.length ? index : 0;
   };
 
-  Scaffolder.prototype.getActive = function() {
+  Scaffolder.prototype.getActive = function(replacement) {
     return {
-      label: this.label(this.active),
+      label: this.label(this.active, replacement),
       url: this.url(this.active)
     };
   };
