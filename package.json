@@ -4,6 +4,7 @@
   "dependencies": {},
   "repository": "https://github.com/pirhoo/iframe-scaffolder/",
   "staticRemote": "git@github.com:Pirhoo/iframe-scaffolder.git",
+  "facebookAppId": "883059891808177",
   "devDependencies": {
     "gulp": "^3.8.0",
     "gulp-autoprefixer": "^0.0.6",

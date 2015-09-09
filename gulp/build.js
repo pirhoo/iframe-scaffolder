@@ -113,7 +113,13 @@ gulp.task('swf', [], function () {
     .pipe($.size());
 });
 
-gulp.task('misc', ['swf'], function () {
+gulp.task('facebookAppId',  function () {
+  return gulp.src('dist/**/*')
+    .pipe($.replace('%%FACEBOOK_APP_ID%%', require('../package.json').facebookAppId))
+    .pipe(gulp.dest('dist'));
+});
+
+gulp.task('misc', ['swf', 'facebookAppId'], function () {
   return gulp.src('src/**/*.{ico,json}')
     .pipe($.flatten())
     .pipe(gulp.dest('dist/assets'))
