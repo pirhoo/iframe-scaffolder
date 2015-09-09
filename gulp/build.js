@@ -65,6 +65,7 @@ gulp.task('html', ['styles', 'scripts', 'partials'], function () {
     .pipe($.rev())
     .pipe(jsFilter)
     .pipe($.ngAnnotate())
+    .pipe($.replace('%%FACEBOOK_APP_ID%%', require('../package.json').facebookAppId))
     .pipe($.replace('bower_components/zeroclipboard/dist/','./assets/swf/'))
     .pipe($.uglify({preserveComments: $.uglifySaveLicense}))
     .pipe(jsFilter.restore())
@@ -112,15 +113,7 @@ gulp.task('swf', [], function () {
     .pipe(gulp.dest('dist/assets/swf'))
     .pipe($.size());
 });
-
-gulp.task('facebookAppId',  function () {
-  return gulp.src('dist/**/*')
-    .pipe($.replace('%%FACEBOOK_APP_ID%%', require('../package.json').facebookAppId))
-    .pipe(gulp.dest('dist'))
-    .pipe($.size());
-});
-
-gulp.task('misc', ['swf', 'facebookAppId'], function () {
+gulp.task('misc', ['swf'], function () {
   return gulp.src('src/**/*.{ico,json}')
     .pipe($.flatten())
     .pipe(gulp.dest('dist/assets'))
