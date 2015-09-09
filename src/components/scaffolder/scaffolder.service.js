@@ -1,18 +1,33 @@
 'use strict';
 
-angular.module('iframeScaffolder').service('Scaffolder', function() {
+angular.module('iframeScaffolder').service('Scaffolder', function($state) {
+  // Defauult scaffolder options
+  var DEFAULTS_OPTIONS = {
+    urls  : [],
+    active: 0,
+    layout: 'menu'
+  };
+
   function Scaffolder(options) {
-    angular.extend(this, {
-      urls  : options.urls   || [],
-      layout: options.layout || 'menu'
-    });
+    // Extend the given options with the default one
+    options = angular.extend( angular.copy(DEFAULTS_OPTIONS), options);
+    angular.extend(this, options);
     // Activate the right url
     this.activate( parseInt(options.active || 0) );
     return this;
   }
 
-  Scaffolder.prototype.sharingUrl = function() {
+  Scaffolder.prototype.serialized = function() {
+    // Exclude unserializable attributes
+    var options = angular.fromJson( angular.toJson(this) );
+    // Override URLs list for better serialization
+    options.urls = options.urls.join(',');
+    // Returns the copy of the object
+    return options;
+  };
 
+  Scaffolder.prototype.viewUrl = function() {
+    return $state.href('view', this.serialized(), {absolute: true});
   };
 
   Scaffolder.prototype.url = function(index, getter) {

@@ -69,15 +69,8 @@ angular.module('iframeScaffolder').controller('MainCtrl', function ($scope, $sta
     $scope.options.urls.splice(index, 1);
   };
 
-  $scope.getViewParams = function() {
-    var options = angular.copy($scope.options);
-    // Override URLs list for better serialization
-    options.urls = options.urls.join(',');
-    return options;
-  };
-
   $scope.getViewUrl = function() {
-    return $state.href('view', $scope.getViewParams(), {absolute: true});
+    return $scope.scaffolder.viewUrl();
   };
 
   $scope.getViewIframe = function() {
