@@ -144,12 +144,72 @@
     color: @gray;
     font-size:0.9em;
     filter:grayscale(0.7);
+    position:relative;
     .transition(0.6s);
+
     &:hover {
       filter:grayscale(0);
     }
 
-    &__sharing {
+    &__sharing-toggler {
+      position: absolute;
+      right:5px;
+      top:50%;
+      .translate(0, -50%);
+    }
+  }
+
+
+  &__sharing-popup {
+
+    position: absolute;
+    top:0;
+    left:0;
+    bottom:0;
+    right:0;
+    overflow: auto;
+    .transition(0.6s);
+
+    &.ng-hide {
+      opacity: 0;
+    }
+
+    &__overlay {
+      position: fixed;
+      top:0;
+      left:0;
+      bottom:0;
+      right:0;
+      background:fade(black, 50%);
+      .box-shadow(0 0 300px 0 fade(black, 80%) inset);
+    }
+
+    &__panel {
+      position:absolute;
+      top:50%;
+      left:50%;
+      width:80%;
+      .translate(-50%, -50%);
+      .transition(0.6s);
+
+      &.ng-hide {
+        transform:scale(0.9) translate(-40%, -40%);
+      }
+
+      &__close {
+        font-size: 21px;
+        font-weight: 700;
+        line-height: 1;
+        color: #000;
+        text-shadow: 0px 1px 0px #FFF;
+        float: right;
+        opacity: 0.2;
+        padding: 5px;
+        margin: 5px;
+        cursor: pointer;
+        background: transparent;
+        border: 0;
+      }
 
       &__twitter,
       &__twitter:hover {
@@ -161,7 +221,7 @@
         color:#3F4B9A;
       }
     }
-  }
 
+  }
 
 }

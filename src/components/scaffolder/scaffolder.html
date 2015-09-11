@@ -24,31 +24,53 @@
   </div>
   <div class="scaffolder__footer">
     Built with <a href="//pirhoo.github.io/iframe-scaffolder/" target="_blank">Iframe Scaffolder</a>
-    <div class="scaffolder__footer__sharing pull-right" ng-if="options.sharing && scaffolder.hasMenu() && scaffolder.urls.length">
-      Share this view&nbsp;
-      <a socialshare
-         socialshare-text="{{ scaffolder.getActive( 'Iframe ' + ($index + 1) ).label }}"
-         socialshare-url="{{ scaffolder.viewUrl(scaffolder.active) }}"
-         socialshare-provider="twitter"
-         class="scaffolder__footer__sharing__twitter">
-        <i class="fa fa-fw fa-twitter"></i>
-        <span class="sr-only">Twitter</span>
-      </a>
-      <a socialshare
-         socialshare-text="{{ scaffolder.getActive().label }}"
-         socialshare-url="{{ scaffolder.viewUrl(scaffolder.active) }}"
-         socialshare-provider="facebook"
-         socialshare-type="feed"
-         socialshare-to=""
-         socialshare-from=""
-         socialshare-ref=""
-         socialshare-display="popup"
-         socialshare-via="%%FACEBOOK_APP_ID%%"
-         socialshare-redirect-uri="https://pirhoo.github.io/iframe-scaffolder/close.html"
-         class="scaffolder__footer__sharing__facebook">
-        <i class="fa fa-fw fa-facebook"></i>
-        <span class="sr-only">Facebook</span>
-      </a>
+    <div class="scaffolder__footer__sharing-toggler" ng-show="options.sharing && scaffolder.hasMenu() && scaffolder.urls.length">
+      <button class="btn btn-xs btn-default" ng-click="displaySharingPopup = !displaySharingPopup">
+        <i class="fa fa-fw fa-share"></i>
+        Share this view
+      </button>
+    </div>
+  </div>
+  <div class="scaffolder__sharing-popup" ng-show="displaySharingPopup">
+    <div class="scaffolder__sharing-popup__overlay" ng-click="displaySharingPopup = false"></div>
+    <div class="scaffolder__sharing-popup__panel panel panel-default" ng-show="displaySharingPopup">
+      <button class="scaffolder__sharing-popup__panel__close" ng-click="displaySharingPopup = false">
+        <span aria-hidden="true">×</span>
+      </button>
+      <div class="panel-body">
+        <h3>Share</h3>
+        <p>
+          Share this view on social networks by clicking here:
+        </p>
+        <p>
+          <a socialshare
+             socialshare-text="{{ scaffolder.getActive( 'Iframe ' + ($index + 1) ).label }}"
+             socialshare-url="{{ scaffolder.viewUrl(scaffolder.active) }}"
+             socialshare-provider="twitter"
+             class="btn btn-default scaffolder__sharing-popup__panel__twitter">
+            <i class="fa fa-fw fa-twitter"></i>
+            Twitter
+          </a>
+          <a socialshare
+             socialshare-text="{{ scaffolder.getActive().label }}"
+             socialshare-url="{{ scaffolder.viewUrl(scaffolder.active) }}"
+             socialshare-provider="facebook"
+             socialshare-type="feed"
+             socialshare-to=""
+             socialshare-from=""
+             socialshare-ref=""
+             socialshare-display="popup"
+             socialshare-via="%%FACEBOOK_APP_ID%%"
+             socialshare-redirect-uri="https://pirhoo.github.io/iframe-scaffolder/close.html"
+             class="btn btn-default scaffolder__sharing-popup__panel__facebook">
+            <i class="fa fa-fw fa-facebook"></i>
+            Facebook
+          </a>
+        </p>
+        <h3>Embed</h3>
+        <p>Please use the following embed code to share this view in your publications:</p>
+        <textarea class="form-control" readonly>{{ getViewIframe() }}</textarea>
+      </div>
     </div>
   </div>
 </div>
