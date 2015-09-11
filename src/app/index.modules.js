@@ -2,6 +2,7 @@
 
 angular.module('iframeScaffolder', [
   'ngSanitize',
+  'ngAnimate',
   'ui.router',
   'ui.bootstrap',
   'ui.validate',

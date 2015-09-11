@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('iframeScaffolder', ['ngSanitize', 'ui.router', 'ui.bootstrap', 'ui.validate', 'ui.sortable', 'zeroclipboard', 'ngMaterial', '720kb.socialshare'])
+angular.module('iframeScaffolder')
   .config(function ($stateProvider, $urlRouterProvider, $sceProvider, $tooltipProvider, uiZeroclipConfigProvider) {
     $stateProvider
       .state('home', {
@@ -31,12 +31,4 @@ angular.module('iframeScaffolder', ['ngSanitize', 'ui.router', 'ui.bootstrap', '
     uiZeroclipConfigProvider.setZcConf({
       swfPath: 'bower_components/zeroclipboard/dist/ZeroClipboard.swf'
     });
-  })
-  .run(['$rootScope', '$location', '$window', function($rootScope, $location, $window){
-    $rootScope
-      .$on('$stateChangeSuccess', function(){
-        if (!$window.ga) { return; }
-        $window.ga('send', 'pageview', { page: $location.url() });
-      });
-  }])
-;
+  });
