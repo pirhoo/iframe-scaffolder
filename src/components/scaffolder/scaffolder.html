@@ -31,7 +31,7 @@
       </button>
     </div>
   </div>
-  <div class="scaffolder__sharing-popup" ng-show="displaySharingPopup">
+  <div class="scaffolder__sharing-popup ng-hide" ng-show="displaySharingPopup">
     <div class="scaffolder__sharing-popup__overlay" ng-click="displaySharingPopup = false"></div>
     <div class="scaffolder__sharing-popup__panel panel panel-default" ng-show="displaySharingPopup">
       <button class="scaffolder__sharing-popup__panel__close" ng-click="displaySharingPopup = false">
@@ -69,7 +69,7 @@
         </p>
         <h3>Embed</h3>
         <p>Please use the following embed code to share this view in your publications:</p>
-        <textarea class="form-control" readonly>{{ getViewIframe() }}</textarea>
+        <textarea class="form-control" select-on-click readonly>{{ getViewIframe() }}</textarea>
       </div>
     </div>
   </div>

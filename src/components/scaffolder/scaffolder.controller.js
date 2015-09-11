@@ -4,6 +4,7 @@ angular.module('iframeScaffolder').controller('ScaffolderCtrl', function ($scope
 
   var options = $scope.options;
   $scope.scaffolder = new Scaffolder(options);
+  $scope.displaySharingPopup = false;
 
   $scope.iframeWidth = function() {
     switch(options.layout) {
