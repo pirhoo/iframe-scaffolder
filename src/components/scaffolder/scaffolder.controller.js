@@ -20,8 +20,8 @@ angular.module('iframeScaffolder').controller('ScaffolderCtrl', function ($scope
       // We use an external service that received the view URL as param
       .get('//white-shortener.herokuapp.com', config)
       .then(function(res) {
-        if( res.data.data.url ) {
-          $scope.sharingUrl = res.data.data.url;
+        if( res.data.id ) {
+          $scope.sharingUrl = res.data.id;
         }
       });
   };
