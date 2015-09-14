@@ -18,10 +18,10 @@ angular.module('iframeScaffolder').controller('ScaffolderCtrl', function ($scope
     // The popup is display, we should load the shorten URL
     $http
       // We use an external service that received the view URL as param
-      .get('https://white-shortener.herokuapp.com', config)
+      .get('//white-shortener.herokuapp.com', config)
       .then(function(res) {
-        if( res.data.url ) {
-          $scope.sharingUrl = res.data.url;
+        if( res.data.data.url ) {
+          $scope.sharingUrl = res.data.data.url;
         }
       });
   };
