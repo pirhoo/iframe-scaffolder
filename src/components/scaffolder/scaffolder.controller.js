@@ -75,6 +75,12 @@ angular.module('iframeScaffolder').controller('ScaffolderCtrl', function ($scope
     };
   };
 
+  // New active slide
+  $scope.$watch('scaffolder.active', function(current, previous) {
+    // Save the last-active slide for directional transition
+    $scope.previousIndex = previous;
+  });
+
   $scope.$watch('options', function() {
     // New instance of the scaffolder class
     $scope.scaffolder = new Scaffolder(options);

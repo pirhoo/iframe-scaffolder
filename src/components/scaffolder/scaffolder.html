@@ -14,12 +14,12 @@
       <h4 class="scaffolder__container__title">{{ scaffolder.getActive( 'Iframe ' + ($index + 1) ).label }}</h4>
     </aside>
     <iframe frameborder="0"
-            class="scaffolder__container__iframe"
+            class="scaffolder__container__iframe scaffolder-slide-horizontal"
             width="{{iframeWidth($index, $first, $last)}}"
             height="{{iframeHeight($index, $first, $last)}}"
             ng-class="{'scaffolder__container__iframe--last': $last, 'scaffolder__container__iframe--first': $first}"
             ng-src="{{scaffolder.url($index)}}"
-            ng-show="scaffolder.isVisible($index)"
+            ng-show="scaffolder.isVisible($index, true)"
             ng-repeat="url in options.urls track by $index"></iframe>
   </div>
   <div class="scaffolder__footer">
