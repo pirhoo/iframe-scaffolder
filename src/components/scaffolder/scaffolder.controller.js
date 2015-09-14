@@ -2,9 +2,13 @@
 
 angular.module('iframeScaffolder').controller('ScaffolderCtrl', function ($scope, $http, Scaffolder) {
 
+  var VERTICAL_LAYOUTS = ['menu'],
+    HORIZONTAL_LAYOUTS = ['tabs', 'narrative'];
+
   var options = $scope.options;
   $scope.scaffolder = new Scaffolder(options);
   $scope.shouldDisplaySharingPopup = false;
+
 
   $scope.toggleSharingPopup = function() {
     // Toggle popup state
@@ -55,6 +59,30 @@ angular.module('iframeScaffolder').controller('ScaffolderCtrl', function ($scope
     }
   };
 
+  $scope.iframeClasses = function(index, first, last) {
+    // Is the given iframe active?
+    var active = index === $scope.active;
+    // Is the given iframe the last active one? Or is it a first-degree neighbor?
+    var edge = $scope.previous === index || Math.abs($scope.active - index) <= 1;
+    // Returns a large set of classes...
+    return {
+      'scaffolder__container__iframe--last'      : last,
+      'scaffolder__container__iframe--first'     : first,
+      'scaffolder__container__iframe--active'    : active,
+      // The iframe was before the last active one and is now active
+      'scaffolder__container__iframe--was-before': active && index < $scope.previous,
+      // The iframe was after the last active one and is now active
+      'scaffolder__container__iframe--was-after' : active && index > $scope.previous,
+      // The iframe is now before the current active one
+      'scaffolder__container__iframe--before'    : edge   && index < $scope.active,
+      // The iframe is now after the current active one
+      'scaffolder__container__iframe--after'     : edge   && index > $scope.active,
+      // Animation is not the same for every layout
+      'scaffolder__container__iframe--anim-vertical'  : VERTICAL_LAYOUTS.indexOf(options.layout) > -1,
+      'scaffolder__container__iframe--anim-horizontal': HORIZONTAL_LAYOUTS.indexOf(options.layout) > -1
+    };
+  };
+
   $scope.getViewIframe = function() {
     var url = $scope.scaffolder.viewUrl(),
       width = '100%',
@@ -78,7 +106,8 @@ angular.module('iframeScaffolder').controller('ScaffolderCtrl', function ($scope
   // New active slide
   $scope.$watch('scaffolder.active', function(current, previous) {
     // Save the last-active slide for directional transition
-    $scope.previousIndex = previous;
+    $scope.previous = previous;
+    $scope.active = current;
   });
 
   $scope.$watch('options', function() {

@@ -66,6 +66,10 @@ angular.module('iframeScaffolder').service('Scaffolder', function($state) {
     return !this.hasMenu() || this.isActive(index);
   };
 
+  Scaffolder.prototype.isEdge = function(index) {
+    return Math.abs(this.active - index) <= 1;
+  };
+
   Scaffolder.prototype.isPrevious = function(index) {
     return index === this.active - 1;
   };
