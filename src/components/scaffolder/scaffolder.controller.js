@@ -1,10 +1,30 @@
 'use strict';
 
-angular.module('iframeScaffolder').controller('ScaffolderCtrl', function ($scope, Scaffolder) {
+angular.module('iframeScaffolder').controller('ScaffolderCtrl', function ($scope, $http, Scaffolder) {
 
   var options = $scope.options;
   $scope.scaffolder = new Scaffolder(options);
-  $scope.displaySharingPopup = false;
+  $scope.shouldDisplaySharingPopup = false;
+
+  $scope.toggleSharingPopup = function() {
+    // Toggle popup state
+    $scope.shouldDisplaySharingPopup = !$scope.shouldDisplaySharingPopup;
+    // Stop here if we are closing the popup
+    if( !$scope.shouldDisplaySharingPopup ) { return; }
+    // Url to share
+    var url = $scope.sharingUrl = $scope.scaffolder.viewUrl( $scope.scaffolder.active );
+    // Build request config
+    var config = { params: { url: url }, cache: true };
+    // The popup is display, we should load the shorten URL
+    $http
+      // We use an external service that received the view URL as param
+      .get('https://white-shortener.herokuapp.com', config)
+      .then(function(res) {
+        if( res.data.url ) {
+          $scope.sharingUrl = res.data.url;
+        }
+      });
+  };
 
   $scope.iframeWidth = function() {
     switch(options.layout) {
