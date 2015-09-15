@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('iframeScaffolder').service('Scaffolder', function($state) {
+angular.module('iframeScaffolder').service('Scaffolder', function($state, $timeout) {
   // Defauult scaffolder options
   var DEFAULTS_OPTIONS = {
     urls  : [],
@@ -16,7 +16,7 @@ angular.module('iframeScaffolder').service('Scaffolder', function($state) {
     options = angular.extend( angular.copy(DEFAULTS_OPTIONS), options);
     angular.extend(this, options);
     // Activate the right url
-    this.activate( parseInt(options.active || 0) );
+    this.activate( parseInt(options.active || 0), parseInt(options.autoplay) > 0);
     return this;
   }
 
@@ -54,8 +54,22 @@ angular.module('iframeScaffolder').service('Scaffolder', function($state) {
     return index === this.active;
   };
 
-  Scaffolder.prototype.activate = function(index) {
+  Scaffolder.prototype.activate = function(index, timeout) {
     this.active = index < this.urls.length ? index : 0;
+    // We must activate the iframe after a timeout
+    if( timeout === true ) {
+      // Avoid loosing context
+      var that = this;
+      // Create a timeout
+      this.autoplayTimeout = $timeout(function() {
+        that.activate(that.active + 1, true);
+      // Autoplay is given in second
+      }, this.autoplay*1000);
+    // Any attempt to activate an iframe without timeout
+    // will cancel the current autoplay
+    } else {
+      $timeout.cancel( this.autoplayTimeout );
+    }
   };
 
   Scaffolder.prototype.getActive = function(replacement) {
