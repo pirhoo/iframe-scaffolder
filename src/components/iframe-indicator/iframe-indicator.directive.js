@@ -3,7 +3,7 @@
 angular.module('iframeScaffolder').directive('iframeIndicator', function() {
   return {
     restrict: 'A',
-    link: function (scope, element, attrs) {
+    link: function (scope, element) {
       // Find the only iframe in the element
       var iframe = element.find('iframe');
       // Fired when the iframe is loaded
