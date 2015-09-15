@@ -7,10 +7,11 @@ angular.module('iframeScaffolder').controller('MainCtrl', function ($scope, $sta
 
   // Mosaic options
   $scope.options = {
-    'active': 0,
-    'sharing': 1,
-    'layout': $stateParams.layout || 'menu',
-    'theme': $stateParams.theme || 'default',
+    'active': parseInt($stateParams.active),
+    'sharing': parseInt($stateParams.sharing),
+    'autoplay': parseInt($stateParams.autoplay),
+    'layout': $stateParams.layout,
+    'theme': $stateParams.theme,
     'urls': !$stateParams.urls || $stateParams.urls === '' ? [] : $stateParams.urls.split(',')
   };
   // Default Scaffolder instance

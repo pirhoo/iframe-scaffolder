@@ -5,6 +5,9 @@ angular.module('iframeScaffolder').service('Scaffolder', function($state) {
   var DEFAULTS_OPTIONS = {
     urls  : [],
     active: 0,
+    sharing: 1,
+    autoplay: 0,
+    theme: 'default',
     layout: 'menu'
   };
 

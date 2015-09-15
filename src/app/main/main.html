@@ -137,7 +137,7 @@
           <div class="editor__step__option">
             <div class="row">
               <div class="col-xs-6">
-                <label for="input-active">
+                <label for="input-autoplay">
                   Choose the 1<sup>st</sup> iframe
                 </label>
               </div>
@@ -146,6 +146,25 @@
                   <option value="{{$index}}" ng-repeat="url in options.urls track by $index">
                     {{scaffolder.label($index)}}
                   </option>
+                </select>
+              </div>
+            </div>
+          </div>
+          <div class="editor__step__option">
+            <div class="row">
+              <div class="col-xs-6">
+                <label for="input-autoplay">
+                  Jump to the next iframe
+                </label>
+              </div>
+              <div class="col-xs-6">
+                <select id="input-autoplay" ng-model="options.autoplay" class="form-control input-sm">
+                  <option value="0">Do not jump</option>
+                  <option value="1">Every 1 second</option>
+                  <option value="2">Every 2 seconds</option>
+                  <option value="4">Every 4 seconds</option>
+                  <option value="8">Every 8 seconds</option>
+                  <option value="16">Every 16 seconds</option>
                 </select>
               </div>
             </div>

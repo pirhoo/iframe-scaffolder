@@ -7,6 +7,9 @@ angular.module('iframeScaffolder')
         url: '/',
         params: {
           urls: { value: ''},
+          active: { value: 0},
+          sharing: { value: 1},
+          autoplay: { value: 0},
           layout: { value: 'menu'},
           theme: { value: 'default'}
         },
@@ -14,12 +17,12 @@ angular.module('iframeScaffolder')
         controller: 'MainCtrl'
       })
       .state('view', {
-        url: '/view?urls&layout&theme&active&sharing',
+        url: '/view?urls&layout&theme&active&sharing&autoplay',
         templateUrl: 'app/view/view.html',
         controller: 'ViewCtrl',
       })
       .state('fork', {
-        url: '/fork?urls&layout&theme&active&sharing',
+        url: '/fork?urls&layout&theme&active&sharing&autoplay',
         controller: 'ForkCtrl'
       });
 
