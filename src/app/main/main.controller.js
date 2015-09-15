@@ -10,6 +10,7 @@ angular.module('iframeScaffolder').controller('MainCtrl', function ($scope, $sta
     'active': parseInt($stateParams.active),
     'sharing': parseInt($stateParams.sharing),
     'autoplay': parseInt($stateParams.autoplay),
+    'loop': parseInt($stateParams.loop),
     'layout': $stateParams.layout,
     'theme': $stateParams.theme,
     'urls': !$stateParams.urls || $stateParams.urls === '' ? [] : $stateParams.urls.split(',')

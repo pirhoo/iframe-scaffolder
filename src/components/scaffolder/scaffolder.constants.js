@@ -6,9 +6,10 @@ angular
       state: {
         params: {
           urls: { value: ''},
-          active: { value: 0},
-          sharing: { value: 1},
-          autoplay: { value: 0},
+          active: { value: '0'},
+          sharing: { value: '1'},
+          autoplay: { value: '0'},
+          loop: { value: '1'},
           layout: { value: 'menu'},
           theme: { value: 'default'}
         }
