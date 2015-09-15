@@ -13,14 +13,20 @@
       </ul>
       <h4 class="scaffolder__container__title">{{ scaffolder.getActive( 'Iframe ' + ($index + 1) ).label }}</h4>
     </aside>
-    <iframe frameborder="0"
-            class="scaffolder__container__iframe"
-            width="{{iframeWidth($index, $first, $last)}}"
-            height="{{iframeHeight($index, $first, $last)}}"
-            ng-class="iframeClasses($index, $first, $last)"
-            ng-src="{{scaffolder.url($index)}}"
-            ng-show="scaffolder.isVisible($index, true)"
-            ng-repeat="url in options.urls track by $index"></iframe>
+    <div  ng-repeat="url in options.urls track by $index"
+          ng-style="{
+            width: iframeWidth($index, $first, $last),
+            height: iframeHeight($index, $first, $last)
+          }"
+          ng-show="scaffolder.isVisible($index, true)"
+          ng-class="iframeClasses($index, $first, $last)"
+          iframe-indicator
+          class="scaffolder__container__iframe">
+      <iframe frameborder="0"
+              width="100%"
+              height="100%"
+              ng-src="{{ scaffolder.url($index) }}"></iframe>
+    </div>
   </div>
   <div class="scaffolder__footer">
     Built with <a href="//pirhoo.github.io/iframe-scaffolder/" target="_blank">Iframe Scaffolder</a>

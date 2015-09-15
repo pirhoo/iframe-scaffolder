@@ -1,0 +1,31 @@
+.iframe-indicator {
+  position:relative;
+  &--loading {
+
+    &:after {
+      content:"";
+      z-index:90;
+      position:absolute;
+      left:50%;
+      top:50%;
+      .translate(-50%, -50%);
+      background:no-repeat center center;
+      background-image: url("//logo-js.herokuapp.com/loading-bars/555");
+      background-size:auto 60%;
+      height:40px;
+      width:40px;
+      border-radius:20px;
+    }
+
+    &:before {
+      content:"";
+      z-index:80;
+      position:absolute;
+      top:0;
+      left:0;
+      right:0;
+      bottom:0;
+      background:#eee;
+    }
+  }
+}

@@ -46,12 +46,11 @@ angular.module('iframeScaffolder').controller('ScaffolderCtrl', function ($scope
   $scope.iframeHeight = function(index, first, last) {
     if (options.layout === 'horizontal'    ||
         options.layout === 'menu'          ||
+        options.layout === 'tabs'          ||
+        options.layout === 'narrative'     ||
         options.layout === 'head' && first ||
         options.layout === 'tail' && last) {
       return '100%';
-    } else if (options.layout === 'tabs'   ||
-               options.layout === 'narrative') {
-      return 'auto';
     } else {
       return (100/(options.urls.length-1)) + '%';
     }
