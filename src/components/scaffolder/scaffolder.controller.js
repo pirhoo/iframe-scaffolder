@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('iframeScaffolder').controller('ScaffolderCtrl', function ($scope, $http, Scaffolder) {
+angular.module('iframeScaffolder').controller('ScaffolderCtrl', function ($scope, $http, Scaffolder, SCAFFOLDER) {
 
   var options = $scope.options;
   $scope.scaffolder = new Scaffolder(options);
@@ -11,6 +11,8 @@ angular.module('iframeScaffolder').controller('ScaffolderCtrl', function ($scope
     $scope.shouldDisplaySharingPopup = !$scope.shouldDisplaySharingPopup;
     // Stop here if we are closing the popup
     if( !$scope.shouldDisplaySharingPopup ) { return; }
+    // Stop the autoplay (if any)
+    $scope.scaffolder.stop();
     // Url to share
     var url = $scope.sharingUrl = $scope.scaffolder.viewUrl( $scope.scaffolder.active );
     // Build request config
@@ -18,7 +20,7 @@ angular.module('iframeScaffolder').controller('ScaffolderCtrl', function ($scope
     // The popup is display, we should load the shorten URL
     $http
       // We use an external service that received the view URL as param
-      .get('//white-shortener.herokuapp.com', config)
+      .get(SCAFFOLDER.shortener, config)
       .then(function(res) {
         if( res.data.id ) {
           $scope.sharingUrl = res.data.id;
@@ -55,10 +57,34 @@ angular.module('iframeScaffolder').controller('ScaffolderCtrl', function ($scope
     }
   };
 
+  $scope.iframeClasses = function(index, first, last) {
+    // Is the given iframe active?
+    var active = index === $scope.active;
+    // Is the given iframe the last active one? Or is it a first-degree neighbor?
+    var edge = $scope.previous === index || Math.abs($scope.active - index) <= 1;
+    // Returns a large set of classes...
+    return {
+      'scaffolder__container__iframe--last'      : last,
+      'scaffolder__container__iframe--first'     : first,
+      'scaffolder__container__iframe--active'    : active,
+      // The iframe was before the last active one and is now active
+      'scaffolder__container__iframe--was-before': active && index < $scope.previous,
+      // The iframe was after the last active one and is now active
+      'scaffolder__container__iframe--was-after' : active && index > $scope.previous,
+      // The iframe is now before the current active one
+      'scaffolder__container__iframe--before'    : edge   && index < $scope.active,
+      // The iframe is now after the current active one
+      'scaffolder__container__iframe--after'     : edge   && index > $scope.active,
+      // Animation is not the same for every layout
+      'scaffolder__container__iframe--anim-vertical'  : SCAFFOLDER.layouts.vertical.indexOf(options.layout) > -1,
+      'scaffolder__container__iframe--anim-horizontal': SCAFFOLDER.layouts.horizontal.indexOf(options.layout) > -1
+    };
+  };
+
   $scope.getViewIframe = function() {
     var url = $scope.scaffolder.viewUrl(),
       width = '100%',
-     height = $scope.height || 450;
+     height = $scope.height || SCAFFOLDER.height;
     return '<iframe src="' + url + '" width="' + width + '" height="' + height + '" frameborder="0" allowfullscreen></iframe>';
   };
 
@@ -74,6 +100,13 @@ angular.module('iframeScaffolder').controller('ScaffolderCtrl', function ($scope
       'hidden'    : isNarrative && !scaffolder.isNext(index) && !scaffolder.isPrevious(index)
     };
   };
+
+  // New active slide
+  $scope.$watch('scaffolder.active', function(current, previous) {
+    // Save the last-active slide for directional transition
+    $scope.previous = previous;
+    $scope.active = current;
+  });
 
   $scope.$watch('options', function() {
     // New instance of the scaffolder class

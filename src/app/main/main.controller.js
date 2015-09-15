@@ -1,22 +1,24 @@
 'use strict';
 
-angular.module('iframeScaffolder').controller('MainCtrl', function ($scope, $state, $stateParams, $http, Scaffolder) {
+angular.module('iframeScaffolder').controller('MainCtrl', function ($scope, $state, $stateParams, $http, Scaffolder, SCAFFOLDER) {
 
   // Regex code is obtained from angular https://github.com/angular/angular.js/blob/master/src/ng/directive/input.js
   var URL_REGEXP = /^(ftp|http|https):\/\/(\w+:{0,1}\w*@)?(\S+)(:[0-9]+)?(\/|\/([\w#!:.?+=&%@!\-\/]))?$/;
 
   // Mosaic options
   $scope.options = {
-    'active': 0,
-    'sharing': 1,
-    'layout': $stateParams.layout || 'menu',
-    'theme': $stateParams.theme || 'default',
+    'active': parseInt($stateParams.active),
+    'sharing': parseInt($stateParams.sharing),
+    'autoplay': parseInt($stateParams.autoplay),
+    'loop': parseInt($stateParams.loop),
+    'layout': $stateParams.layout,
+    'theme': $stateParams.theme,
     'urls': !$stateParams.urls || $stateParams.urls === '' ? [] : $stateParams.urls.split(',')
   };
   // Default Scaffolder instance
   $scope.scaffolder = new Scaffolder($scope.options);
-  $scope.width      = 600;
-  $scope.height     = 450;
+  $scope.width      = SCAFFOLDER.width;
+  $scope.height     = SCAFFOLDER.height;
   $scope.examples   = [];
   $scope.themes     = {
     "default": "Default",
@@ -70,13 +72,13 @@ angular.module('iframeScaffolder').controller('MainCtrl', function ($scope, $sta
   };
 
   $scope.getViewUrl = function() {
-    return $scope.scaffolder.viewUrl();
+    return $scope.scaffolder.viewUrl($scope.scaffolder.firstIframe);
   };
 
   $scope.getViewIframe = function() {
     var url = $scope.getViewUrl(),
-      width = $scope.useFluid ? '100%' : $scope.width || 600,
-     height = $scope.height || 450;
+      width = $scope.useFluid ? '100%' : $scope.width || SCAFFOLDER.width,
+     height = $scope.height || SCAFFOLDER.height;
     return '<iframe src="' + url + '" width="' + width + '" height="' + height + '" frameborder="0" allowfullscreen></iframe>';
   };
 

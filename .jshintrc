@@ -21,6 +21,7 @@
   "validthis": true,
   "globals": {
     "angular": false,
-    "$": false
+    "$": false,
+    "jQuery": false
   }
 }

@@ -137,7 +137,7 @@
           <div class="editor__step__option">
             <div class="row">
               <div class="col-xs-6">
-                <label for="input-active">
+                <label for="input-autoplay">
                   Choose the 1<sup>st</sup> iframe
                 </label>
               </div>
@@ -148,6 +148,34 @@
                   </option>
                 </select>
               </div>
+            </div>
+          </div>
+          <div class="editor__step__option">
+            <div class="row">
+              <div class="col-xs-6">
+                <label for="input-autoplay">
+                  Autoplay to the next
+                </label>
+              </div>
+              <div class="col-xs-6">
+                <select id="input-autoplay" ng-model="options.autoplay" class="form-control input-sm">
+                  <option value="0">Do not autoplay</option>
+                  <option value="1">Every 1 second</option>
+                  <option value="2">Every 2 seconds</option>
+                  <option value="4">Every 4 seconds</option>
+                  <option value="8">Every 8 seconds</option>
+                  <option value="16">Every 16 seconds</option>
+                </select>
+              </div>
+            </div>
+          </div>
+          <div class="editor__step__option">
+            <div class="checkbox">
+              <label for="input-loop">
+                <input type="checkbox" ng-model="options.loop" ng-true-value="1" ng-false-value="0" id="input-loop" />
+                Loop autoplay
+              </label>
+              <p class="text-muted small">When reaching the end of the autoplay.</p>
             </div>
           </div>
           <div class="editor__step__option">

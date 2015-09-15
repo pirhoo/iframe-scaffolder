@@ -1,10 +1,13 @@
 'use strict';
 
-angular.module('iframeScaffolder').service('Scaffolder', function($state) {
+angular.module('iframeScaffolder').service('Scaffolder', function($state, $timeout, SCAFFOLDER) {
   // Defauult scaffolder options
   var DEFAULTS_OPTIONS = {
     urls  : [],
     active: 0,
+    sharing: 1,
+    autoplay: 0,
+    theme: 'default',
     layout: 'menu'
   };
 
@@ -12,8 +15,10 @@ angular.module('iframeScaffolder').service('Scaffolder', function($state) {
     // Extend the given options with the default one
     options = angular.extend( angular.copy(DEFAULTS_OPTIONS), options);
     angular.extend(this, options);
+    // Save the first iframe index
+    this.firstIframe = parseInt(options.active || 0);
     // Activate the right url
-    this.activate( parseInt(options.active || 0) );
+    this.activate( this.firstIframe, parseInt(options.autoplay) > 0);
     return this;
   }
 
@@ -51,8 +56,33 @@ angular.module('iframeScaffolder').service('Scaffolder', function($state) {
     return index === this.active;
   };
 
-  Scaffolder.prototype.activate = function(index) {
+  Scaffolder.prototype.activate = function(index, timeout) {
     this.active = index < this.urls.length ? index : 0;
+    // We must activate the iframe after a timeout
+    if( timeout === true ) {
+      this.start();
+    // Any attempt to activate an iframe without timeout
+    // will cancel the current autoplay
+    } else {
+      this.stop();
+    }
+  };
+
+  Scaffolder.prototype.start = function() {
+    // Avoid loosing context
+    var that = this;
+    // Create a timeout
+    this.autoplayTimeout = $timeout(function() {
+      // Do not continue after the end if loop mode is not enable
+      if(that.loop || that.active + 1 < that.urls.length) {
+        that.activate(that.active + 1, true);
+      }
+    // Autoplay is given in second
+    }, this.autoplay*1000);
+  };
+
+  Scaffolder.prototype.stop = function() {
+    $timeout.cancel( this.autoplayTimeout );
   };
 
   Scaffolder.prototype.getActive = function(replacement) {
@@ -64,6 +94,10 @@ angular.module('iframeScaffolder').service('Scaffolder', function($state) {
 
   Scaffolder.prototype.isVisible = function(index) {
     return !this.hasMenu() || this.isActive(index);
+  };
+
+  Scaffolder.prototype.isEdge = function(index) {
+    return Math.abs(this.active - index) <= 1;
   };
 
   Scaffolder.prototype.isPrevious = function(index) {
@@ -94,7 +128,7 @@ angular.module('iframeScaffolder').service('Scaffolder', function($state) {
   };
 
   Scaffolder.prototype.hasMenu = function() {
-    return ['menu', 'tabs', 'narrative'].indexOf(this.layout) > -1;
+    return SCAFFOLDER.layouts.togglable.indexOf(this.layout) > -1;
   };
 
   return Scaffolder;
