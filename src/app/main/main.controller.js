@@ -71,7 +71,7 @@ angular.module('iframeScaffolder').controller('MainCtrl', function ($scope, $sta
   };
 
   $scope.getViewUrl = function() {
-    return $scope.scaffolder.viewUrl();
+    return $scope.scaffolder.viewUrl($scope.scaffolder.firstIframe);
   };
 
   $scope.getViewIframe = function() {

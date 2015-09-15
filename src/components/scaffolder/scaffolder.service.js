@@ -15,8 +15,10 @@ angular.module('iframeScaffolder').service('Scaffolder', function($state, $timeo
     // Extend the given options with the default one
     options = angular.extend( angular.copy(DEFAULTS_OPTIONS), options);
     angular.extend(this, options);
+    // Save the first iframe index
+    this.firstIframe = parseInt(options.active || 0);
     // Activate the right url
-    this.activate( parseInt(options.active || 0), parseInt(options.autoplay) > 0);
+    this.activate( this.firstIframe, parseInt(options.autoplay) > 0);
     return this;
   }
 
