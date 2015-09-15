@@ -1,17 +1,10 @@
 'use strict';
 
 angular.module('iframeScaffolder')
-  .config(function ($stateProvider) {
+  .config(function ($stateProvider, SCAFFOLDER) {
     $stateProvider.state('home', {
       url: '/',
-      params: {
-        urls: { value: ''},
-        active: { value: 0},
-        sharing: { value: 1},
-        autoplay: { value: 0},
-        layout: { value: 'menu'},
-        theme: { value: 'default'}
-      },
+      params: SCAFFOLDER.state.params,
       templateUrl: 'app/main/main.html',
       controller: 'MainCtrl'
     });

@@ -1,14 +1,10 @@
 'use strict';
 
-angular.module('iframeScaffolder').controller('ScaffolderCtrl', function ($scope, $http, Scaffolder) {
-
-  var VERTICAL_LAYOUTS = ['menu'],
-    HORIZONTAL_LAYOUTS = ['tabs', 'narrative'];
+angular.module('iframeScaffolder').controller('ScaffolderCtrl', function ($scope, $http, Scaffolder, SCAFFOLDER) {
 
   var options = $scope.options;
   $scope.scaffolder = new Scaffolder(options);
   $scope.shouldDisplaySharingPopup = false;
-
 
   $scope.toggleSharingPopup = function() {
     // Toggle popup state
@@ -24,7 +20,7 @@ angular.module('iframeScaffolder').controller('ScaffolderCtrl', function ($scope
     // The popup is display, we should load the shorten URL
     $http
       // We use an external service that received the view URL as param
-      .get('//white-shortener.herokuapp.com', config)
+      .get(SCAFFOLDER.shortener, config)
       .then(function(res) {
         if( res.data.id ) {
           $scope.sharingUrl = res.data.id;
@@ -80,8 +76,8 @@ angular.module('iframeScaffolder').controller('ScaffolderCtrl', function ($scope
       // The iframe is now after the current active one
       'scaffolder__container__iframe--after'     : edge   && index > $scope.active,
       // Animation is not the same for every layout
-      'scaffolder__container__iframe--anim-vertical'  : VERTICAL_LAYOUTS.indexOf(options.layout) > -1,
-      'scaffolder__container__iframe--anim-horizontal': HORIZONTAL_LAYOUTS.indexOf(options.layout) > -1
+      'scaffolder__container__iframe--anim-vertical'  : SCAFFOLDER.layouts.vertical.indexOf(options.layout) > -1,
+      'scaffolder__container__iframe--anim-horizontal': SCAFFOLDER.layouts.horizontal.indexOf(options.layout) > -1
     };
   };
 
