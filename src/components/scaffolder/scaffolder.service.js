@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('iframeScaffolder').service('Scaffolder', function($state, $timeout) {
+angular.module('iframeScaffolder').service('Scaffolder', function($state, $timeout, SCAFFOLDER) {
   // Defauult scaffolder options
   var DEFAULTS_OPTIONS = {
     urls  : [],
@@ -125,7 +125,7 @@ angular.module('iframeScaffolder').service('Scaffolder', function($state, $timeo
   };
 
   Scaffolder.prototype.hasMenu = function() {
-    return ['menu', 'tabs', 'narrative'].indexOf(this.layout) > -1;
+    return SCAFFOLDER.layouts.togglable.indexOf(this.layout) > -1;
   };
 
   return Scaffolder;

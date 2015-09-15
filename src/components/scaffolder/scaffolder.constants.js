@@ -16,7 +16,10 @@ angular
       layouts: {
         vertical: ['menu'],
         horizontal: ['tabs', 'narrative'],
-        splitted: ['horizontal', 'head', 'tail']
+        splitted: ['horizontal', 'head', 'tail'],
+        togglable: ['menu', 'tabs', 'narrative']
       },
-      shortener: '//white-shortener.herokuapp.com'
+      shortener: '//white-shortener.herokuapp.com',
+      width: 600,
+      height: 450
     });

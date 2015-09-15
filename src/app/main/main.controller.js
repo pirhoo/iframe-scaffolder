@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('iframeScaffolder').controller('MainCtrl', function ($scope, $state, $stateParams, $http, Scaffolder) {
+angular.module('iframeScaffolder').controller('MainCtrl', function ($scope, $state, $stateParams, $http, Scaffolder, SCAFFOLDER) {
 
   // Regex code is obtained from angular https://github.com/angular/angular.js/blob/master/src/ng/directive/input.js
   var URL_REGEXP = /^(ftp|http|https):\/\/(\w+:{0,1}\w*@)?(\S+)(:[0-9]+)?(\/|\/([\w#!:.?+=&%@!\-\/]))?$/;
@@ -16,8 +16,8 @@ angular.module('iframeScaffolder').controller('MainCtrl', function ($scope, $sta
   };
   // Default Scaffolder instance
   $scope.scaffolder = new Scaffolder($scope.options);
-  $scope.width      = 600;
-  $scope.height     = 450;
+  $scope.width      = SCAFFOLDER.width;
+  $scope.height     = SCAFFOLDER.height;
   $scope.examples   = [];
   $scope.themes     = {
     "default": "Default",
@@ -76,8 +76,8 @@ angular.module('iframeScaffolder').controller('MainCtrl', function ($scope, $sta
 
   $scope.getViewIframe = function() {
     var url = $scope.getViewUrl(),
-      width = $scope.useFluid ? '100%' : $scope.width || 600,
-     height = $scope.height || 450;
+      width = $scope.useFluid ? '100%' : $scope.width || SCAFFOLDER.width,
+     height = $scope.height || SCAFFOLDER.height;
     return '<iframe src="' + url + '" width="' + width + '" height="' + height + '" frameborder="0" allowfullscreen></iframe>';
   };
 
