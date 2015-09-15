@@ -21,13 +21,13 @@ angular.module('iframeScaffolder').controller('MainCtrl', function ($scope, $sta
   $scope.height     = SCAFFOLDER.height;
   $scope.examples   = [];
   $scope.themes     = {
-    "default": "Default",
-    "ebony-clay": "Ebony clay",
-    "picton-blue": "Picton blue",
-    "silver-tree": "Silver tree",
-    "eucalyptus": "Eucalyptus",
-    "sunset-orange": "Sunset orange",
-    "monza-red": "Monza red"
+    'default': 'Default',
+    'ebony-clay': 'Ebony clay',
+    'picton-blue': 'Picton blue',
+    'silver-tree': 'Silver tree',
+    'eucalyptus': 'Eucalyptus',
+    'sunset-orange': 'Sunset orange',
+    'monza-red': 'Monza red'
   };
 
   // Get sample datasets
