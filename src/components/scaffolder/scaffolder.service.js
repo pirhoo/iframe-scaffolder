@@ -73,7 +73,10 @@ angular.module('iframeScaffolder').service('Scaffolder', function($state, $timeo
     var that = this;
     // Create a timeout
     this.autoplayTimeout = $timeout(function() {
-      that.activate(that.active + 1, true);
+      // Do not continue after the end if loop mode is not enable
+      if(that.loop || that.active + 1 < that.urls.length) {
+        that.activate(that.active + 1, true);
+      }
     // Autoplay is given in second
     }, this.autoplay*1000);
   };
