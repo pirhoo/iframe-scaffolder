@@ -22,5 +22,14 @@ angular
       },
       shortener: '//white-shortener.herokuapp.com',
       width: 600,
-      height: 450
+      height: 450,
+      themes: [
+        { slug: 'default', label: 'Default' },
+        { slug: 'ebony-clay', label: 'Ebony clay' },
+        { slug: 'picton-blue', label: 'Picton blue' },
+        { slug: 'silver-tree', label: 'Silver tree' },
+        { slug: 'eucalyptus', label: 'Eucalyptus' },
+        { slug: 'sunset-orange', label: 'Sunset orange' },
+        { slug: 'monza-red', label: 'Monza red' }
+      ]
     });
