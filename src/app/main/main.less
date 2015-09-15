@@ -56,6 +56,32 @@
       }
     }
 
+    &__not-available {
+      z-index:100;
+      position:absolute;
+      top:0;
+      left:0;
+      right:0;
+      bottom:0;
+      text-align:center;
+      background:fade( @gray-lighter, 80%);
+
+      &__label {
+        position:absolute;
+        top:50%;
+        left:50%;
+        .translate(-50%, -50%);
+      }
+    }
+
+    &__options-group {
+      position:relative;
+    }
+
+    &__options-group[disabled=disabled] &__option {
+      filter:blur(1px);
+    }
+
     &__label {
       position:absolute;
       bottom:0;
