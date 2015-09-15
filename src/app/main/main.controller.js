@@ -20,20 +20,30 @@ angular.module('iframeScaffolder').controller('MainCtrl', function ($scope, $sta
   $scope.width      = SCAFFOLDER.width;
   $scope.height     = SCAFFOLDER.height;
   $scope.examples   = [];
-  $scope.themes     = {
-    'default': 'Default',
-    'ebony-clay': 'Ebony clay',
-    'picton-blue': 'Picton blue',
-    'silver-tree': 'Silver tree',
-    'eucalyptus': 'Eucalyptus',
-    'sunset-orange': 'Sunset orange',
-    'monza-red': 'Monza red'
-  };
+  $scope.themes     = [
+    { slug: 'default', label: 'Default' },
+    { slug: 'ebony-clay', label: 'Ebony clay' },
+    { slug: 'picton-blue', label: 'Picton blue' },
+    { slug: 'silver-tree', label: 'Silver tree' },
+    { slug: 'eucalyptus', label: 'Eucalyptus' },
+    { slug: 'sunset-orange', label: 'Sunset orange' },
+    { slug: 'monza-red', label: 'Monza red' }
+  ];
 
   // Get sample datasets
   $http.get('assets/examples.json').success(function(data) {
     $scope.examples = data;
   });
+
+  $scope.getTheme = function(slug) {
+    var theme = null;
+    angular.forEach($scope.themes, function(one) {
+      if( one.slug === slug ) {
+        theme = one;
+      }
+    });
+    return theme;
+  };
 
   $scope.isUrlValid = function(value) {
     return $scope.extractUrl(value) !== null;

@@ -87,14 +87,14 @@
             <span class="btn-group">
               <i class="scaffolder--{{options.theme}}__preview editor__step__theme-preview disabled btn btn-xs"></i>
               <button class="btn btn-default btn-xs" dropdown-toggle>
-                {{ themes[options.theme] }} &nbsp;<i class="caret"></i>
+                {{ getTheme(options.theme).label }} &nbsp;<i class="caret"></i>
               </button>
             </span>
             <ul class="dropdown-menu" role="menu">
-              <li ng-repeat="(theme, label) in themes" class="editor__step__theme">
-                <a ng-click="options.theme = theme">
-                  <i class="scaffolder--{{theme}}__preview editor__step__theme__preview"></i>
-                  {{label}}
+              <li ng-repeat="theme in themes" class="editor__step__theme">
+                <a ng-click="options.theme = theme.slug">
+                  <i class="scaffolder--{{theme.slug}}__preview editor__step__theme__preview"></i>
+                  {{theme.label}}
                 </a>
               </li>
             </ul>
