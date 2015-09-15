@@ -14,10 +14,7 @@
       <h4 class="scaffolder__container__title">{{ scaffolder.getActive( 'Iframe ' + ($index + 1) ).label }}</h4>
     </aside>
     <div  ng-repeat="url in options.urls track by $index"
-          ng-style="{
-            width: iframeWidth($index, $first, $last),
-            height: iframeHeight($index, $first, $last)
-          }"
+          ng-style="iframeStyle($index, $first, $last)"
           ng-show="scaffolder.isVisible($index, true)"
           ng-class="iframeClasses($index, $first, $last)"
           iframe-indicator

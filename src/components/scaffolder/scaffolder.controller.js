@@ -46,11 +46,12 @@ angular.module('iframeScaffolder').controller('ScaffolderCtrl', function ($scope
   $scope.iframeHeight = function(index, first, last) {
     if (options.layout === 'horizontal'    ||
         options.layout === 'menu'          ||
-        options.layout === 'tabs'          ||
-        options.layout === 'narrative'     ||
         options.layout === 'head' && first ||
         options.layout === 'tail' && last) {
       return '100%';
+    } else if (options.layout === 'tabs'   ||
+              options.layout === 'narrative') {
+      return undefined;
     } else {
       return (100/(options.urls.length-1)) + '%';
     }
@@ -77,6 +78,13 @@ angular.module('iframeScaffolder').controller('ScaffolderCtrl', function ($scope
       // Animation is not the same for every layout
       'scaffolder__container__iframe--anim-vertical'  : SCAFFOLDER.layouts.vertical.indexOf(options.layout) > -1,
       'scaffolder__container__iframe--anim-horizontal': SCAFFOLDER.layouts.horizontal.indexOf(options.layout) > -1
+    };
+  };
+
+  $scope.iframeStyle = function(index, first, last) {
+    return {
+      width: $scope.iframeWidth(index, first, last),
+      height: $scope.iframeHeight(index, first, last)
     };
   };
 
