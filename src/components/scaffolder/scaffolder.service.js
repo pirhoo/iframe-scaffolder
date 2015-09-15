@@ -58,18 +58,26 @@ angular.module('iframeScaffolder').service('Scaffolder', function($state, $timeo
     this.active = index < this.urls.length ? index : 0;
     // We must activate the iframe after a timeout
     if( timeout === true ) {
-      // Avoid loosing context
-      var that = this;
-      // Create a timeout
-      this.autoplayTimeout = $timeout(function() {
-        that.activate(that.active + 1, true);
-      // Autoplay is given in second
-      }, this.autoplay*1000);
+      this.start();
     // Any attempt to activate an iframe without timeout
     // will cancel the current autoplay
     } else {
-      $timeout.cancel( this.autoplayTimeout );
+      this.stop();
     }
+  };
+
+  Scaffolder.prototype.start = function() {
+    // Avoid loosing context
+    var that = this;
+    // Create a timeout
+    this.autoplayTimeout = $timeout(function() {
+      that.activate(that.active + 1, true);
+    // Autoplay is given in second
+    }, this.autoplay*1000);
+  };
+
+  Scaffolder.prototype.stop = function() {
+    $timeout.cancel( this.autoplayTimeout );
   };
 
   Scaffolder.prototype.getActive = function(replacement) {

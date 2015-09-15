@@ -6,8 +6,8 @@ angular.module('iframeScaffolder').controller('ViewCtrl', function ($scope, $sta
     layout  : $stateParams.layout,
     theme   : $stateParams.theme || 'default',
     urls    : $stateParams.urls.split(','),
-    active  : $stateParams.active || 0,
-    sharing : $stateParams.sharing || 0,
-    autoplay: $stateParams.autoplay || 0,
+    active  : parseInt($stateParams.active),
+    sharing : parseInt($stateParams.sharing),
+    autoplay: parseInt($stateParams.autoplay),
   };
 });

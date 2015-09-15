@@ -15,6 +15,8 @@ angular.module('iframeScaffolder').controller('ScaffolderCtrl', function ($scope
     $scope.shouldDisplaySharingPopup = !$scope.shouldDisplaySharingPopup;
     // Stop here if we are closing the popup
     if( !$scope.shouldDisplaySharingPopup ) { return; }
+    // Stop the autoplay (if any)
+    $scope.scaffolder.stop();
     // Url to share
     var url = $scope.sharingUrl = $scope.scaffolder.viewUrl( $scope.scaffolder.active );
     // Build request config
