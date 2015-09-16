@@ -28,6 +28,17 @@
   <div class="scaffolder__footer">
     Built with <a href="//pirhoo.github.io/iframe-scaffolder/" target="_blank">Iframe Scaffolder</a>
     <div class="scaffolder__footer__sharing-toggler" ng-show="options.sharing && scaffolder.hasMenu() && scaffolder.urls.length">
+      <button class="btn btn-xs"
+              ng-click="scaffolder.toggleAutoplay()"
+              ng-class="{
+                'btn-default': !scaffolder.autoplayPlaying,
+                'btn-primary': scaffolder.autoplayPlaying
+              }">
+        <i class="fa fa-fw" ng-class="{
+          'fa-play': !scaffolder.autoplayPlaying,
+          'fa-pause': scaffolder.autoplayPlaying
+        }"></i>
+      </button>
       <button class="btn btn-xs btn-default" ng-click="toggleSharingPopup()">
         <i class="fa fa-fw fa-share"></i>
         Share this view

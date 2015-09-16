@@ -71,11 +71,16 @@ angular.module('iframeScaffolder').service('Scaffolder', function($state, $timeo
   Scaffolder.prototype.start = function() {
     // Avoid loosing context
     var that = this;
+    // Autoplay state
+    this.autoplayPlaying = true;
     // Create a timeout
     this.autoplayTimeout = $timeout(function() {
       // Do not continue after the end if loop mode is not enable
       if(that.loop || that.active + 1 < that.urls.length) {
         that.activate(that.active + 1, true);
+      // This is the end
+      } else {
+        that.stop();
       }
     // Autoplay is given in second
     }, this.autoplay*1000);
@@ -83,6 +88,20 @@ angular.module('iframeScaffolder').service('Scaffolder', function($state, $timeo
 
   Scaffolder.prototype.stop = function() {
     $timeout.cancel( this.autoplayTimeout );
+    // Autoplay state
+    this.autoplayPlaying = false;
+  };
+
+  Scaffolder.prototype.toggleAutoplay = function() {
+    if( this.autoplayPlaying ) {
+      // Simply stop the autoplay
+      this.stop();
+    } else {
+      // The slideshow may have reach this end
+      var next = this.active + 1 < this.urls.length ? this.active + 1 : 0;
+      // Just go to the next slide
+      this.activate( next, true );
+    }
   };
 
   Scaffolder.prototype.getActive = function(replacement) {
