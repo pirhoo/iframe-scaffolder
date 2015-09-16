@@ -9,5 +9,6 @@ angular.module('iframeScaffolder').controller('ViewCtrl', function ($scope, $sta
     active  : parseInt($stateParams.active),
     sharing : parseInt($stateParams.sharing),
     autoplay: parseInt($stateParams.autoplay),
+    loop    : parseInt($stateParams.loop),
   };
 });
