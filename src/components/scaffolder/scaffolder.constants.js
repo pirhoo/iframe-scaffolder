@@ -20,7 +20,8 @@ angular
         splitted: ['horizontal', 'head', 'tail'],
         togglable: ['menu', 'tabs', 'narrative']
       },
-      shortener: '//white-shortener.herokuapp.com',
+      shortenerInterface: '//white-shortener.herokuapp.com',
+      shortenerProvider: 'goo.gl',
       width: 600,
       height: 450,
       themes: [

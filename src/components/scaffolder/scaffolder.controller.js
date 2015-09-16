@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('iframeScaffolder').controller('ScaffolderCtrl', function ($scope, $http, Scaffolder, SCAFFOLDER) {
+angular.module('iframeScaffolder').controller('ScaffolderCtrl', function ($scope, $state, $http, Scaffolder, SCAFFOLDER) {
 
   var options = $scope.options;
   $scope.scaffolder = new Scaffolder(options);
@@ -20,10 +20,14 @@ angular.module('iframeScaffolder').controller('ScaffolderCtrl', function ($scope
     // The popup is display, we should load the shorten URL
     $http
       // We use an external service that received the view URL as param
-      .get(SCAFFOLDER.shortener, config)
+      .get(SCAFFOLDER.shortenerInterface, config)
       .then(function(res) {
         if( res.data.id ) {
-          $scope.sharingUrl = res.data.id;
+          // Extract the id from the result
+          var sep = SCAFFOLDER.shortenerProvider + '/',
+               id = res.data.id.split(sep)[1];
+          // Generate the sharing URL from a local endpoint
+          $scope.sharingUrl = $state.href('shorten', { id: id }, { absolute: true });
         }
       });
   };
