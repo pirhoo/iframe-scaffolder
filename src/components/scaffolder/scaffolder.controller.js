@@ -93,7 +93,7 @@ angular.module('iframeScaffolder').controller('ScaffolderCtrl', function ($scope
   };
 
   $scope.getViewIframe = function() {
-    var url = $scope.scaffolder.viewUrl(),
+    var url = $scope.sharingUrl || $scope.scaffolder.viewUrl(),
       width = '100%',
      height = $scope.height || SCAFFOLDER.height;
     return '<iframe src="' + url + '" width="' + width + '" height="' + height + '" frameborder="0" allowfullscreen></iframe>';
