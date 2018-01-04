@@ -117,7 +117,7 @@ gulp.task('clean', function (done) {
 });
 
 gulp.task('deploy', ['build'], function() {
-  gulp.src('./dist/**/*').pipe($.ghPages({
+  return gulp.src('./dist/**/*').pipe($.ghPages({
     remoteUrl: require('../package.json').staticRemote
   }));
 });
