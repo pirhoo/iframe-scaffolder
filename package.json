@@ -21,8 +21,8 @@
     "@bower_components/velocity": "julianshapiro/velocity#~1.2.2",
     "@bower_components/zeroclipboard": "zeroclipboard/zeroclipboard#>=2"
   },
-  "repository": "https://github.com/googletrends/iframe-scaffolder/",
-  "staticRemote": "git@github.com:googletrends/iframe-scaffolder.git",
+  "repository": "https://github.com/pirhoo/iframe-scaffolder/",
+  "staticRemote": "git@github.com:pirhoo/iframe-scaffolder.git",
   "facebookAppId": "1491916714459281",
   "devDependencies": {
     "gulp": "^3.9.1",
