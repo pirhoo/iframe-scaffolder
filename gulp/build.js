@@ -3,7 +3,7 @@
 var gulp = require('gulp');
 
 var $ = require('gulp-load-plugins')({
-  pattern: ['gulp-*', 'main-bower-files', 'uglify-save-license', 'del']
+  pattern: ['gulp-*', 'uglify-save-license', 'del']
 });
 
 function handleError(err) {
@@ -99,14 +99,6 @@ gulp.task('images', function () {
       .pipe($.size());
 });
 
-gulp.task('fonts', function () {
-  return gulp.src($.mainBowerFiles())
-    .pipe($.filter('**/*.{eot,svg,ttf,woff}'))
-    .pipe($.flatten())
-    .pipe(gulp.dest('dist/fonts'))
-    .pipe($.size());
-});
-
 gulp.task('swf', [], function () {
   return gulp.src('node_modules/@bower_components/**/*.swf')
     .pipe($.flatten())
@@ -130,4 +122,4 @@ gulp.task('deploy', ['build'], function() {
   }));
 });
 
-gulp.task('build', ['html', 'images', 'fonts', 'misc']);
+gulp.task('build', ['html', 'images', 'misc']);

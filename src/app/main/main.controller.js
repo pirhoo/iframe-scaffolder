@@ -23,8 +23,8 @@ angular.module('iframeScaffolder').controller('MainCtrl', function ($scope, $sta
   $scope.examples   = [];
 
   // Get sample datasets
-  $http.get('assets/examples.json').success(function(data) {
-    $scope.examples = data;
+  $http.get('assets/examples.json').then(function(res) {
+    $scope.examples = res.data;
   });
 
   $scope.getTheme = function(slug) {

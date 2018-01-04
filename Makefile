@@ -5,5 +5,4 @@ deploy:
 	gulp deploy
 
 install:
-	npm install
-	bower install
+	yarn

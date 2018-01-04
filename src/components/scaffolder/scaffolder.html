@@ -1,6 +1,6 @@
-<div class="scaffolder scaffolder--{{options.layout}} scaffolder--{{options.theme}}"  layout="column" layout-align="start start">
-  <div class="scaffolder__header"></div>
-  <div class="scaffolder__container" flex>
+<div class="scaffolder scaffolder--{{options.layout}} scaffolder--{{options.theme}} layout-column" layout="column" layout-align="center none">
+  <div class="scaffolder__header" flex="nogrow"></div>
+  <div class="scaffolder__container" flex="100">
     <aside ng-show="scaffolder.hasMenu()" class="scaffolder__container__menu">
       <ul class="nav nav-pills" ng-class="{ 'nav-stacked': options.layout === 'menu' }">
         <li ng-repeat="url in options.urls track by $index"
@@ -25,7 +25,7 @@
               ng-src="{{ scaffolder.url($index) }}"></iframe>
     </div>
   </div>
-  <div class="scaffolder__footer">
+  <div class="scaffolder__footer" flex="none">
     Built with <a href="//pirhoo.github.io/iframe-scaffolder/" target="_blank">Iframe Scaffolder</a>
     <div class="scaffolder__footer__sharing-toggler" ng-show="scaffolder.hasMenu() && scaffolder.urls.length">
       <button class="btn btn-xs"
