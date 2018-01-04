@@ -108,7 +108,7 @@ gulp.task('fonts', function () {
 });
 
 gulp.task('swf', [], function () {
-  return gulp.src('bower_components/**/*.swf')
+  return gulp.src('node_modules/@bower_components/**/*.swf')
     .pipe($.flatten())
     .pipe(gulp.dest('dist/assets/swf'))
     .pipe($.size());

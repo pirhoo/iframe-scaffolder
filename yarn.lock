@@ -2,6 +2,80 @@
 # yarn lockfile v1
 
 
+"@bower_components/angular-animate@angular/bower-angular-animate#1.3.x":
+  version "1.3.20"
+  resolved "https://codeload.github.com/angular/bower-angular-animate/tar.gz/a0d4208f770315df80866fcb449eff913efbbbdc"
+
+"@bower_components/angular-aria@angular/bower-angular-aria#^1.3.15 || >1.4.0-beta.0":
+  version "1.6.8"
+  resolved "https://codeload.github.com/angular/bower-angular-aria/tar.gz/26fb0805952e485b55c7873c8050f75a54b700be"
+
+"@bower_components/angular-bootstrap@angular-ui/bootstrap-bower#0.13.1":
+  version "0.13.1"
+  resolved "https://codeload.github.com/angular-ui/bootstrap-bower/tar.gz/92d5b56d34e4087c7c88d0d50e93913a14270f2d"
+
+"@bower_components/angular-material@angular/bower-material#~0.10.0":
+  version "0.10.1"
+  resolved "https://codeload.github.com/angular/bower-material/tar.gz/44f067ad06830daf69a173706e7dee92edb4b1fa"
+
+"@bower_components/angular-mocks@angular/bower-angular-mocks#1.3.x":
+  version "1.3.20"
+  resolved "https://codeload.github.com/angular/bower-angular-mocks/tar.gz/67e8eeedf5514e5f8240ca69de5bdfe3701e687c"
+
+"@bower_components/angular-sanitize@angular/bower-angular-sanitize#1.3.x":
+  version "1.3.20"
+  resolved "https://codeload.github.com/angular/bower-angular-sanitize/tar.gz/1072923abc9a6bc076e0625ae115b7b8f3ed70d1"
+
+"@bower_components/angular-ui-router@angular-ui/angular-ui-router-bower#0.2.15":
+  version "0.0.0"
+  resolved "https://codeload.github.com/angular-ui/angular-ui-router-bower/tar.gz/90ce66133afc3572a8d7556d6d3fcee0efd8bb13"
+
+"@bower_components/angular-ui-sortable@angular-ui/ui-sortable#~0.13.0":
+  version "0.0.0"
+  resolved "https://codeload.github.com/angular-ui/ui-sortable/tar.gz/0311efe8c8f0771b7f02d56e3a9dc675dcaa8d4f"
+
+"@bower_components/angular-ui-utils@angular-ui/ui-utils#bower-validate":
+  version "0.0.0"
+  resolved "https://codeload.github.com/angular-ui/ui-utils/tar.gz/e3994d4e80e1487f486c98a94c12d3b9ff7614a1"
+
+"@bower_components/angular-zeroclipboard@lisposter/angular-zeroclipboard#~0.3.2":
+  version "0.0.0"
+  resolved "https://codeload.github.com/lisposter/angular-zeroclipboard/tar.gz/70ab4f8d34bd493b653ab11a1a958121b14d01de"
+
+"@bower_components/angular@angular/bower-angular#1.3.20":
+  version "1.3.20"
+  resolved "https://codeload.github.com/angular/bower-angular/tar.gz/0cd10f27471310fe07167b00f8a4242c6bba4df2"
+
+"@bower_components/angularjs-socialshare@720kb/angular-socialshare#~0.1.13":
+  version "0.1.20"
+  resolved "https://codeload.github.com/720kb/angular-socialshare/tar.gz/2e14fac535c778f49ebc3558bd1d72d64ce3d064"
+
+"@bower_components/bootstrap@twbs/bootstrap#3.3.1":
+  version "3.3.1"
+  resolved "https://codeload.github.com/twbs/bootstrap/tar.gz/9a7e365c2c4360335d25246dac11afb1f577210a"
+
+"@bower_components/jquery-ui@components/jqueryui#>=1.9":
+  version "1.12.1"
+  resolved "https://codeload.github.com/components/jqueryui/tar.gz/44ecf3794cc56b65954cc19737234a3119d036cc"
+
+"@bower_components/jquery@jquery/jquery-dist#2.x.x":
+  version "2.2.4"
+  resolved "https://codeload.github.com/jquery/jquery-dist/tar.gz/c0185ab7c75aab88762c5aae780b9d83b80eda72"
+
+"@bower_components/modernizr@Modernizr/Modernizr#2.8.x":
+  version "0.0.0"
+  resolved "https://codeload.github.com/Modernizr/Modernizr/tar.gz/d6bb30c0f12ebb3ddd01e90b0bf435e1c34e6f11"
+
+"@bower_components/velocity@julianshapiro/velocity#~1.2.2":
+  version "1.2.3"
+  resolved "https://codeload.github.com/julianshapiro/velocity/tar.gz/1ad0a8196fa973f96e347a9b7f5bdaf7498ed1a6"
+  dependencies:
+    jquery ">= 1.4.3"
+
+"@bower_components/zeroclipboard@zeroclipboard/zeroclipboard#>=2":
+  version "2.3.0"
+  resolved "https://codeload.github.com/zeroclipboard/zeroclipboard/tar.gz/9ddfc4623bda247f3647733f7ca3bed5bd5e4972"
+
 "@types/node@^6.0.46":
   version "6.0.95"
   resolved "https://registry.yarnpkg.com/@types/node/-/node-6.0.95.tgz#0d027612a77c55b84497ff90a4a7d597e5ac0fab"
@@ -3991,6 +4065,10 @@ jpegtran-bin@^3.0.0:
     bin-build "^2.0.0"
     bin-wrapper "^3.0.0"
     logalot "^2.0.0"
+
+"jquery@>= 1.4.3":
+  version "3.2.1"
+  resolved "https://registry.yarnpkg.com/jquery/-/jquery-3.2.1.tgz#5c4d9de652af6cd0a770154a631bba12b015c787"
 
 js-yaml@~2.1.0:
   version "2.1.3"

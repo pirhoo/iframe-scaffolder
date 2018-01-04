@@ -15,11 +15,10 @@
 
 ## Installation
 
-Install `node` and `npm` then run:
+Install `node` and `yarn` then run:
 
 ```
-npm install
-bower install
+yarn
 ```
 
 You can now start serving static files with gulp!
