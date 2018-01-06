@@ -1,10 +1,10 @@
 [
   {
     "urls": [
-      "Impact: official view|http://charts-datawrapper.s3.amazonaws.com/ecHpQ/index.html?rev=21",
-      "What does it cost?|http://charts-datawrapper.s3.amazonaws.com/VUNcU/index.html?rev=79",
-      "Taxes v spending|http://charts-datawrapper.s3.amazonaws.com/mgalY/index.html?rev=18",
-      "GDP|http://charts-datawrapper.s3.amazonaws.com/q1QdD/index.html?rev=96"
+      "Impact: official view|https://charts-datawrapper.s3.amazonaws.com/ecHpQ/index.html?rev=21",
+      "What does it cost?|https://charts-datawrapper.s3.amazonaws.com/VUNcU/index.html?rev=79",
+      "Taxes v spending|https://charts-datawrapper.s3.amazonaws.com/mgalY/index.html?rev=18",
+      "GDP|https://charts-datawrapper.s3.amazonaws.com/q1QdD/index.html?rev=96"
     ],
     "layout": "menu",
     "gap": "md",
@@ -14,10 +14,10 @@
   },
   {
     "urls": [
-      "Impact: official view|http://charts-datawrapper.s3.amazonaws.com/ecHpQ/index.html?rev=21",
-      "What does it cost?|http://charts-datawrapper.s3.amazonaws.com/VUNcU/index.html?rev=79",
-      "Taxes v spending|http://charts-datawrapper.s3.amazonaws.com/mgalY/index.html?rev=18",
-      "GDP|http://charts-datawrapper.s3.amazonaws.com/q1QdD/index.html?rev=96"
+      "Impact: official view|https://charts-datawrapper.s3.amazonaws.com/ecHpQ/index.html?rev=21",
+      "What does it cost?|https://charts-datawrapper.s3.amazonaws.com/VUNcU/index.html?rev=79",
+      "Taxes v spending|https://charts-datawrapper.s3.amazonaws.com/mgalY/index.html?rev=18",
+      "GDP|https://charts-datawrapper.s3.amazonaws.com/q1QdD/index.html?rev=96"
     ],
     "layout": "narrative",
     "gap": "sm",
@@ -27,10 +27,10 @@
   },
   {
     "urls": [
-      "Impact: official view|http://charts-datawrapper.s3.amazonaws.com/ecHpQ/index.html?rev=21",
-      "What does it cost?|http://charts-datawrapper.s3.amazonaws.com/VUNcU/index.html?rev=79",
-      "Taxes v spending|http://charts-datawrapper.s3.amazonaws.com/mgalY/index.html?rev=18",
-      "GDP|http://charts-datawrapper.s3.amazonaws.com/q1QdD/index.html?rev=96"
+      "Impact: official view|https://charts-datawrapper.s3.amazonaws.com/ecHpQ/index.html?rev=21",
+      "What does it cost?|https://charts-datawrapper.s3.amazonaws.com/VUNcU/index.html?rev=79",
+      "Taxes v spending|https://charts-datawrapper.s3.amazonaws.com/mgalY/index.html?rev=18",
+      "GDP|https://charts-datawrapper.s3.amazonaws.com/q1QdD/index.html?rev=96"
     ],
     "layout": "tabs",
     "gap": "sm",
@@ -40,9 +40,9 @@
   },
   {
     "urls": [
-      "Victoires par pays|http://athomascommin.cartodb.com/viz/9cceb7c0-7165-11e4-a5d4-0e018d66dc29/embed_map",
-      "Victoires par discipline|http://chart.dwp.lequipe.fr/9fYO6/index.html",
-      "Victoires par saison|http://chart.dwp.lequipe.fr/vUO4B/index.html"
+      "Victoires par pays|https://athomascommin.cartodb.com/viz/9cceb7c0-7165-11e4-a5d4-0e018d66dc29/embed_map",
+      "Victoires par discipline|https://chart.dwp.lequipe.fr/9fYO6/index.html",
+      "Victoires par saison|https://chart.dwp.lequipe.fr/vUO4B/index.html"
     ],
     "layout": "tabs",
     "theme": "monza-red",
@@ -50,9 +50,9 @@
   },
   {
     "urls": [
-      "Victoires par pays|http://athomascommin.cartodb.com/viz/9cceb7c0-7165-11e4-a5d4-0e018d66dc29/embed_map",
-      "Victoires par discipline|http://chart.dwp.lequipe.fr/9fYO6/index.html",
-      "Victoires par saison|http://chart.dwp.lequipe.fr/vUO4B/index.html"
+      "Victoires par pays|https://athomascommin.cartodb.com/viz/9cceb7c0-7165-11e4-a5d4-0e018d66dc29/embed_map",
+      "Victoires par discipline|https://chart.dwp.lequipe.fr/9fYO6/index.html",
+      "Victoires par saison|https://chart.dwp.lequipe.fr/vUO4B/index.html"
     ],
     "layout": "tabs",
     "gap": "md",
@@ -64,8 +64,8 @@
     "gap": "md",
     "theme": "monza-red-filled",
     "urls": [
-      "Avec 10-11|http://chart.dwp.lequipe.fr/4aVYD/index.html",
-      "Sans 10-11|http://chart.dwp.lequipe.fr/Pkykg/index.html"
+      "Avec 10-11|https://chart.dwp.lequipe.fr/4aVYD/index.html",
+      "Sans 10-11|https://chart.dwp.lequipe.fr/Pkykg/index.html"
     ],
     "active": 0,
     "sharing": 1,
@@ -94,12 +94,12 @@
     "gap": "md",
     "theme": "picton-blue",
     "urls": [
-      "Qui va le plus au boulot en vélo ?|http://datawrapper.dwcdn.net/EdCwy/6/",
-      "Qui dépense le plus pour le vélo ?|http://datawrapper.dwcdn.net/U8d47/1/",
-      "Qui a la voirie la plus aménagée ?|http://datawrapper.dwcdn.net/kpXpR/1/",
-      "Qui est le meilleur pour le libre service ?|http://datawrapper.dwcdn.net/dNEKo/1/",
-      "Où peut-on le mieux sécuriser son vélo ?|http://datawrapper.dwcdn.net/2zsCo/1/",
-      "Qui délaisse le plus la bagnole ?|http://datawrapper.dwcdn.net/qAUNp/2/"
+      "Qui va le plus au boulot en vélo ?|https://datawrapper.dwcdn.net/EdCwy/6/",
+      "Qui dépense le plus pour le vélo ?|https://datawrapper.dwcdn.net/U8d47/1/",
+      "Qui a la voirie la plus aménagée ?|https://datawrapper.dwcdn.net/kpXpR/1/",
+      "Qui est le meilleur pour le libre service ?|https://datawrapper.dwcdn.net/dNEKo/1/",
+      "Où peut-on le mieux sécuriser son vélo ?|https://datawrapper.dwcdn.net/2zsCo/1/",
+      "Qui délaisse le plus la bagnole ?|https://datawrapper.dwcdn.net/qAUNp/2/"
     ],
     "active": 0,
     "sharing": 1,
