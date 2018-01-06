@@ -7,6 +7,7 @@
       "GDP|http://charts-datawrapper.s3.amazonaws.com/q1QdD/index.html?rev=96"
     ],
     "layout": "menu",
+    "gap": "md",
     "theme": "sunset-orange",
     "title": "The Budget visualised",
     "description": "4 key charts to tell you what happened"
@@ -19,6 +20,7 @@
       "GDP|http://charts-datawrapper.s3.amazonaws.com/q1QdD/index.html?rev=96"
     ],
     "layout": "narrative",
+    "gap": "sm",
     "theme": "ebony-clay",
     "title": "The Budget visualised",
     "description": "4 key charts to tell you what happened"
@@ -31,6 +33,7 @@
       "GDP|http://charts-datawrapper.s3.amazonaws.com/q1QdD/index.html?rev=96"
     ],
     "layout": "tabs",
+    "gap": "sm",
     "theme": "eucalyptus",
     "title": "The Budget visualised",
     "description": "4 key charts to tell you what happened"
@@ -44,5 +47,84 @@
     "layout": "tabs",
     "theme": "monza-red",
     "title": "Martin Fourcade"
+  },
+  {
+    "urls": [
+      "Victoires par pays|http://athomascommin.cartodb.com/viz/9cceb7c0-7165-11e4-a5d4-0e018d66dc29/embed_map",
+      "Victoires par discipline|http://chart.dwp.lequipe.fr/9fYO6/index.html",
+      "Victoires par saison|http://chart.dwp.lequipe.fr/vUO4B/index.html"
+    ],
+    "layout": "tabs",
+    "gap": "md",
+    "theme": "default",
+    "title": "Martin Fourcade"
+  },
+  {
+    "layout": "tabs",
+    "gap": "md",
+    "theme": "monza-red-filled",
+    "urls": [
+      "Avec 10-11|http://chart.dwp.lequipe.fr/4aVYD/index.html",
+      "Sans 10-11|http://chart.dwp.lequipe.fr/Pkykg/index.html"
+    ],
+    "active": 0,
+    "sharing": 1,
+    "autoplay": 0,
+    "loop": 1,
+    "title": "Indice UEFA",
+    "description": null
+  },
+  {
+    "layout": "tabs",
+    "gap": "sm",
+    "theme": "ebony-clay-filled",
+    "urls": [
+      "Republican primaries|https://telegraph.cartodb.com/u/foreign/viz/5d210c30-e082-11e5-8a50-0e674067d321/embed_map",
+      "Democrat primaries|https://telegraph.cartodb.com/u/foreign/viz/607cda44-e082-11e5-af88-0ea31932ec1d/embed_map"
+    ],
+    "active": 0,
+    "sharing": 1,
+    "autoplay": 0,
+    "loop": 1,
+    "title": null,
+    "description": null
+  },
+  {
+    "layout": "menu",
+    "gap": "md",
+    "theme": "picton-blue",
+    "urls": [
+      "Qui va le plus au boulot en vélo ?|http://datawrapper.dwcdn.net/EdCwy/6/",
+      "Qui dépense le plus pour le vélo ?|http://datawrapper.dwcdn.net/U8d47/1/",
+      "Qui a la voirie la plus aménagée ?|http://datawrapper.dwcdn.net/kpXpR/1/",
+      "Qui est le meilleur pour le libre service ?|http://datawrapper.dwcdn.net/dNEKo/1/",
+      "Où peut-on le mieux sécuriser son vélo ?|http://datawrapper.dwcdn.net/2zsCo/1/",
+      "Qui délaisse le plus la bagnole ?|http://datawrapper.dwcdn.net/qAUNp/2/"
+    ],
+    "active": 0,
+    "sharing": 1,
+    "autoplay": 0,
+    "loop": 1,
+    "title": null,
+    "description": null
+  },
+  {
+    "layout": "narrative",
+    "gap": null,
+    "theme": "gorse",
+    "urls": [
+      "Candidat en tête|https://bertrandenjalbal.carto.com/viz/03f46810-2b67-11e7-bd4c-0e05a8b3e3d7/embed_map",
+      "Vote Emmanuel Macron|https://bertrandenjalbal.carto.com/viz/c7c117ce-2b01-4d76-805e-ba3a41db412d/embed_map",
+      "Vote François Fillon|https://bertrandenjalbal.carto.com/viz/0485a7c2-af77-4c87-b17d-2ce9c11f0fd5/embed_map",
+      "Vote Jean-Luc Mélenchon|https://bertrandenjalbal.carto.com/viz/1ce68c59-bee5-4ab5-a63c-333b75751746/embed_map",
+      "Vote Marine Le Pen|https://bertrandenjalbal.carto.com/viz/58182b39-8384-440d-a0ee-42afbec44164/embed_map",
+      "Vote Benoît Hamon|https://bertrandenjalbal.carto.com/viz/645e4084-21eb-4871-a536-c3209a9d762d/embed_map"
+    ],
+    "active": 2,
+    "sharing": 1,
+    "autoplay": 4,
+    "loop": 1,
+    "title": "Lyon: élection présidentielle de 2017",
+    "description": null
   }
 ]
