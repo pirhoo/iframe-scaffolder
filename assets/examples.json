@@ -41,8 +41,8 @@
   {
     "urls": [
       "Victoires par pays|https://athomascommin.cartodb.com/viz/9cceb7c0-7165-11e4-a5d4-0e018d66dc29/embed_map",
-      "Victoires par discipline|https://chart.dwp.lequipe.fr/9fYO6/index.html",
-      "Victoires par saison|https://chart.dwp.lequipe.fr/vUO4B/index.html"
+      "Victoires par discipline|http://chart.dwp.lequipe.fr/9fYO6/index.html",
+      "Victoires par saison|http://chart.dwp.lequipe.fr/vUO4B/index.html"
     ],
     "layout": "tabs",
     "theme": "monza-red",
@@ -51,8 +51,8 @@
   {
     "urls": [
       "Victoires par pays|https://athomascommin.cartodb.com/viz/9cceb7c0-7165-11e4-a5d4-0e018d66dc29/embed_map",
-      "Victoires par discipline|https://chart.dwp.lequipe.fr/9fYO6/index.html",
-      "Victoires par saison|https://chart.dwp.lequipe.fr/vUO4B/index.html"
+      "Victoires par discipline|http://chart.dwp.lequipe.fr/9fYO6/index.html",
+      "Victoires par saison|http://chart.dwp.lequipe.fr/vUO4B/index.html"
     ],
     "layout": "tabs",
     "gap": "md",
@@ -64,8 +64,8 @@
     "gap": "md",
     "theme": "monza-red-filled",
     "urls": [
-      "Avec 10-11|https://chart.dwp.lequipe.fr/4aVYD/index.html",
-      "Sans 10-11|https://chart.dwp.lequipe.fr/Pkykg/index.html"
+      "Avec 10-11|http://chart.dwp.lequipe.fr/4aVYD/index.html",
+      "Sans 10-11|http://chart.dwp.lequipe.fr/Pkykg/index.html"
     ],
     "active": 0,
     "sharing": 1,
