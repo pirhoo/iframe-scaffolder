@@ -15,6 +15,7 @@ angular
           gap: { value: null},
           title: { value: null},
           description: { value: null},
+          enforceProtocol: { value: '1'}
         }
       },
       layouts: {

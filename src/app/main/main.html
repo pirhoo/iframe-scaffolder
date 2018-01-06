@@ -180,7 +180,7 @@
             <div class="editor__step__option">
               <div class="row">
                 <div class="col-xs-6">
-                  <label for="input-autoplay">
+                  <label for="input-active">
                     Choose the 1<sup>st</sup> iframe
                   </label>
                 </div>
@@ -218,7 +218,9 @@
                   <input type="checkbox" ng-model="options.loop" ng-true-value="1" ng-false-value="0" id="input-loop" />
                   Loop autoplay
                 </label>
-                <p class="text-muted small">When reaching the end of the autoplay.</p>
+                <p class="text-muted small">
+                  When reaching the end of the autoplay.
+                </p>
               </div>
             </div>
             <div class="editor__step__option">
@@ -227,7 +229,20 @@
                   <input type="checkbox" ng-model="options.sharing" ng-true-value="1" ng-false-value="0" id="input-sharing" />
                   Allow iframe sharing
                 </label>
-                <p class="text-muted small">The user will be able to share each iframe individually.</p>
+                <p class="text-muted small">
+                  The user will be able to share each iframe individually.
+                </p>
+              </div>
+            </div>
+            <div class="editor__step__option">
+              <div class="checkbox">
+                <label for="input-enforce-protocol">
+                  <input type="checkbox" ng-model="options.enforceProtocol" ng-true-value="1" ng-false-value="0" id="input-enforce-protocol" />
+                  Use the same protocol
+                </label>
+                <p class="text-muted small">
+                  Every URL will use the same protocol (HTTP or HTTPS).
+                </p>
               </div>
             </div>
           </fieldset>

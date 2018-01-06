@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('iframeScaffolder').service('Scaffolder', function($state, $timeout, SCAFFOLDER) {
+angular.module('iframeScaffolder').service('Scaffolder', function($state, $timeout,  $window, SCAFFOLDER) {
   // Defauult scaffolder options
   var DEFAULTS_OPTIONS = {
     urls  : [],
@@ -9,8 +9,11 @@ angular.module('iframeScaffolder').service('Scaffolder', function($state, $timeo
     autoplay: 0,
     gap: null,
     theme: 'default',
-    layout: 'menu'
+    layout: 'menu',
+    // Enfore same protocol?
+    enforceProtocol: 1
   };
+
 
   function Scaffolder(options) {
     // Extend the given options with the default one
@@ -42,11 +45,15 @@ angular.module('iframeScaffolder').service('Scaffolder', function($state, $timeo
     var url = this.urls[index];
     // Return an URL only for visible iframes in order to avoid
     // bug when an iframe is loaded in background.
-    if(this.isVisible(index) || getter) {
+    if (url && this.isVisible(index) || getter) {
       // This url is prefixed by a label
-      if( this.hasLabel(index) ) {
+      if (this.hasLabel(index)) {
         // Returns the second part
-        return url.split('|')[1];
+        url = url.split('|')[1];
+      }
+      // Enfore HTTPS or not?
+      if (this.enforceProtocol) {
+        return url.indexOf($window.location.protocol) === 0 ? url : url.replace(/https?:/, $window.location.protocol);
       } else {
         return url;
       }

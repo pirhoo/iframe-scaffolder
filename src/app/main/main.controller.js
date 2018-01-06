@@ -16,7 +16,8 @@ angular.module('iframeScaffolder').controller('MainCtrl', function ($scope, $sta
     'layout': $stateParams.layout,
     'gap': $stateParams.gap,
     'theme': $stateParams.theme,
-    'urls': !$stateParams.urls || $stateParams.urls === '' ? [] : $stateParams.urls.split(',')
+    'urls': !$stateParams.urls || $stateParams.urls === '' ? [] : $stateParams.urls.split(','),
+    'enforceProtocol': parseInt($stateParams.enforceProtocol)
   };
   // Default Scaffolder instance
   $scope.scaffolder = new Scaffolder($scope.options);
