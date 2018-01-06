@@ -94,7 +94,7 @@
               <li ng-repeat="theme in themes" class="editor__step__theme">
                 <a ng-click="options.theme = theme.slug">
                   <i class="scaffolder--{{theme.slug}}__preview editor__step__theme__preview"></i>
-                  {{theme.label}}
+                  <span ng-bind-html="theme.label"></span>
                 </a>
               </li>
             </ul>
