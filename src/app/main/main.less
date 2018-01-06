@@ -18,6 +18,10 @@
     position:relative;
     counter-increment:step;
 
+    .form-group:last-child {
+      margin-bottom: 0;
+    }
+
     &--disable {
       opacity:0.2;
       filter:grayscale(1);
@@ -179,7 +183,7 @@
       opacity:1;
     }
 
-    .dropdown-menu {
+    .dropdown-menu--themes.dropdown-menu {
       overflow: auto;
       max-height: 20rem;
       max-width: none;

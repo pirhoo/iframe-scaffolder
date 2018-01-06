@@ -14,6 +14,7 @@ angular.module('iframeScaffolder').controller('MainCtrl', function ($scope, $sta
     'autoplay': parseInt($stateParams.autoplay),
     'loop': parseInt($stateParams.loop),
     'layout': $stateParams.layout,
+    'gap': $stateParams.gap,
     'theme': $stateParams.theme,
     'urls': !$stateParams.urls || $stateParams.urls === '' ? [] : $stateParams.urls.split(',')
   };
@@ -21,6 +22,7 @@ angular.module('iframeScaffolder').controller('MainCtrl', function ($scope, $sta
   $scope.scaffolder = new Scaffolder($scope.options);
   $scope.width      = SCAFFOLDER.width;
   $scope.height     = SCAFFOLDER.height;
+  $scope.gaps       = SCAFFOLDER.gaps;
   $scope.themes     = SCAFFOLDER.themes;
   $scope.examples   = [];
 
@@ -28,6 +30,16 @@ angular.module('iframeScaffolder').controller('MainCtrl', function ($scope, $sta
   $http.get('assets/examples.json').then(function(res) {
     $scope.examples = res.data;
   });
+
+  $scope.getGap = function(slug) {
+    var gap = null;
+    angular.forEach(SCAFFOLDER.gaps, function(one) {
+      if( one.slug === slug ) {
+        gap = one;
+      }
+    });
+    return gap;
+  };
 
   $scope.getTheme = function(slug) {
     var theme = null;

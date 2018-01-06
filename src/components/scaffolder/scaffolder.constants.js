@@ -12,8 +12,9 @@ angular
           loop: { value: '1'},
           layout: { value: 'menu'},
           theme: { value: 'default'},
+          gap: { value: null},
           title: { value: null},
-          description: { value: null}
+          description: { value: null},
         }
       },
       layouts: {
@@ -26,6 +27,14 @@ angular
       shortenerProvider: 'goo.gl',
       width: 600,
       height: 450,
+      gaps: [
+        { slug: null, label: 'None' },
+        { slug: 'xs', label: 'Extra-Small' },
+        { slug: 'sm', label: 'Small' },
+        { slug: 'md', label: 'Medium' },
+        { slug: 'lg', label: 'Large' },
+        { slug: 'xl', label: 'Extra-Large' },
+      ],
       themes: [
         { slug: 'default', label: 'Default' },
         { slug: 'ebony-clay', label: 'Ebony clay' },

@@ -7,6 +7,7 @@ angular.module('iframeScaffolder').service('Scaffolder', function($state, $timeo
     active: 0,
     sharing: 1,
     autoplay: 0,
+    gap: null,
     theme: 'default',
     layout: 'menu'
   };

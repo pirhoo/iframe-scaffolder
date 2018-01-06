@@ -54,8 +54,8 @@
         <div class="editor__step__label"></div>
         <div class="panel-body">
           <p>
-            Choose a layout&nbsp;
-            <small class="text-muted">(how iframes are arranged)</small>
+            Choose a layout&nbsp;<br />
+            <small class="text-muted">How iframes are arranged</small>
           </p>
           <div class="text-center btn-group">
             <button class="btn btn-default btn-sm" ng-class="{active: options.layout == 'menu'}" ng-click="options.layout = 'menu'" tooltip="Toggle iframes using a menu">
@@ -83,23 +83,43 @@
       <div class="panel editor__step panel-default" ng-class="{ 'editor__step--disable': !options.urls.length }">
         <div class="editor__step__label"></div>
         <div class="panel-body">
-          <div class="pull-right" dropdown>
-            <span class="btn-group">
-              <i class="scaffolder--{{options.theme}}__preview editor__step__theme-preview disabled btn btn-xs"></i>
-              <button class="btn btn-default btn-xs" dropdown-toggle>
-                {{ getTheme(options.theme).label }} &nbsp;<i class="caret"></i>
-              </button>
-            </span>
-            <ul class="dropdown-menu" role="menu">
-              <li ng-repeat="theme in themes" class="editor__step__theme">
-                <a ng-click="options.theme = theme.slug">
-                  <i class="scaffolder--{{theme.slug}}__preview editor__step__theme__preview"></i>
-                  <span ng-bind-html="theme.label"></span>
-                </a>
-              </li>
-            </ul>
+          <div class="form-group">
+            <div class="pull-right" dropdown>
+              <span class="btn-group">
+                <i class="scaffolder--{{options.theme}}__preview editor__step__theme-preview disabled btn btn-xs"></i>
+                <button class="btn btn-default btn-xs" dropdown-toggle>
+                  {{ getTheme(options.theme).label }} &nbsp;<i class="caret"></i>
+                </button>
+              </span>
+              <ul class="dropdown-menu dropdown-menu--themes" role="menu">
+                <li ng-repeat="theme in themes" class="editor__step__theme">
+                  <a ng-click="options.theme = theme.slug">
+                    <i class="scaffolder--{{theme.slug}}__preview editor__step__theme__preview"></i>
+                    <span ng-bind-html="theme.label"></span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+            Choose a theme&nbsp;
           </div>
-          Choose a theme&nbsp;
+          <div class="form-group">
+            <div class="pull-right" dropdown>
+              <span class="btn-group">
+                <button class="btn btn-default btn-xs" dropdown-toggle>
+                  {{ getGap(options.gap).label }} &nbsp;<i class="caret"></i>
+                </button>
+              </span>
+              <ul class="dropdown-menu" role="menu">
+                <li ng-repeat="gap in gaps">
+                  <a ng-click="options.gap = gap.slug">
+                    <span ng-bind-html="gap.label"></span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+            Add a gap&nbsp;<br />
+            <small class="text-muted">A space around each iframe</smalL>
+          </div>
         </div>
       </div>
       <div class="panel editor__step panel-default" ng-class="{ 'editor__step--disable': !options.urls.length }">

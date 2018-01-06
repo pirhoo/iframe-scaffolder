@@ -71,6 +71,12 @@ angular.module('iframeScaffolder').controller('ScaffolderCtrl', function ($scope
       'scaffolder__container__iframe--last'      : last,
       'scaffolder__container__iframe--first'     : first,
       'scaffolder__container__iframe--active'    : active,
+      // Gap arround each iframe
+      'scaffolder__container__iframe--gap-xs'    : options.gap === 'xs',
+      'scaffolder__container__iframe--gap-sm'    : options.gap === 'sm',
+      'scaffolder__container__iframe--gap-md'    : options.gap === 'md',
+      'scaffolder__container__iframe--gap-lg'    : options.gap === 'lg',
+      'scaffolder__container__iframe--gap-xl'    : options.gap === 'xl',
       // The iframe was before the last active one and is now active
       'scaffolder__container__iframe--was-before': active && index < $scope.previous,
       // The iframe was after the last active one and is now active
