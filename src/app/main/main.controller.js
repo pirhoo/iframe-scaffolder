@@ -7,6 +7,8 @@ angular.module('iframeScaffolder').controller('MainCtrl', function ($scope, $sta
 
   // Mosaic options
   $scope.options = {
+    'title': $stateParams.title,
+    'description': $stateParams.description,
     'active': parseInt($stateParams.active),
     'sharing': parseInt($stateParams.sharing),
     'autoplay': parseInt($stateParams.autoplay),

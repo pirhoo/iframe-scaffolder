@@ -105,9 +105,20 @@ angular.module('iframeScaffolder').service('Scaffolder', function($state, $timeo
   };
 
   Scaffolder.prototype.getActive = function(replacement) {
+    var   label = this.label(this.active, replacement),
+    description = this.description;
+    // Add label to the description
+    if( this.title && description ) {
+      description = this.title + ' - ' + description;
+    // Use only the description or the label
+    } else {
+      description = description || this.title;
+    }
+
     return {
-      label: this.label(this.active, replacement),
-      url: this.url(this.active)
+      label: label,
+      url: this.url(this.active),
+      description: description
     };
   };
 

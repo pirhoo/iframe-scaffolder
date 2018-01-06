@@ -1,5 +1,8 @@
 <div class="scaffolder scaffolder--{{options.layout}} scaffolder--{{options.theme}} layout-column" layout="column" layout-align="center none">
-  <div class="scaffolder__header" flex="nogrow"></div>
+  <div class="scaffolder__header" flex="nogrow" ng-if="options.title || options.description">
+    <h3 class="scaffolder__header__title" ng-if="options.title">{{ options.title }}</h3>
+    <p class="scaffolder__header__description lead" ng-if="options.description">{{ options.description }}</p>
+  </div>
   <div class="scaffolder__container" flex="100">
     <aside ng-show="scaffolder.hasMenu()" class="scaffolder__container__menu">
       <ul class="nav nav-pills" ng-class="{ 'nav-stacked': options.layout === 'menu' }">

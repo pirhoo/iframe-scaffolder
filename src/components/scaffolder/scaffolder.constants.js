@@ -11,7 +11,9 @@ angular
           autoplay: { value: '0'},
           loop: { value: '1'},
           layout: { value: 'menu'},
-          theme: { value: 'default'}
+          theme: { value: 'default'},
+          title: { value: null},
+          description: { value: null}
         }
       },
       layouts: {

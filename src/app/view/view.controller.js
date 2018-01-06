@@ -10,5 +10,7 @@ angular.module('iframeScaffolder').controller('ViewCtrl', function ($scope, $sta
     sharing : parseInt($stateParams.sharing),
     autoplay: parseInt($stateParams.autoplay),
     loop    : parseInt($stateParams.loop),
+    title   : $stateParams.title,
+    description: $stateParams.description
   };
 });
