@@ -3,7 +3,8 @@
                   @active-bg: darken(@iframe-bg, 10),
                   @active-color: contrast(@iframe-bg),
                   @hover-bg: lighten(@active-bg, 10),
-                  @hover-color: @active-color) {
+                  @hover-color: @active-color,
+                  @border-color: @active-color) {
 
   color: @iframe-color;
   background: @iframe-bg;
@@ -18,7 +19,7 @@
       font-size:0.9em;
       border-radius: @border-radius-base;
       border-left: 4px solid @iframe-bg;
-      border-right: 4px solid @hover-bg;
+      border-right: 4px solid @border-color;
     }
   }
 
@@ -26,7 +27,7 @@
   .scaffolder__container__menu__item.active a:hover {
     color: @active-color;
     background: @active-bg;
-    border-color: @active-color;
+    border-color: @border-color;
   }
   .scaffolder__container__menu__item a:hover {
     color: @hover-color;
