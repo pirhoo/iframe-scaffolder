@@ -39,42 +39,6 @@
     "description": "4 key charts to tell you what happened"
   },
   {
-    "urls": [
-      "Victoires par pays|https://athomascommin.cartodb.com/viz/9cceb7c0-7165-11e4-a5d4-0e018d66dc29/embed_map",
-      "Victoires par discipline|http://chart.dwp.lequipe.fr/9fYO6/index.html",
-      "Victoires par saison|http://chart.dwp.lequipe.fr/vUO4B/index.html"
-    ],
-    "layout": "tabs",
-    "theme": "monza-red",
-    "title": "Martin Fourcade"
-  },
-  {
-    "urls": [
-      "Victoires par pays|https://athomascommin.cartodb.com/viz/9cceb7c0-7165-11e4-a5d4-0e018d66dc29/embed_map",
-      "Victoires par discipline|http://chart.dwp.lequipe.fr/9fYO6/index.html",
-      "Victoires par saison|http://chart.dwp.lequipe.fr/vUO4B/index.html"
-    ],
-    "layout": "tabs",
-    "gap": "md",
-    "theme": "default",
-    "title": "Martin Fourcade"
-  },
-  {
-    "layout": "tabs",
-    "gap": "md",
-    "theme": "monza-red-filled",
-    "urls": [
-      "Avec 10-11|http://chart.dwp.lequipe.fr/4aVYD/index.html",
-      "Sans 10-11|http://chart.dwp.lequipe.fr/Pkykg/index.html"
-    ],
-    "active": 0,
-    "sharing": 1,
-    "autoplay": 0,
-    "loop": 1,
-    "title": "Indice UEFA",
-    "description": null
-  },
-  {
     "layout": "tabs",
     "gap": "sm",
     "theme": "ebony-clay-filled",
